@@ -1616,7 +1616,7 @@ PrefabInstance:
     - target: {fileID: 4347438997229501135, guid: 3bcb6f5cf9dbf7942b3cdb0d21d5bf53,
         type: 3}
       propertyPath: onClickEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: MinigameSelectionScene
+      value: HomeScene
       objectReference: {fileID: 0}
     - target: {fileID: 4347438997229501135, guid: 3bcb6f5cf9dbf7942b3cdb0d21d5bf53,
         type: 3}

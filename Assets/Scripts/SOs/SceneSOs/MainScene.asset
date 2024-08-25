@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e415b0e6ef0c5f40b0a6cfc7c5c4dd6, type: 3}
   m_Name: MainScene
   m_EditorClassIdentifier: 
-  sceneName: MainScene
-  shortDescription: Main scene where user interacts with the pet
+  sceneName: HomeScene
+  shortDescription: Landing page
   music: {fileID: 0}
   musicVolume: 0
