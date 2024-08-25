@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15105bfef30cf31449c0d6d73130a0c9, type: 3}
+  m_Name: Macaw
+  m_EditorClassIdentifier: 
+  petName: Macaw
+  species: 2
+  petPrefab: {fileID: 6813842759266199228, guid: 5a064b41b0515474ba51fe72484d4ac4,
+    type: 3}
+  animationCueList:
+  - {fileID: 11400000, guid: efb3514a1bcceb94d90969beb535b279, type: 2}
+  - {fileID: 11400000, guid: a61e8a6297c434849bd4ee78212076bd, type: 2}
+  - {fileID: 11400000, guid: 546845f6865c9f34c8c71d1c8c09a9ae, type: 2}
+  - {fileID: 11400000, guid: 81686f38afbfb874fa0ccd5a9fd1b9c7, type: 2}
+  - {fileID: 11400000, guid: f257014eada501e47ac5dbb5b66415d8, type: 2}
+  barkAudioCue: {fileID: 11400000, guid: 7d694bac46a682f489671e3d011559a2, type: 2}
+  colors:
+  - {fileID: 11400000, guid: 774d010e9ba7f484c88cb5061a711506, type: 2}
+  - {fileID: 11400000, guid: 9333f6b4413124449920f8c3477b8140, type: 2}
+  - {fileID: 11400000, guid: 298e57c2b1f73614dbe51251c3eaa62d, type: 2}
