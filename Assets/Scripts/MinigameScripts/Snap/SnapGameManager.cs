@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using System.Linq;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class SnapGameManager : MonoBehaviour
 {
@@ -122,23 +123,30 @@ public class SnapGameManager : MonoBehaviour
     }
     public void DrawNext()
     {
-        if (lockout) return;
-        if (deckDrawn)
+        if (!minigameTimer.canPlayNow())
         {
-            totalMoves++;
-            if (deckList.Contains(currentIndex)) // When the cards are the same
-            {
-                StartCoroutine(Popup("Buy when the cards are the same!"));
-                return;
-            }
-            currentIndex++;
-            remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
-            StartCoroutine(FlipNewPlayerCard());
+            StartCoroutine(Popup(String.Format("Sorry you can only play the game after {0}", minigameTimer.getInterpretableDateTime())));
         }
         else
         {
-            StartCoroutine(FlipBothCards());
-            deckDrawn = true;
+            if (lockout) return;
+            if (deckDrawn)
+            {
+                totalMoves++;
+                if (deckList.Contains(currentIndex)) // When the cards are the same
+                {
+                    StartCoroutine(Popup("Buy when the cards are the same!"));
+                    return;
+                }
+                currentIndex++;
+                remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
+                StartCoroutine(FlipNewPlayerCard());
+            }
+            else
+            {
+                StartCoroutine(FlipBothCards());
+                deckDrawn = true;
+            }
         }
     }
     public void toggleTutorial()
@@ -160,7 +168,7 @@ public class SnapGameManager : MonoBehaviour
         int reward = (nCorrects - nWrongs) < 0 ? 0 : (nCorrects - nWrongs);
         currency.AddAmount(reward);
         StartCoroutine(Popup(String.Format("Well done! You've earned {0} points with {1} correct and {2} wrongs! Keep it up!", reward, nCorrects, nWrongs)));
-        minigameTimer.SetOpenTimeNow();
+        minigameTimer.SetNextOpenTimeFromNow();
         //currency.AddAmount(SnapMinigameSO.reward);
         saveManager.Save();
         Send();

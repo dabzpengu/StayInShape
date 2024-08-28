@@ -12,7 +12,6 @@ public class GetMinigameTimerData : MonoBehaviour
 
     private void Awake()
     {
-        DateTime dt = DateTime.ParseExact(so.openTime, so.timeFormat, null);
-        textUI.text = dt.ToString("MMMM dd, yyyy");
+        textUI.text = so.getInterpretableDateTime();
     }
 }
