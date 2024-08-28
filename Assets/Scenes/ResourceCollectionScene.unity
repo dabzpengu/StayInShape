@@ -1353,6 +1353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1288416433}
   - component: {fileID: 1288416434}
+  - component: {fileID: 1288416435}
   m_Layer: 5
   m_Name: PlayerInfo
   m_TagString: Untagged
@@ -1409,6 +1410,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1288416435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288416432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6bb899c6c1c2e4cbb68489ac7a61cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveManager: {fileID: 11400000, guid: ddf61ec8f040149498b3a7d02638b035, type: 2}
+  currency: {fileID: 11400000, guid: e080e02aecdbbec44b3d40ee862d65f4, type: 2}
+  snapTimer: {fileID: 11400000, guid: bb3ebfe3d1aed4a4aa73068885e47cc3, type: 2}
+  currencyUI: {fileID: 1283673179}
+  snapUI: {fileID: 1843414865}
 --- !u!1 &1342558539
 GameObject:
   m_ObjectHideFlags: 0

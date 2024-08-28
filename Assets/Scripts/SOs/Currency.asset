@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58edd1d2d2f5754caa9bf9ca405a89d, type: 3}
   m_Name: Currency
   m_EditorClassIdentifier: 
-  amount: 200
+  amount: 0

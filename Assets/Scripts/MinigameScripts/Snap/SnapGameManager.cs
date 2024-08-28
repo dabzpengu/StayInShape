@@ -15,7 +15,7 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField]
     Sprite backSprite;
     [SerializeField]
-    int[,] level = new int[5,2] { {15,2 },{18,4 },{24,6 },{28,8 },{ 30, 10 } }; // Right number represents the number of matches needed, left number represents the number of spare cards
+    int[,] level = new int[5,2] { {6,2 },{10,4 },{14,6 },{18,8 },{ 20, 10 } }; // Right number represents the number of matches needed, left number represents the number of spare cards
     [SerializeField]
     GameObject tutorialPrompt, popupBar;
     [SerializeField]
@@ -81,8 +81,6 @@ public class SnapGameManager : MonoBehaviour
         nWrongs = 0;
         deckDrawn = false;
         deckList.Clear();
-        Debug.Log("Level is " + level.ToString() + " and currentLevelId is " + currentLevelId);
-        Debug.Log("level[currentLevelId, 1] is " + level[currentLevelId, 1]);
         while(deckList.Count < level[currentLevelId, 1])
         {
             int num = UnityEngine.Random.Range(0, level[currentLevelId, 0] + level[currentLevelId, 1] - 1); // For first level, it will be 15 + 6 - 1 = 20
@@ -125,7 +123,8 @@ public class SnapGameManager : MonoBehaviour
     {
         if (!minigameTimer.canPlayNow())
         {
-            StartCoroutine(Popup(String.Format("Sorry you can only play the game after {0}", minigameTimer.getInterpretableDateTime())));
+            StartCoroutine(Popup(String.Format("Sorry you can only play the game after {0}",
+                minigameTimer.getInterpretableDateTime())));
         }
         else
         {
