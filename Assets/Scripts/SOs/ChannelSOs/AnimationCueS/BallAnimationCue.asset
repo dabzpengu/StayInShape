@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4cce9df839e9b4b8dece177f12aecc, type: 3}
+  m_Name: BallAnimationCue
+  m_EditorClassIdentifier: 
+  cueName: Ball
+  waitTime: 0
+  prop: {fileID: 2613647904828734829, guid: 2ce1e1623e8453844837a7330e86b902, type: 3}
+  propSpawnLocation: {x: 0, y: -1, z: 4}
+  propAnimation: {fileID: -3100628101864396295, guid: a4240b7279167264e86a6a7553a8bf32,
+    type: 3}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15105bfef30cf31449c0d6d73130a0c9, type: 3}
+  m_Name: Sg
+  m_EditorClassIdentifier: 
+  petName: Singapura
+  species: 1
+  petPrefab: {fileID: 8215997385384321361, guid: 367b3be0fd823cf4dab219f882075c74,
+    type: 3}
+  animationCueList:
+  - {fileID: 11400000, guid: 9c8e2fd18bcf0a04f91fc4521f8fc442, type: 2}
+  - {fileID: 11400000, guid: 1e90440e3966cf74d94b6b191c3a61d2, type: 2}
+  - {fileID: 11400000, guid: 72cc19212d9e19e4ca5d95239b97aca4, type: 2}
+  - {fileID: 11400000, guid: 7a9c87bc1f0b6e84eb7d177537ee3900, type: 2}
+  - {fileID: 11400000, guid: 23d1b42a1bfe24f49a11697a482ba270, type: 2}
+  barkAudioCue: {fileID: 11400000, guid: 9ad1086dd2468d74fb0c42a623cffab7, type: 2}
+  colors:
+  - {fileID: 11400000, guid: 55afa1d491062d04aa8dd2e8b70771b0, type: 2}
+  - {fileID: 11400000, guid: b0d7a331e807d5943a68f8cccf5c8f43, type: 2}
+  - {fileID: 11400000, guid: 3d5c7a1ad737947488970996f60bc025, type: 2}
+  - {fileID: 11400000, guid: cae37947455c50f49bfc66c12acd0a11, type: 2}
+  - {fileID: 11400000, guid: 470fe5f705c6664418a13d4a3931e5f3, type: 2}
