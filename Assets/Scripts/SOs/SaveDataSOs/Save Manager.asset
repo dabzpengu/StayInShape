@@ -14,11 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   savables:
   - {fileID: 11400000, guid: e080e02aecdbbec44b3d40ee862d65f4, type: 2}
-  - {fileID: 11400000, guid: e4e5cf55f99e6764ab4814d83b75eef8, type: 2}
-  - {fileID: 11400000, guid: b3bdf145534e1d141a9925234dbb250a, type: 2}
-  - {fileID: 11400000, guid: a36b44d27f7b36a4f9be2b1035bd8890, type: 2}
   - {fileID: 11400000, guid: de7a4b855443e124e807893f98c13162, type: 2}
-  - {fileID: 11400000, guid: def176a789e7e5a4e8147f6598fcbc5a, type: 2}
-  - {fileID: 11400000, guid: c97a4638068132546becc32e243a0ac7, type: 2}
-  - {fileID: 11400000, guid: 8cb93e2779d125b45a50da3e7d1b9200, type: 2}
-  - {fileID: 11400000, guid: e7e75122bbf7fba42a8696e3adbfea27, type: 2}
+  - {fileID: 11400000, guid: bb3ebfe3d1aed4a4aa73068885e47cc3, type: 2}

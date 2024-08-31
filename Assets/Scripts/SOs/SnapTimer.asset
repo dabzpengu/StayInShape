@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58edd1d2d2f5754caa9bf9ca405a89d, type: 3}
-  m_Name: Currency
+  m_Script: {fileID: 11500000, guid: 92760c6f8aac2fa4d928c9806f8b6da3, type: 3}
+  m_Name: SnapTimer
   m_EditorClassIdentifier: 
-  amount: 0
+  openTime: 20240101

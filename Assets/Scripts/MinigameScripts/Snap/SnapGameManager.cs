@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using System.Linq;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class SnapGameManager : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField]
     Sprite backSprite;
     [SerializeField]
-    int[,] level = new int[5,2] { {15,6 },{18,6 },{24,10 },{28,10 },{ 30, 12 } };
+    int[,] level = new int[5,2] { {6,2 },{10,4 },{14,6 },{18,8 },{ 20, 10 } }; // Right number represents the number of matches needed, left number represents the number of spare cards
     [SerializeField]
     GameObject tutorialPrompt, popupBar;
     [SerializeField]
     TMPro.TextMeshProUGUI remainingText;
+    [SerializeField]
+    TMPro.TextMeshProUGUI correctText;
+    [SerializeField]
+    TMPro.TextMeshProUGUI wrongText;
 
 
     [SerializeField]
@@ -30,6 +35,8 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField]
     MinigameSO SnapMinigameSO;
     [SerializeField]
+    MinigameTimerSO minigameTimer;
+    [SerializeField]
     String[] formIds;
     [SerializeField]
     AudioClip successSound;
@@ -37,6 +44,8 @@ public class SnapGameManager : MonoBehaviour
     public List<int> deckList;
     public int currentDeckCard;
     public int currentIndex;
+    public int nCorrects = 0;
+    public int nWrongs = 0;
     public float totalTime;
     int currentLevelId;
     string[] stats = new string[5];
@@ -56,7 +65,7 @@ public class SnapGameManager : MonoBehaviour
         lockout = true;
         SetupGame();
         toggleTutorial();
-        remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
+        remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString(); // Unsure how this actually works
     }
     private void Update()
     {
@@ -68,30 +77,39 @@ public class SnapGameManager : MonoBehaviour
         currentIndex = 0;
         totalMoves = 0;
         totalTime = 0;
+        nCorrects = 0;
+        nWrongs = 0;
         deckDrawn = false;
         deckList.Clear();
         while(deckList.Count < level[currentLevelId, 1])
         {
-            int num = UnityEngine.Random.Range(0, level[currentLevelId, 0] + level[currentLevelId, 1] - 1);
-            if (deckList.Contains(num)) continue;
+            int num = UnityEngine.Random.Range(0, level[currentLevelId, 0] + level[currentLevelId, 1] - 1); // For first level, it will be 15 + 6 - 1 = 20
+            if (deckList.Contains(num)) continue; // Not sure what this part actually does
             deckList.Add(num);
         }
-        remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
+        remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString(); // Number of items left
+        wrongText.text = nWrongs.ToString();
+        correctText.text = nCorrects.ToString();
     }
 
-    public void Snap()
+    public void Snap() // Buy button
     {
         if (lockout) return;
         totalMoves++;
         if (!deckList.Contains(currentIndex))
         {
             StartCoroutine(Popup("Draw the next card when the cards are not the same!"));
+            nWrongs++;
+            wrongText.text = nWrongs.ToString();
             return;
         } else
         {
+            nCorrects++;
+            correctText.text = nCorrects.ToString();
+
             if (deckList.Max() == currentIndex)
             {
-                StartCoroutine(Popup("Well done! You've earned some points! Keep it up!"));
+                Debug.Log("Game ended!");
                 CompleteGame();
                 return;
             }
@@ -99,28 +117,35 @@ public class SnapGameManager : MonoBehaviour
             remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
             StartCoroutine(MoveCardsOut());
             deckDrawn = false;
-            
         }
     }
     public void DrawNext()
     {
-        if (lockout) return;
-        if (deckDrawn)
+        if (!minigameTimer.canPlayNow())
         {
-            totalMoves++;
-            if (deckList.Contains(currentIndex))
-            {
-                StartCoroutine(Popup("Buy when the cards are the same!"));
-                return;
-            }
-            currentIndex++;
-            remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
-            StartCoroutine(FlipNewPlayerCard());
+            StartCoroutine(Popup(String.Format("Sorry you can only play the game after {0}",
+                minigameTimer.getInterpretableDateTime())));
         }
         else
         {
-            StartCoroutine(FlipBothCards());
-            deckDrawn = true;
+            if (lockout) return;
+            if (deckDrawn)
+            {
+                totalMoves++;
+                if (deckList.Contains(currentIndex)) // When the cards are the same
+                {
+                    StartCoroutine(Popup("Buy when the cards are the same!"));
+                    return;
+                }
+                currentIndex++;
+                remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
+                StartCoroutine(FlipNewPlayerCard());
+            }
+            else
+            {
+                StartCoroutine(FlipBothCards());
+                deckDrawn = true;
+            }
         }
     }
     public void toggleTutorial()
@@ -139,7 +164,11 @@ public class SnapGameManager : MonoBehaviour
 
     void CompleteGame()
     {
-        currency.AddAmount(SnapMinigameSO.reward);
+        int reward = (nCorrects - nWrongs) < 0 ? 0 : (nCorrects - nWrongs);
+        currency.AddAmount(reward);
+        StartCoroutine(Popup(String.Format("Well done! You've earned {0} points with {1} correct and {2} wrongs! Keep it up!", reward, nCorrects, nWrongs)));
+        minigameTimer.SetNextOpenTimeFromNow();
+        //currency.AddAmount(SnapMinigameSO.reward);
         saveManager.Save();
         Send();
         audioSource.clip = successSound;
