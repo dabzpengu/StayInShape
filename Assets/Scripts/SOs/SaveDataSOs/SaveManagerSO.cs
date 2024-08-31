@@ -41,7 +41,7 @@ public class SaveManagerSO : ScriptableObject
 
     public void Load()
     {
-        if (File.Exists(SAVE_LOCATION + "save.JSON"))
+        if (hasSaveFile())
         {
             Debug.Log("SAVE LOCATION" + SAVE_LOCATION);
             try

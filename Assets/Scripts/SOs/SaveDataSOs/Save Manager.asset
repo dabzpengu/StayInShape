@@ -15,4 +15,3 @@ MonoBehaviour:
   savables:
   - {fileID: 11400000, guid: e080e02aecdbbec44b3d40ee862d65f4, type: 2}
   - {fileID: 11400000, guid: de7a4b855443e124e807893f98c13162, type: 2}
-  - {fileID: 11400000, guid: bb3ebfe3d1aed4a4aa73068885e47cc3, type: 2}

@@ -8,28 +8,29 @@ public class DisplayPlayerStats : MonoBehaviour
     [SerializeField]
     SaveManagerSO saveManager;
     [SerializeField]
-    CurrencySO currency;
+    PlayerDataSO playerData;
     [SerializeField]
-    MinigameTimerSO snapTimer;
-
+    TMPro.TextMeshProUGUI fertilizerUI;
     [SerializeField]
-    TMPro.TextMeshProUGUI currencyUI;
+    TMPro.TextMeshProUGUI waterUI;
+    [SerializeField]
+    TMPro.TextMeshProUGUI expUI;
+    [SerializeField]
+    TMPro.TextMeshProUGUI stepsUI;
     [SerializeField]
     TMPro.TextMeshProUGUI snapUI;
+
     // Start is called before the first frame update
     void Awake()
     {
         if (saveManager.hasSaveFile())
         {
             saveManager.Load();
-            currencyUI.text = currency.amount.ToString();
-            snapUI.text = snapTimer.getInterpretableDateTime();
-        } else
-        {
-            currency.amount = 0;
-            snapTimer.openTime = DateTime.Now.AddDays(-1).ToString("yyyyMMdd");
-            currencyUI.text = "0";
-            snapUI.text = "Open to play";
         }
+        fertilizerUI.text = playerData.GetFertilizer().ToString();
+        waterUI.text = playerData.GetWater().ToString();
+        expUI.text = playerData.GetExp().ToString();
+        stepsUI.text = playerData.GetSteps().ToString();
+        snapUI.text = playerData.CanPlaySnap() ? "Can play now" : "Can only play after " + playerData.GetSnapTimer();
     }
 }
