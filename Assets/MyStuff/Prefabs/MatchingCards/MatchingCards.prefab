@@ -213,10 +213,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3163619867196929202, guid: e2bb17d1520a6c34f8d710dd29513709,
+        type: 3}
+      propertyPath: m_text
+      value: PlantName\nID0
+      objectReference: {fileID: 0}
     - target: {fileID: 3547994812829554112, guid: e2bb17d1520a6c34f8d710dd29513709,
         type: 3}
       propertyPath: m_Name
       value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944572511779965324, guid: e2bb17d1520a6c34f8d710dd29513709,
+        type: 3}
+      propertyPath: m_text
+      value: PlantName\nID0
       objectReference: {fileID: 0}
     - target: {fileID: 5300160299733191824, guid: e2bb17d1520a6c34f8d710dd29513709,
         type: 3}

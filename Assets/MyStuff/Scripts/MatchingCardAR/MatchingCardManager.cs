@@ -30,11 +30,13 @@ public class MatchingCardManager : MonoBehaviour
         {
             selectedCard = card;
             selectedCardUI.text = selectedCard.plantName;
+            selectedCard.OnSelect();
         }
     }
 
     public void unselect()
     {
+        selectedCard.OnDeselect();
         selectedCard = null;
         selectedCardUI.text = "";
     }
