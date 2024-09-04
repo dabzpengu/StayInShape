@@ -4,7 +4,7 @@
         <ui:Label tabindex="-1" text="Logo Here" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Logo" class="logo" />
         <ui:Label tabindex="-1" text="Stay in SHAPE!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Header" class="header" />
         <ui:Button text="My Garden" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MyGardenButton" class="button" />
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CollectResourcesButton" class="button" />
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="button" />
+        <ui:Button text="Collect Resource" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CollectResourceButton" class="button" style="white-space: normal;" />
+        <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="button" />
     </ui:VisualElement>
 </ui:UXML>
