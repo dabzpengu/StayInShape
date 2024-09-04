@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2966703065560159240}
   - component: {fileID: 8719467339212141640}
   - component: {fileID: 2253453356286570199}
-  - component: {fileID: 5857621199869891114}
+  - component: {fileID: 4221510289464097228}
   m_Layer: 0
-  m_Name: Soil
+  m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5857621199869891114
+--- !u!114 &4221510289464097228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +115,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3547994812829554112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e5c2006009675a4fb05e1d0da3b6406, type: 3}
+  m_Script: {fileID: 11500000, guid: f6d7e812574f6334ba805bbb1dd88213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plantName: DefaultCardName
+  id: 0
 --- !u!1 &5300160299733191824
 GameObject:
   m_ObjectHideFlags: 0
