@@ -35,8 +35,6 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField]
     MinigameSO SnapMinigameSO;
     [SerializeField]
-    MinigameTimerSO minigameTimer;
-    [SerializeField]
     String[] formIds;
     [SerializeField]
     AudioClip successSound;
@@ -121,10 +119,10 @@ public class SnapGameManager : MonoBehaviour
     }
     public void DrawNext()
     {
-        if (!minigameTimer.canPlayNow())
+        if (!playerDataSO.CanPlaySnap())
         {
             StartCoroutine(Popup(String.Format("Sorry you can only play the game after {0}",
-                minigameTimer.getInterpretableDateTime())));
+                playerDataSO.GetSnapTimer())));
         }
         else
         {
@@ -162,13 +160,18 @@ public class SnapGameManager : MonoBehaviour
         }
     }
 
-    void CompleteGame()
+    void RewardPlayer()
     {
         int reward = (nCorrects - nWrongs) < 0 ? 0 : (nCorrects - nWrongs);
-        currency.AddAmount(reward);
+        playerDataSO.SetFertilizer(playerDataSO.GetFertilizer() + reward);
+        playerDataSO.SetWater(playerDataSO.GetWater() + reward);
         StartCoroutine(Popup(String.Format("Well done! You've earned {0} points with {1} correct and {2} wrongs! Keep it up!", reward, nCorrects, nWrongs)));
-        minigameTimer.SetNextOpenTimeFromNow();
-        //currency.AddAmount(SnapMinigameSO.reward);
+    }
+
+    void CompleteGame()
+    {
+        RewardPlayer();
+        playerDataSO.SetSnapTimer(DateTime.Now.AddDays(1));
         saveManager.Save();
         Send();
         audioSource.clip = successSound;

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
@@ -14,6 +12,7 @@ public class PlayerDataSO : SavableSO
     private int water = 0;
     private int steps = 0;
     private int exp = 0;
+    private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again
 
     const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm";
     public void ResetSurveyTime()
@@ -59,6 +58,22 @@ public class PlayerDataSO : SavableSO
     {
         this.exp = newExpValue;
     }
+
+    public String GetSnapTimer() { return snapTimer; }
+
+    public void SetSnapTimer(DateTime dt)
+    {
+        this.snapTimer = dt.ToString(DATETIME_FORMAT);
+    }
+
+    public Boolean CanPlaySnap()
+    {
+        DateTime openDateTime = DateTime.ParseExact(this.snapTimer, DATETIME_FORMAT, null);
+        DateTime nowDateTime = DateTime.Now;
+        Boolean ans = nowDateTime >= openDateTime;
+        return ans;
+    }
+
     public override string ToJson()
     {
         SaveObject saveObject = new SaveObject
@@ -69,6 +84,7 @@ public class PlayerDataSO : SavableSO
             water = this.water,
             steps = this.steps,
             exp = this.exp,
+            snapTimer = this.snapTimer,
         };
 
         string saveString = JsonUtility.ToJson(saveObject);
@@ -76,10 +92,15 @@ public class PlayerDataSO : SavableSO
         return saveString;
     }
 
-    // Currently unchanged from the original PlayerClassSO
     public override void LoadFromString(string saveString)
     {
         SaveObject loadedObject = JsonUtility.FromJson<SaveObject>(saveString);
+        fertilizer = loadedObject.fertilizer;
+        water = loadedObject.water;
+        steps = loadedObject.steps;
+        exp = loadedObject.exp;
+        snapTimer = loadedObject.snapTimer;
+
         lastSurvey = DateTime.ParseExact(loadedObject.lastSurvey, DATETIME_FORMAT, CultureInfo.InvariantCulture);
     }
 
@@ -90,6 +111,7 @@ public class PlayerDataSO : SavableSO
         public int fertilizer;
         public int water;
         public int steps;
-        public int exp;  
+        public int exp;
+        public String snapTimer;
     }
 }

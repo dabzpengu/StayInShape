@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MinigameScenes/SnapScene.unity
     guid: 27f278517f29a9242a174bf422fb82bc
+  - enabled: 1
+    path: Assets/Scenes/MinigameScenes/MatchingCardScene.unity
+    guid: 8484cc7c66932a14ea4dbddc20b4a01b
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
