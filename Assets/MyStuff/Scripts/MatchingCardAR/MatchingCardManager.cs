@@ -36,8 +36,11 @@ public class MatchingCardManager : MonoBehaviour
 
     public void unselect()
     {
-        selectedCard.OnDeselect();
-        selectedCard = null;
-        selectedCardUI.text = "";
+        if (selectedCard)
+        {
+            selectedCard.OnDeselect();
+            selectedCard = null;
+            selectedCardUI.text = "";
+        }
     }
 }
