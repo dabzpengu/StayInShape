@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class MatchingCardInputBehaviour : MonoBehaviour
 {
@@ -32,8 +27,6 @@ public class MatchingCardInputBehaviour : MonoBehaviour
 
     private void Update()
     {
-        //int rayDistance = 100;
-
         Vector3 cameraPosition = Camera.main.transform.position;
         Collider[] colliders = Physics.OverlapSphere(cameraPosition, overlapRadius);
 
@@ -51,45 +44,9 @@ public class MatchingCardInputBehaviour : MonoBehaviour
         }
 
         updatePosition(Camera.main.transform.position);
-        if (closestCollider != null && closestCollider.TryGetComponent(out CardLogic card))
+        if (closestCollider != null && closestCollider.TryGetComponent(out CardLogic _))
         {
-            gameManager.selectCard(closestCollider.gameObject.GetComponent<CardLogic>());
+            gameManager.SelectCard(closestCollider.gameObject.GetComponent<CardLogic>());
         }
-        //gameManager.selectCard(closestCollider.gameObject);
-        
-
-
-        //if (actions.UI.Click.IsPressed())
-        //{
-        //    Vector2 clickPosition = actions.UI.Point.ReadValue<Vector2>();
-        //    Ray ray = Camera.main.ScreenPointToRay(clickPosition);
-        //    RaycastHit hit;
-
-        //    if (Physics.Raycast(ray, out hit, rayDistance))
-        //    {
-        //        if (hit.transform.TryGetComponent<PlantLogic>(out PlantLogic plant))
-        //        {
-        //            if (gardenUIBehaviour.getEquipped() != null)
-        //            {
-        //                if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
-        //                {
-        //                    plant.Insert(gardenUIBehaviour.getEquipped());
-        //                }
-        //                else if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
-        //                {
-        //                    plant.Insert(gardenUIBehaviour.getEquipped());
-        //                }
-        //            }
-        //            else
-        //            {
-        //                plant.getStatus();
-        //            }
-        //        }
-        //        else
-        //        {
-        //            gardenUIBehaviour.UpdateItem(hit.transform);
-        //        }
-        //    }
-        //}
     }
 }

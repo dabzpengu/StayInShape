@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class CardLogic : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class CardLogic : MonoBehaviour
     [SerializeField] TextMeshProUGUI cardTextBack;
     private Transform highlight;
 
-    public void OnSelect()
+    public void Select()
     {
         if (highlight.gameObject.GetComponent<Outline>() != null)
         {
@@ -29,7 +28,12 @@ public class CardLogic : MonoBehaviour
         }
     }
 
-    public void OnDeselect()
+    public bool Match(CardLogic otherCard)
+    {
+        return otherCard.id == id & otherCard != this;
+    }
+
+    public void Deselect()
     {
         highlight.gameObject.GetComponent<Outline>().enabled = false;
     }
