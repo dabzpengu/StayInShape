@@ -14,6 +14,14 @@ public class CardLogic : MonoBehaviour
     [SerializeField] TextMeshProUGUI cardTextBack;
     private Transform highlight;
 
+    public void SetCard(MatchingCardSO cardData)
+    {
+        this.plantName = cardData.name;
+        this.id = cardData.id;
+        cardTextFront.text = presentName();
+        cardTextBack.text = presentName();
+    }
+
     public void Select()
     {
         if (highlight.gameObject.GetComponent<Outline>() != null)

@@ -487,10 +487,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4343652460349132687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d7e812574f6334ba805bbb1dd88213, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e11aef6015205f4499116e8c925f871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantName: Chilli Plant
-  id: 73
+  plantName: DefaultCardName
+  id: 0
   cardTextFront: {fileID: 6427644817994255978}
   cardTextBack: {fileID: 4246679928266080184}

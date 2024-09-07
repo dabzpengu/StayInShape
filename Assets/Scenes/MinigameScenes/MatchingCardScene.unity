@@ -1063,7 +1063,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1846747655}
         m_TargetAssemblyTypeName: MatchingCardManager, Assembly-CSharp
-        m_MethodName: unselect
+        m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1196,6 +1196,7 @@ MonoBehaviour:
   selectedCardUI: {fileID: 906141184}
   selectClip: {fileID: 8300000, guid: 11ad8dead4d74f449bfbf6bc64e1642f, type: 3}
   matchClip: {fileID: 8300000, guid: 57b7039fe53bd914cb828b1bd29e1470, type: 3}
+  db: {fileID: 11400000, guid: 9402d4200eff530478eb483cbe7c53a3, type: 2}
 --- !u!4 &1846747656
 Transform:
   m_ObjectHideFlags: 0

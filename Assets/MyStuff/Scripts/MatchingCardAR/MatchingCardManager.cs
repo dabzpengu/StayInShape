@@ -10,6 +10,7 @@ public class MatchingCardManager : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] AudioClip selectClip;
     [SerializeField] AudioClip matchClip;
+    [SerializeField] CardDB db;
 
 
     private CardLogic selectedCard;
@@ -25,6 +26,29 @@ public class MatchingCardManager : MonoBehaviour
         
     }
 
+    public void SetupGame(Transform parentTransform, int spawnRange, float height, int nCards)
+    {
+        Transform[] myCards = GetCards(parentTransform, nCards);
+        RandomiseCards(myCards, nCards);
+        ArrangeCards(myCards, spawnRange, height, nCards);
+    }
+
+    public void RandomiseCards(Transform[] cards, int nCards)
+    {
+        if (nCards % 2 != 0)
+        {
+            throw new System.Exception("Number of cards cannot be an odd number!");
+        }
+        for (int i = 0; i < nCards/2; i++)
+        {
+            MatchingCardSO cardData = db.getCardData(i);
+            CardLogic cardA = cards[i].gameObject.GetComponent<CardLogic>();
+            CardLogic cardB = cards[nCards - 1 - i].gameObject.GetComponent<CardLogic>();
+            cardA.SetCard(cardData);
+            cardB.SetCard(cardData);
+        }
+    }
+
     public Transform[] GetCards(Transform parentTransform, int nCards)
     {
         Transform[] cards = new Transform[nCards];
@@ -37,6 +61,7 @@ public class MatchingCardManager : MonoBehaviour
                 i++;
             }
         }
+        
         return cards;
     }
 
@@ -72,11 +97,11 @@ public class MatchingCardManager : MonoBehaviour
         }
 
         // Random positions code
-        //// Randomise the position of the cards
+        //// Randomise the position of the myCards
         //Vector3 randomRangeMin = new Vector3(-spawnRange, height, -spawnRange);
         //Vector3 randomRangeMax = new Vector3(spawnRange, height, spawnRange);
 
-        //foreach (Transform card in cards)
+        //foreach (Transform card in myCards)
         //{
         //    Debug.Log(card.name);
         //    if (card.TryGetComponent<CardLogic>(out CardLogic _))
@@ -93,11 +118,10 @@ public class MatchingCardManager : MonoBehaviour
         //}
     }
 
-    public void ArrangeCards(Transform parentTransform, int spawnRange, float height, int nCards)
+    public void ArrangeCards(Transform[] myCards, int spawnRange, float height, int nCards)
     {
-        Transform[] cards = GetCards(parentTransform, nCards);
         Vector3[] spawnPositions = CalculateSpawnPositions(nCards, spawnRange, height);
-        RandomisePositions(cards, spawnPositions);
+        RandomisePositions(myCards, spawnPositions);
     }
 
     public void PlaySound(AudioClip clip)

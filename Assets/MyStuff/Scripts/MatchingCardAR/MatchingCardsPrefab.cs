@@ -34,10 +34,7 @@ public class MatchingCardsPrefab : MonoBehaviour
             throw new System.Exception("No MatchingCardManager found in the scene!");
         }
 
-        // Randomise the position of the cards
-        manager.ArrangeCards(transform, spawnRange, 1, nCards);
-
-
+        manager.SetupGame(transform, spawnRange, 1, nCards);
     }
 
     // Update is called once per frame
