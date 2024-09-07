@@ -6,7 +6,7 @@ public class MatchingCardInputBehaviour : MonoBehaviour
 {
     [SerializeField] ReticleBehaviour reticleBehaviour;
     [SerializeField] MatchingCardManager gameManager;
-    [SerializeField] TextMeshProUGUI positionText;
+    [SerializeField] TextMeshProUGUI positionUI;
     [SerializeField] float overlapRadius;
     DefaultInputActions actions;
 
@@ -22,7 +22,7 @@ public class MatchingCardInputBehaviour : MonoBehaviour
 
     private void updatePosition(Vector3 p)
     {
-        positionText.text = p.ToString();
+        positionUI.text = p.ToString();
     }
 
     private void Update()

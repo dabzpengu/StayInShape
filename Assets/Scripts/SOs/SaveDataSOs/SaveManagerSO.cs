@@ -56,7 +56,6 @@ public class SaveManagerSO : ScriptableObject
                     Debug.Log("Loading Json string: " + itemJson);
 
                     savables[i].LoadFromString(itemJson);
-                    Debug.Log(i);
                 }
             } catch (NullReferenceException)
             {

@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/HomeScene.unity
     guid: c66d9b461a5d9ee46a23d3274e30e4d8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GardenScene.unity
     guid: 85123bf14dcf62447b67b818cd16d40a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ResourceCollectionScene.unity
     guid: 0095caf5a1c5f8f4382f4f18ab5d1169
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MinigameScenes/SnapScene.unity
     guid: 27f278517f29a9242a174bf422fb82bc
   - enabled: 1

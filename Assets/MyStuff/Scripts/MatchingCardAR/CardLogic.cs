@@ -9,6 +9,7 @@ public class CardLogic : MonoBehaviour
 {
     public string plantName = "DefaultCardName";
     public int id = 0;
+    bool isActive;
 
     [SerializeField] TextMeshProUGUI cardTextFront;
     [SerializeField] TextMeshProUGUI cardTextBack;
@@ -36,7 +37,17 @@ public class CardLogic : MonoBehaviour
         }
     }
 
-    public bool Match(CardLogic otherCard)
+    public void Enable()
+    {
+        isActive = true;
+    }
+
+    public void Disable()
+    {
+        isActive = false;
+    }
+
+    public bool IsMatching(CardLogic otherCard)
     {
         return otherCard.id == id & otherCard != this;
     }
@@ -57,5 +68,6 @@ public class CardLogic : MonoBehaviour
         highlight = this.transform;
         cardTextFront.text = presentName();
         cardTextBack.text = presentName();
+        isActive = true;
     }
 }

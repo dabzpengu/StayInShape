@@ -4,7 +4,6 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using System.Linq;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class SnapGameManager : MonoBehaviour
 {
