@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c148ca9f3efa0a41999aab11856582a, type: 3}
-  m_Name: Chilli_MatchingCard
+  m_Name: Papaya_Card
   m_EditorClassIdentifier: 
-  name: Chilli Plant
-  description: A hot and spicy chilli!
-  id: 0
+  name: Papaya
+  description: Yummy as a salad!
+  id: 3
