@@ -10,6 +10,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private Button _button1;
     private Button _button2;
+    private Button _button3;
 
     private List<Button> _menuButtons = new List<Button>();
 
@@ -26,7 +27,11 @@ public class MainMenuEvents : MonoBehaviour
         _button2 = _document.rootVisualElement.Q("CollectResourceButton") as Button;
         _button2.RegisterCallback<ClickEvent>(OnCollectResourceClick);
 
+        _button3 = _document.rootVisualElement.Q("MiniGameButton") as Button;
+        _button3.RegisterCallback<ClickEvent>(OnMiniGameClick);
+
         _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
+
         for (int i = 0; i < _menuButtons.Count; i++)
         {
             _menuButtons[i].RegisterCallback<ClickEvent>(OnAllButtonsClick);
@@ -37,6 +42,7 @@ public class MainMenuEvents : MonoBehaviour
     {
         _button1.UnregisterCallback<ClickEvent>(OnMyGardenClick);
         _button2.UnregisterCallback<ClickEvent>(OnCollectResourceClick);
+        _button3.UnregisterCallback<ClickEvent>(OnMiniGameClick);
 
         for (int i = 0; i < _menuButtons.Count; i++)
         {
@@ -56,6 +62,13 @@ public class MainMenuEvents : MonoBehaviour
         Debug.Log("You pressed the Collect Resource Button");
 
         SceneManager.LoadScene("ResourceCollectionScene");
+    }
+
+    private void OnMiniGameClick(ClickEvent evt)
+    {
+        Debug.Log("You pressed the Mini Game Button");
+
+        SceneManager.LoadScene("MatchingCardScene");
     }
 
     private void OnAllButtonsClick(ClickEvent evt)
