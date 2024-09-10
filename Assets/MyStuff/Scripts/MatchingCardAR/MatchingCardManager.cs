@@ -92,19 +92,18 @@ public class MatchingCardManager : MonoBehaviour
     private Vector3[] CalculateSpawnPositions(int nCards, int spawnRange, float height)
     {
         Vector3[] spawnPositions = new Vector3[nCards];
-
-        float x = 0, z = 0;
-
-        float unitDistance = (float) spawnRange / (float) nCards;
-
-        Debug.Log("Calculating spawn positions unit distance: " + unitDistance.ToString());
+        float angleStep = 360f / nCards;
+        float x, z;
 
         for (int i = 0; i < nCards; i++)
         {
+            float angleDegrees = i * angleStep;
+            float angleRadians = angleDegrees * Mathf.Deg2Rad;
+
+            x = Mathf.Cos(angleRadians) * spawnRange;
+            z = Mathf.Sin(angleRadians) * spawnRange;
             Vector3 newSpawnPosition = new Vector3(x, height, z);
             spawnPositions[i] = newSpawnPosition;
-            x += unitDistance;
-            z += unitDistance;
         }
 
         return spawnPositions;
@@ -123,44 +122,26 @@ public class MatchingCardManager : MonoBehaviour
             cards[j] = temp;
         }
     }
-    private void RandomisePositions(Transform[] cards, Vector3[] spawnPositions)
+    private void PositionCards(Transform[] cards, Vector3[] spawnPositions)
     {
+        float yRotation = 90;
+        float rotateStep = 360 / cards.Length;
         shuffleCards(cards);
 
         int i = 0;
         foreach (Transform card in cards)
         {
             card.localPosition = spawnPositions[i];
-            Debug.Log("Put " + card.name + " at " + spawnPositions[i]);
+            card.transform.Rotate(0, yRotation, 0);
+            yRotation += rotateStep;
             i += 1;
         }
-
-        // Random positions code
-        //// Randomise the position of the myCards
-        //Vector3 randomRangeMin = new Vector3(-spawnRange, height, -spawnRange);
-        //Vector3 randomRangeMax = new Vector3(spawnRange, height, spawnRange);
-
-        //foreach (Transform card in myCards)
-        //{
-        //    Debug.Log(card.name);
-        //    if (card.TryGetComponent<CardLogic>(out CardLogic _))
-        //    {
-        //        // Generate random position within specified range
-        //        float randomX = Random.Range(randomRangeMin.x, randomRangeMax.x);
-        //        //float randomY = Random.Range(randomRangeMin.y, randomRangeMax.y);
-        //        float randomZ = Random.Range(randomRangeMin.z, randomRangeMax.z);
-
-        //        // Set the new position
-        //        card.localPosition = new Vector3(randomX, height, randomZ);
-        //        Debug.Log(card.gameObject.name + " with position " + card.localPosition.ToString());
-        //    }
-        //}
     }
 
     private void ArrangeCards(Transform[] myCards, int spawnRange, float height, int nCards)
     {
         Vector3[] spawnPositions = CalculateSpawnPositions(nCards, spawnRange, height);
-        RandomisePositions(myCards, spawnPositions);
+        PositionCards(myCards, spawnPositions);
     }
 
     private void PlaySound(AudioClip clip)

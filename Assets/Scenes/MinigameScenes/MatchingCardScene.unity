@@ -1395,6 +1395,9 @@ MonoBehaviour:
   db: {fileID: 11400000, guid: 9402d4200eff530478eb483cbe7c53a3, type: 2}
   player: {fileID: 11400000, guid: de7a4b855443e124e807893f98c13162, type: 2}
   saveManager: {fileID: 11400000, guid: ddf61ec8f040149498b3a7d02638b035, type: 2}
+  xRot: 0
+  yRot: 90
+  zRot: 0
 --- !u!4 &1846747656
 Transform:
   m_ObjectHideFlags: 0
