@@ -124,7 +124,7 @@ public class MatchingCardManager : MonoBehaviour
     }
     private void PositionCards(Transform[] cards, Vector3[] spawnPositions)
     {
-        float yRotation = 90;
+        float yRotation = 90; // Trial and error Tested value
         float rotateStep = 360 / cards.Length;
         shuffleCards(cards);
 
@@ -133,7 +133,7 @@ public class MatchingCardManager : MonoBehaviour
         {
             card.localPosition = spawnPositions[i];
             card.transform.Rotate(0, yRotation, 0);
-            yRotation += rotateStep;
+            yRotation -= rotateStep; // Trial and error Tested value
             i += 1;
         }
     }
