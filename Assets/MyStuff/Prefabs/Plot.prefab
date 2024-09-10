@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 2966703065560159240}
   - component: {fileID: 8719467339212141640}
   - component: {fileID: 2253453356286570199}
+  - component: {fileID: 5857621199869891114}
   m_Layer: 0
   m_Name: Soil
   m_TagString: Untagged
@@ -210,6 +211,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5857621199869891114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547994812829554112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5c2006009675a4fb05e1d0da3b6406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soil: {fileID: 0}
 --- !u!1 &4376098295557325709
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +494,7 @@ Transform:
   m_GameObject: {fileID: 8496323541093046437}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5819817, y: -1.8120499, z: 1.3282623}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
