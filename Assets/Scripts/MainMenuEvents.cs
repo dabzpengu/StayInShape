@@ -59,7 +59,7 @@ public class MainMenuEvents : MonoBehaviour
     {
         Debug.Log("You pressed the My Garden Button");
 
-        SceneManager.LoadScene("GardenScene");
+        SceneManager.LoadScene("GardenSceneJia");
     }
 
     private void OnCollectResourceClick(ClickEvent evt)
