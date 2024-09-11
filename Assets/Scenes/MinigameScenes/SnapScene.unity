@@ -2899,7 +2899,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 519034911}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 888351247}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -3028,7 +3028,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PetNameHolder
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8726226906309661587, guid: 3cc6bcb1ee32890469d1956916f1e180,
+        type: 3}
+      propertyPath: m_text
+      value: Mascot
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 90389285647160517, guid: 3cc6bcb1ee32890469d1956916f1e180, type: 3}
+    - {fileID: 1154241410904544309, guid: 3cc6bcb1ee32890469d1956916f1e180, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3315,6 +3322,18 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!1 &877438965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126417541604787044, guid: 3bcb6f5cf9dbf7942b3cdb0d21d5bf53,
+    type: 3}
+  m_PrefabInstance: {fileID: 1026843450}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &888351247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126417541604787044, guid: 3bcb6f5cf9dbf7942b3cdb0d21d5bf53,
+    type: 3}
+  m_PrefabInstance: {fileID: 519034911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931664980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3931,6 +3950,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7126417541604787098, guid: 3bcb6f5cf9dbf7942b3cdb0d21d5bf53,
         type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126417541604787098, guid: 3bcb6f5cf9dbf7942b3cdb0d21d5bf53,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4022,7 +4046,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1026843450}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 877438965}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -4828,7 +4852,6 @@ MonoBehaviour:
   playerDataSO: {fileID: 11400000, guid: de7a4b855443e124e807893f98c13162, type: 2}
   saveManager: {fileID: 11400000, guid: ddf61ec8f040149498b3a7d02638b035, type: 2}
   SnapMinigameSO: {fileID: 11400000, guid: 6827f16795a444f46812a6ad9bc07165, type: 2}
-  minigameTimer: {fileID: 11400000, guid: bb3ebfe3d1aed4a4aa73068885e47cc3, type: 2}
   formIds:
   - entry.1030373760
   - entry.1721892931
@@ -4836,12 +4859,15 @@ MonoBehaviour:
   - entry.1232709143
   - entry.1031660944
   successSound: {fileID: 8300000, guid: 90b3e998d89cfeb4788dfed6b5b34110, type: 3}
+  drawBut: {fileID: 877438965}
+  buyBut: {fileID: 888351247}
   deckList: 
   currentDeckCard: 0
   currentIndex: 0
   nCorrects: 0
   nWrongs: 0
   totalTime: 0
+  intervalToPlayGame: 60
   popupActive: 0
 --- !u!82 &1895497796
 AudioSource:
@@ -5778,7 +5804,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4072643778519999102, guid: 6cb04706dda5aa144ad56f1a0de20e90, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb04706dda5aa144ad56f1a0de20e90, type: 3}
