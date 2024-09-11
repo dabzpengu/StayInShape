@@ -16,7 +16,7 @@
     border-top-right-radius: 5%;
     border-bottom-right-radius: 5%;
     border-bottom-left-radius: 5%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .logo {
