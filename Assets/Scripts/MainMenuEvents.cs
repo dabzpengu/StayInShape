@@ -11,6 +11,7 @@ public class MainMenuEvents : MonoBehaviour
     private Button _button1;
     private Button _button2;
     private Button _button3;
+    private Button _button4;
 
     private List<Button> _menuButtons = new List<Button>();
 
@@ -27,8 +28,11 @@ public class MainMenuEvents : MonoBehaviour
         _button2 = _document.rootVisualElement.Q("CollectResourceButton") as Button;
         _button2.RegisterCallback<ClickEvent>(OnCollectResourceClick);
 
-        _button3 = _document.rootVisualElement.Q("MiniGameButton") as Button;
-        _button3.RegisterCallback<ClickEvent>(OnMiniGameClick);
+        _button3 = _document.rootVisualElement.Q("MatchCardButton") as Button;
+        _button3.RegisterCallback<ClickEvent>(OnMatchCardClick);
+
+        _button4 = _document.rootVisualElement.Q("SnapGameButton") as Button;
+        _button4.RegisterCallback<ClickEvent>(OnSnapGameClick);
 
         _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
 
@@ -42,7 +46,8 @@ public class MainMenuEvents : MonoBehaviour
     {
         _button1.UnregisterCallback<ClickEvent>(OnMyGardenClick);
         _button2.UnregisterCallback<ClickEvent>(OnCollectResourceClick);
-        _button3.UnregisterCallback<ClickEvent>(OnMiniGameClick);
+        _button3.UnregisterCallback<ClickEvent>(OnMatchCardClick);
+        _button4.UnregisterCallback<ClickEvent>(OnSnapGameClick);
 
         for (int i = 0; i < _menuButtons.Count; i++)
         {
@@ -64,11 +69,18 @@ public class MainMenuEvents : MonoBehaviour
         SceneManager.LoadScene("ResourceCollectionScene");
     }
 
-    private void OnMiniGameClick(ClickEvent evt)
+    private void OnMatchCardClick(ClickEvent evt)
     {
-        Debug.Log("You pressed the Mini Game Button");
+        Debug.Log("You pressed the Match Card Game Button");
 
         SceneManager.LoadScene("MatchingCardScene");
+    }
+
+    private void OnSnapGameClick(ClickEvent evt)
+    {
+        Debug.Log("You pressed the Snap Game Button");
+
+        SceneManager.LoadScene("SnapScene");
     }
 
     private void OnAllButtonsClick(ClickEvent evt)
