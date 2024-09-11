@@ -87,8 +87,8 @@ public class MatchingCardManager : MonoBehaviour
             MatchingCardSO cardData = db.getCardData(i);
             CardLogic cardA = cards[i].gameObject.GetComponent<CardLogic>();
             CardLogic cardB = cards[nCards - 1 - i].gameObject.GetComponent<CardLogic>();
-            cardA.SetCard(cardData);
-            cardB.SetCard(cardData);
+            cardA.SetCard(cardData, true);
+            cardB.SetCard(cardData, false);
         }
     }
 

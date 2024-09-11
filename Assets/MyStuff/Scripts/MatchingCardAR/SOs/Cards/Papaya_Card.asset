@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Papaya_Card
   m_EditorClassIdentifier: 
   name: Papaya
-  description: Yummy as a salad!
+  description: Grows on a tree
   id: 3
   col: {r: 1, g: 0.4890508, b: 0, a: 1}

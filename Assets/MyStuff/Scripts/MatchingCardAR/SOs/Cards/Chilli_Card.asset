@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Chilli_Card
   m_EditorClassIdentifier: 
   name: Chilli Plant
-  description: A hot and spicy chilli!
+  description: Hot and spicy!
   id: 0
   col: {r: 1, g: 0, b: 0, a: 1}

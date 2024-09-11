@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Eggplant_Card
   m_EditorClassIdentifier: 
   name: Eggplant
-  description: Yummy with eggs!
+  description: Some call me Brinjal
   id: 1
   col: {r: 0.5246225, g: 0.10070309, b: 0.6886792, a: 1}

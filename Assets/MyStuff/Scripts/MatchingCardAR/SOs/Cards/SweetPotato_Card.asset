@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SweetPotato_Card
   m_EditorClassIdentifier: 
   name: Sweet Potato
-  description: Essential staple in South East Asia
+  description: Staple food in the past
   id: 5
   col: {r: 0.5849056, g: 0.3276813, b: 0.13519046, a: 1}

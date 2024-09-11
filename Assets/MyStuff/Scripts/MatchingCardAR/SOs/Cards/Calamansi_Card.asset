@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Calamansi_Card
   m_EditorClassIdentifier: 
   name: Calamansi
-  description: Kinda like lime!
+  description: Looks like lime!
   id: 2
   col: {r: 0.54251814, g: 1, b: 0, a: 1}

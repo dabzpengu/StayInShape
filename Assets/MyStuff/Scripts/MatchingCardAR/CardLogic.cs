@@ -15,20 +15,24 @@ public class CardLogic : MonoBehaviour
     [SerializeField] TextMeshProUGUI cardTextBack;
     private Transform highlight;
 
-    public void SetCard(MatchingCardSO cardData)
+    public void SetCard(MatchingCardSO cardData, bool isImage)
     {
         this.plantName = cardData.name;
         this.id = cardData.id;
-        cardTextFront.text = presentName();
-        cardTextBack.text = presentName();
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-        if (meshRenderer != null && meshRenderer.material != null)
+        if (isImage)
         {
-            Debug.Log("Set");
-            meshRenderer.material.color = cardData.col;
+            cardTextFront.text = cardData.name;
+            cardTextBack.text = cardData.name;
+            MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+            if (meshRenderer != null && meshRenderer.material != null)
+            {
+                Debug.Log("Set");
+                meshRenderer.material.color = cardData.col;
+            }
         } else
         {
-            Debug.Log("Help");
+            cardTextFront.text = cardData.description;
+            cardTextBack.text = cardData.description;
         }
     }
 
@@ -56,16 +60,9 @@ public class CardLogic : MonoBehaviour
         highlight.gameObject.GetComponent<Outline>().enabled = false;
     }
 
-    private string presentName()
-    {
-        return plantName;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         highlight = this.transform;
-        cardTextFront.text = presentName();
-        cardTextBack.text = presentName();
     }
 }
