@@ -197,10 +197,16 @@ public class MatchingCardManager : MonoBehaviour
                 Debug.Log("Unable to match!");
             }
         }
-        else if (card != selectedCard)
+        else if (selectedCard == null || card != selectedCard)
         {
             selectedCard = card;
-            DisplayText("You have selected " + selectedCard.plantName);
+            if (selectedCard.isImage)
+            {
+                DisplayText("You have selected " + selectedCard.plantName);
+            } else
+            {
+                DisplayText("You have selected the trivia card: " + selectedCard.description);
+            }
             selectedCard.Select();
             PlaySound(selectClip);
         }

@@ -10,6 +10,8 @@ public class CardLogic : MonoBehaviour
     public string plantName = "DefaultCardName";
     public int id = 0;
     public Color col = Color.white;
+    public bool isImage = false;
+    public string description;
 
     [SerializeField] TextMeshProUGUI cardTextFront;
     [SerializeField] TextMeshProUGUI cardTextBack;
@@ -19,6 +21,8 @@ public class CardLogic : MonoBehaviour
     {
         this.plantName = cardData.name;
         this.id = cardData.id;
+        this.isImage = isImage;
+        this.description = cardData.description;
         if (isImage)
         {
             cardTextFront.text = cardData.name;

@@ -17,6 +17,8 @@ public class MainMenuEvents : MonoBehaviour
 
     private AudioSource _audioSource;
 
+    [SerializeField] PlayerDataSO player;
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -72,15 +74,19 @@ public class MainMenuEvents : MonoBehaviour
     private void OnMatchCardClick(ClickEvent evt)
     {
         Debug.Log("You pressed the Match Card Game Button");
-
-        SceneManager.LoadScene("MatchingCardScene");
+        if (player.CanPlayMatchingCard())
+        {
+           SceneManager.LoadScene("MatchingCardScene");
+        }
     }
 
     private void OnSnapGameClick(ClickEvent evt)
     {
         Debug.Log("You pressed the Snap Game Button");
-
-        SceneManager.LoadScene("SnapScene");
+        if (player.CanPlaySnap())
+        {
+            SceneManager.LoadScene("SnapScene");
+        }
     }
 
     private void OnAllButtonsClick(ClickEvent evt)
