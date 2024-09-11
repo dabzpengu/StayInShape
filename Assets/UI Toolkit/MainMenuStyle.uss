@@ -1,25 +1,26 @@
 .header {
-    font-size: 50px;
+    font-size: 800%;
     -unity-text-align: upper-center;
     -unity-font-style: bold;
-    margin-top: 60px;
+    margin-top: 27%;
+    margin-bottom: 10%;
 }
 
 .button {
-    font-size: 30px;
-    width: 220px;
-    height: 80px;
+    font-size: 400%;
+    width: 40%;
+    height: 8%;
     align-items: stretch;
     align-self: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    margin-top: 50px;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    margin-top: 10%;
 }
 
 .logo {
     align-self: center;
-    margin-top: 40px;
-    font-size: 40px;
+    margin-top: 10%;
+    font-size: 450%;
 }
