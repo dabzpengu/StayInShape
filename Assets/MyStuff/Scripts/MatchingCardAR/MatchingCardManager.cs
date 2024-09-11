@@ -7,44 +7,63 @@ using TMPro;
 
 public class MatchingCardManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI selectedCardUI;
-    [SerializeField] TextMeshProUGUI scoreUI;
-    private AudioSource audioSource;
+    [SerializeField] TextMeshProUGUI ui;
+    [SerializeField] TextMeshProUGUI instructions;
     [SerializeField] AudioClip selectClip;
-    [SerializeField] AudioClip matchClip;
+    [SerializeField] AudioClip matchCorrectClip;
+    [SerializeField] AudioClip matchWrongClip;
+    [SerializeField] AudioClip winGameClip;
     [SerializeField] CardDB db;
     [SerializeField] PlayerDataSO player;
     [SerializeField] SaveManagerSO saveManager;
 
+    public int timeToDisplayText = 3;
+    public int intervalToPlayGame = 30;
     private CardLogic selectedCard;
     private int nCardsLeft;
     private int currReward;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        scoreUI.text = "0";
+        ui.text = "";
         currReward = 0;
+    }
+
+    private IEnumerator DisplayTextCoroutine(string message, float duration)
+    {
+        ui.text = message;
+        yield return new WaitForSeconds(duration);
+        ui.text = "";
+    }
+
+    private void DisplayText(string text)
+    {
+        StartCoroutine(DisplayTextCoroutine(text, timeToDisplayText));
     }
 
     private void RewardPlayer(int reward)
     {
+        PlaySound(winGameClip);
         player.SetFertilizer(player.GetFertilizer() + reward);
         player.SetWater(player.GetWater() + reward);
-        Debug.Log(String.Format("You have earned {0} points! Current fertilizer is {1} and water is {2}", 
+        DisplayText(String.Format("You have earned {0} points! Current fertilizer is {1} and water is {2}", 
             reward, player.GetFertilizer(), player.GetWater()));
     }
 
-    private void AddReward(int add)
+    private void AddReward(int add, string plantName)
     {
         currReward += add;
-        scoreUI.text = currReward.ToString();
+        DisplayText(String.Format("You have matched a pair of {0} cards!", plantName));
     }
 
     private void CompleteGame()
     {
         RewardPlayer(currReward);
+        player.SetMatchingCardTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
+        instructions.text = "You have won the game. Tap on the back button to go to the home screen.\n Next time to play is " + player.GetMatchingCardTimer();
         saveManager.Save();
     }
 
@@ -156,9 +175,9 @@ public class MatchingCardManager : MonoBehaviour
         Unselect();
         Destroy(card1.gameObject);
         Destroy(card2.gameObject);
-        PlaySound(matchClip);
+        PlaySound(matchCorrectClip);
         nCardsLeft -= 2;
-        AddReward(1);
+        AddReward(1, card1.plantName);
         if (nCardsLeft == 0)
         {
             CompleteGame();
@@ -167,20 +186,21 @@ public class MatchingCardManager : MonoBehaviour
 
     public void SelectCard(CardLogic card)
     {
-        if (selectedCard != null)
+        if (selectedCard != null && selectedCard != card)
         {
             if (selectedCard.IsMatching(card)) {
                 Debug.Log("IsMatching found!");
                 MatchCards(selectedCard, card);
             } else
             {
+                //PlaySound(matchWrongClip); // Can play this if we can overcome infinite looping
                 Debug.Log("Unable to match!");
             }
         }
         else if (card != selectedCard)
         {
             selectedCard = card;
-            selectedCardUI.text = selectedCard.plantName;
+            DisplayText("You have selected " + selectedCard.plantName);
             selectedCard.Select();
             PlaySound(selectClip);
         }
@@ -192,7 +212,8 @@ public class MatchingCardManager : MonoBehaviour
         {
             selectedCard.Deselect();
             selectedCard = null;
-            selectedCardUI.text = "";
+            DisplayText("Unselected!");
+            PlaySound(selectClip);
         }
     }
 }

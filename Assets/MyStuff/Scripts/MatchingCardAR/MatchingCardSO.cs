@@ -7,4 +7,5 @@ public class MatchingCardSO : ScriptableObject
     public new string name;
     public string description;
     public int id;
+    public Color col;
 }

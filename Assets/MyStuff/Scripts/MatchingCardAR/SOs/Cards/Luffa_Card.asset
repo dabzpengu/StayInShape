@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Luffa
   description: Kinda spongey
   id: 4
+  col: {r: 0.7924528, g: 0.7078436, b: 0.47472408, a: 1}

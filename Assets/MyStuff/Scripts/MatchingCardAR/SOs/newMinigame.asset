@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c148ca9f3efa0a41999aab11856582a, type: 3}
-  m_Name: Papaya_Card
+  m_Script: {fileID: 11500000, guid: c7b02a4660ba0804a8c390f798315ff9, type: 3}
+  m_Name: newMinigame
   m_EditorClassIdentifier: 
-  name: Papaya
-  description: Yummy as a salad!
-  id: 3
-  col: {r: 1, g: 0.4890508, b: 0, a: 1}
+  gameName: MatchingCard
+  gameSceneName: MatchingCardScene
+  reward: 0
+  description: 

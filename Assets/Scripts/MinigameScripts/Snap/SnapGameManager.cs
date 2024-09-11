@@ -44,6 +44,7 @@ public class SnapGameManager : MonoBehaviour
     public int nCorrects = 0;
     public int nWrongs = 0;
     public float totalTime;
+    public int intervalToPlayGame = 60;
     int currentLevelId;
     string[] stats = new string[5];
     Vector3 initialPos;
@@ -170,7 +171,7 @@ public class SnapGameManager : MonoBehaviour
     void CompleteGame()
     {
         RewardPlayer();
-        playerDataSO.SetSnapTimer(DateTime.Now.AddDays(1));
+        playerDataSO.SetSnapTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
         saveManager.Save();
         Send();
         audioSource.clip = successSound;

@@ -9,7 +9,7 @@ public class CardLogic : MonoBehaviour
 {
     public string plantName = "DefaultCardName";
     public int id = 0;
-    bool isActive;
+    public Color col = Color.white;
 
     [SerializeField] TextMeshProUGUI cardTextFront;
     [SerializeField] TextMeshProUGUI cardTextBack;
@@ -21,6 +21,15 @@ public class CardLogic : MonoBehaviour
         this.id = cardData.id;
         cardTextFront.text = presentName();
         cardTextBack.text = presentName();
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        if (meshRenderer != null && meshRenderer.material != null)
+        {
+            Debug.Log("Set");
+            meshRenderer.material.color = cardData.col;
+        } else
+        {
+            Debug.Log("Help");
+        }
     }
 
     public void Select()
@@ -37,16 +46,6 @@ public class CardLogic : MonoBehaviour
         }
     }
 
-    public void Enable()
-    {
-        isActive = true;
-    }
-
-    public void Disable()
-    {
-        isActive = false;
-    }
-
     public bool IsMatching(CardLogic otherCard)
     {
         return otherCard.id == id & otherCard != this;
@@ -59,7 +58,7 @@ public class CardLogic : MonoBehaviour
 
     private string presentName()
     {
-        return plantName + "\nID" + id.ToString();
+        return plantName;
     }
 
     // Start is called before the first frame update
@@ -68,6 +67,5 @@ public class CardLogic : MonoBehaviour
         highlight = this.transform;
         cardTextFront.text = presentName();
         cardTextBack.text = presentName();
-        isActive = true;
     }
 }

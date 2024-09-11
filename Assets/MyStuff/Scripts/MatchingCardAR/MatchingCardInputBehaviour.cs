@@ -6,7 +6,6 @@ public class MatchingCardInputBehaviour : MonoBehaviour
 {
     [SerializeField] ReticleBehaviour reticleBehaviour;
     [SerializeField] MatchingCardManager gameManager;
-    [SerializeField] TextMeshProUGUI positionUI;
     [SerializeField] float overlapRadius;
     DefaultInputActions actions;
 
@@ -18,11 +17,6 @@ public class MatchingCardInputBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         actions.Disable();
-    }
-
-    private void updatePosition(Vector3 p)
-    {
-        positionUI.text = p.ToString();
     }
 
     private void Update()
@@ -43,7 +37,7 @@ public class MatchingCardInputBehaviour : MonoBehaviour
             }
         }
 
-        updatePosition(Camera.main.transform.position);
+        //updatePosition(Camera.main.transform.position);
         if (closestCollider != null && closestCollider.TryGetComponent(out CardLogic _))
         {
             gameManager.SelectCard(closestCollider.gameObject.GetComponent<CardLogic>());
