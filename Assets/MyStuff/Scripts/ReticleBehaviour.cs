@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ReticleBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject image;
+    [SerializeField] Material interactable; //kiv
 
     private Transform currFocus;
     private void Awake()
@@ -23,20 +24,23 @@ public class ReticleBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int rayDistance = 100;
+        int rayDistance = 5;
         Vector3 screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         Ray crosshairRay = Camera.main.ScreenPointToRay(screenCenter); //kiv this
         RaycastHit crosshairHit;
         if (Physics.Raycast(crosshairRay, out crosshairHit, rayDistance))
         {
-            //spawn reticle (stretch goal)
             image.SetActive(true);
             transform.position = crosshairHit.point;
             currFocus = crosshairHit.transform;
-
-
+            transform.rotation = Camera.main.transform.rotation;
         }
-        transform.rotation = Camera.main.transform.rotation;
+        else
+        {
+            //if player is too far, cannot interact with asset
+            image.SetActive(false);
+            currFocus = null;
+        }
     }
 
     public Transform getTransform() 
