@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using System.Linq;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
+using UnityEngine.UI;
 
 public class SnapGameManager : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField]
     Sprite backSprite;
     [SerializeField]
-    int[,] level = new int[5,2] { {6,2 },{10,4 },{14,6 },{18,8 },{ 20, 10 } }; // Right number represents the number of matches needed, left number represents the number of spare cards
+    int[,] level = new int[5,2] { {15,6 },{10,4 },{14,6 },{18,8 },{ 20, 10 } }; // Right number represents the number of matches needed, left number represents the number of spare cards
     [SerializeField]
     GameObject tutorialPrompt, popupBar;
     [SerializeField]
@@ -24,7 +24,6 @@ public class SnapGameManager : MonoBehaviour
     TMPro.TextMeshProUGUI correctText;
     [SerializeField]
     TMPro.TextMeshProUGUI wrongText;
-
 
     [SerializeField]
     CurrencySO currency;
@@ -38,6 +37,8 @@ public class SnapGameManager : MonoBehaviour
     String[] formIds;
     [SerializeField]
     AudioClip successSound;
+    [SerializeField] GameObject drawBut;
+    [SerializeField] GameObject buyBut;
 
     public List<int> deckList;
     public int currentDeckCard;
@@ -45,20 +46,20 @@ public class SnapGameManager : MonoBehaviour
     public int nCorrects = 0;
     public int nWrongs = 0;
     public float totalTime;
+    public int intervalToPlayGame = 60;
     int currentLevelId;
     string[] stats = new string[5];
-    Vector3 initialPos;
     bool lockout;
     bool deckDrawn;
     public bool popupActive;
     int totalMoves;
     AudioSource audioSource;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         currentLevelId = 0;
         deckDrawn = false;
-        initialPos = playerCard.transform.position;
         deckList = new List<int>();
         lockout = true;
         SetupGame();
@@ -171,15 +172,18 @@ public class SnapGameManager : MonoBehaviour
     void CompleteGame()
     {
         RewardPlayer();
-        playerDataSO.SetSnapTimer(DateTime.Now.AddDays(1));
+        playerDataSO.SetSnapTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
         saveManager.Save();
         Send();
         audioSource.clip = successSound;
         audioSource.Play();
         if (currentLevelId < level.Length - 1) currentLevelId++;
-        playerCard.FlipCard();
-        deckCard.FlipCard();
-        SetupGame();
+        drawBut.SetActive(false);
+        buyBut.SetActive(false);
+
+        //playerCard.FlipCard();
+        //deckCard.FlipCard();
+        //SetupGame();
     }
     IEnumerator FlipBothCards()
     {

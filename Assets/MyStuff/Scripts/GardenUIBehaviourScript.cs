@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GardenUIBehaviourScript : MonoBehaviour
 {
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private Button insertPlantButton;
+    [SerializeField] private Button homeButton;
     [SerializeField] GameObject plantAsset; //temporarily use placeholderasset, to be replaced with plant asset
     [SerializeField] ReticleBehaviour reticleBehaviour;
     [SerializeField] private RawImage itemImage;
@@ -22,6 +23,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
     private void Start()
     {
         insertPlantButton.onClick.AddListener(InsertPlant);
+        homeButton.onClick.AddListener(BackHome);
     }
     // to check if the object to rotate is assigned
     private void Update()
@@ -37,10 +39,22 @@ public class GardenUIBehaviourScript : MonoBehaviour
 
     public void InsertPlant()
     {
-        if (reticleBehaviour.getTransform().TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
+        if(reticleBehaviour.getTransform() == null)
         {
-            plotLogic.InsertPlant(plantAsset, reticleBehaviour.transform.position);
+            Debug.Log("You are too far from the soil to insert plant");
         }
+        else
+        {
+            if (reticleBehaviour.getTransform().TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
+            {
+                plotLogic.InsertPlant(plantAsset, reticleBehaviour.transform.position);
+            }
+        }
+    }
+
+    public void BackHome()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void UpdateItem(Transform item)

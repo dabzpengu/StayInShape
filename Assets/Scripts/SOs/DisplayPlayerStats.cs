@@ -19,6 +19,8 @@ public class DisplayPlayerStats : MonoBehaviour
     TMPro.TextMeshProUGUI stepsUI;
     [SerializeField]
     TMPro.TextMeshProUGUI snapUI;
+    [SerializeField]
+    TMPro.TextMeshProUGUI mcUI;
 
     // Start is called before the first frame update
     void Awake()
@@ -32,5 +34,6 @@ public class DisplayPlayerStats : MonoBehaviour
         expUI.text = playerData.GetExp().ToString();
         stepsUI.text = playerData.GetSteps().ToString();
         snapUI.text = playerData.CanPlaySnap() ? "Can play now" : "Can only play after " + playerData.GetSnapTimer();
+        mcUI.text = playerData.CanPlayMatchingCard() ? "Can play now" : "Can only play after " + playerData.GetMatchingCardTimer();
     }
 }
