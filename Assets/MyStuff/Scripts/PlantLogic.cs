@@ -58,7 +58,7 @@ public class PlantLogic : MonoBehaviour
             stage2.SetActive(false);
             stage3.SetActive(true);
         }
-        Debug.Log(growthAmount);
+        //Debug.Log(growthAmount);
     }
 
     public void Insert(Component item)

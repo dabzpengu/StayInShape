@@ -10,12 +10,15 @@ public class InteractionBehaviour : MonoBehaviour
 {
     [SerializeField] ReticleBehaviour reticleBehaviour;
     [SerializeField] GardenUIBehaviourScript gardenUIBehaviour;
+    [SerializeField] PlayerDataSO player;
+    [SerializeField] SaveManagerSO saveManager;
     DefaultInputActions actions;
 
     private void Awake()
     {
         actions = new DefaultInputActions();
         actions.Enable();
+        saveManager.Load();
     }
     private void OnDestroy()
     {
@@ -52,13 +55,29 @@ public class InteractionBehaviour : MonoBehaviour
                     {
                         if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
                         {
-                            plant.Insert(gardenUIBehaviour.getEquipped());
-                            plant.getStatus();
+                            if (player.GetFertilizer() >= 1)
+                            {
+                                plant.Insert(gardenUIBehaviour.getEquipped());
+                                plant.getStatus();
+                                player.SetFertilizer(player.GetFertilizer() - 1);
+                                saveManager.Save();
+                            } else
+                            {
+                                Debug.Log("No water");
+                            }
                         }
                         else if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
                         {
-                            plant.Insert(gardenUIBehaviour.getEquipped());
-                            plant.getStatus();
+                            if (player.GetWater() >= 1)
+                            {
+                                plant.Insert(gardenUIBehaviour.getEquipped());
+                                plant.getStatus();
+                                player.SetWater(player.GetWater() - 1);
+                                saveManager.Save();
+                            } else
+                            {
+                                Debug.Log("No fertilizer");
+                            }
                         }
                     }
                     else

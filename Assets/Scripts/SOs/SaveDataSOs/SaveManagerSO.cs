@@ -63,7 +63,9 @@ public class SaveManagerSO : ScriptableObject
             }
         } else
         {
-            Debug.Log("No save found");
+            Save();
+            Load();
+            Debug.Log("Created a new save file!");
         }
     }
 
