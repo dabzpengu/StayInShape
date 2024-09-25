@@ -19,7 +19,9 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField]
     GameObject tutorialPrompt, popupBar;
     [SerializeField]
-    TMPro.TextMeshProUGUI remainingText;
+    TMPro.TextMeshProUGUI nCardsLeft;
+    [SerializeField]
+    TMPro.TextMeshProUGUI backButton;
     [SerializeField]
     TMPro.TextMeshProUGUI correctText;
     [SerializeField]
@@ -64,7 +66,7 @@ public class SnapGameManager : MonoBehaviour
         lockout = true;
         SetupGame();
         toggleTutorial();
-        remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString(); // Unsure how this actually works
+        nCardsLeft.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString(); // Unsure how this actually works
     }
     private void Update()
     {
@@ -86,12 +88,12 @@ public class SnapGameManager : MonoBehaviour
             if (deckList.Contains(num)) continue; // Not sure what this part actually does
             deckList.Add(num);
         }
-        remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString(); // Number of items left
+        nCardsLeft.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString(); // Number of items left
         wrongText.text = nWrongs.ToString();
         correctText.text = nCorrects.ToString();
     }
 
-    public void Snap() // Buy button
+    public void Snap() // Snap button
     {
         if (lockout) return;
         totalMoves++;
@@ -113,12 +115,12 @@ public class SnapGameManager : MonoBehaviour
                 return;
             }
             currentIndex++;
-            remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
+            nCardsLeft.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
             StartCoroutine(MoveCardsOut());
             deckDrawn = false;
         }
     }
-    public void DrawNext()
+    public void DrawNext() // Logic for both "Draw" and "Buy" button
     {
         if (!playerDataSO.CanPlaySnap())
         {
@@ -127,21 +129,21 @@ public class SnapGameManager : MonoBehaviour
         }
         else
         {
-            if (lockout) return;
-            if (deckDrawn)
+            if (lockout) return; // While an animation is happening
+            if (deckDrawn) // When draw is pressed, deckDrawn = true
             {
                 totalMoves++;
-                if (deckList.Contains(currentIndex)) // When the cards are the same
+                if (deckList.Contains(currentIndex)) // Prevent drawing when the cards are the same
                 {
                     StartCoroutine(Popup("Buy when the cards are the same!"));
                     return;
                 }
                 currentIndex++;
-                remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
+                nCardsLeft.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
                 StartCoroutine(FlipNewPlayerCard());
             }
             else
-            {
+            { // When we press draw at the very start of the game to "begin" the game.
                 StartCoroutine(FlipBothCards());
                 deckDrawn = true;
             }
@@ -171,10 +173,12 @@ public class SnapGameManager : MonoBehaviour
 
     void CompleteGame()
     {
+        nCardsLeft.text = "0";
+        backButton.text = "Finish";
         RewardPlayer();
         playerDataSO.SetSnapTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
         saveManager.Save();
-        Send();
+        //Send();
         audioSource.clip = successSound;
         audioSource.Play();
         if (currentLevelId < level.Length - 1) currentLevelId++;
@@ -258,6 +262,7 @@ public class SnapGameManager : MonoBehaviour
         popupBar.transform.DOScale(0, 0.5f);
         popupActive = false;
     }
+    // Outdated method. Can look at for Google Forms API
     private void Send()
     {
         stats[0] = playerDataSO.playerName;
