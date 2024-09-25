@@ -19,7 +19,11 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField]
     GameObject tutorialPrompt, popupBar;
     [SerializeField]
-    TMPro.TextMeshProUGUI remainingText;
+    TMPro.TextMeshProUGUI nMatchesLeft;
+    [SerializeField]
+    TMPro.TextMeshProUGUI backButton;
+    [SerializeField]
+    TMPro.TextMeshProUGUI timerValue;
     [SerializeField]
     TMPro.TextMeshProUGUI correctText;
     [SerializeField]
@@ -41,16 +45,17 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField] GameObject buyBut;
 
     public List<int> deckList;
-    public int currentDeckCard;
-    public int currentIndex;
+    public int currentDeckCard; // Deck (RHS)
+    public int currentIndex; // Player
     public int nCorrects = 0;
     public int nWrongs = 0;
-    public float totalTime;
     public int intervalToPlayGame = 60;
+    public static float timePerSnap = 5;
+    private float timeLeft;
     int currentLevelId;
     string[] stats = new string[5];
     bool lockout;
-    bool deckDrawn;
+    bool deckDrawn; // If the deck card (RHS) is drawn
     public bool popupActive;
     int totalMoves;
     AudioSource audioSource;
@@ -64,47 +69,94 @@ public class SnapGameManager : MonoBehaviour
         lockout = true;
         SetupGame();
         toggleTutorial();
-        remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString(); // Unsure how this actually works
     }
     private void Update()
     {
-        if (deckDrawn) totalTime += Time.deltaTime;
+        if (deckDrawn && !lockout)
+        {
+            subtractTimer(Time.deltaTime);
+            if (timeLeft < 0)
+            {
+                StartCoroutine(Popup("You did not snap in time!"));
+                incrementWrong();
+            }
+        }
+    }
+
+    private void setTimer(float val)
+    {
+        timeLeft = val;
+        timerValue.text = timeLeft.ToString("F2");
+    }
+
+    private void subtractTimer(float val)
+    {
+        timeLeft -= val;
+        timerValue.text = timeLeft.ToString("F2");
+    }
+
+    private void incrementWrong()
+    {
+        currentIndex++;
+        deckDrawn = false;
+        nWrongs++;
+        updateTextUI(); // Edge case where UI does not update when the game ends after timer runs out. Otherwise, MoveCardsOut handles UI updates too
+        Coroutine movingCardsOut = StartCoroutine(MoveCardsOut());
+        if (nWrongs + nCorrects >= level[currentLevelId, 1])
+        {
+            StopCoroutine(movingCardsOut);
+            CompleteGame();
+            setTimer(0);
+            
+        } else
+        {
+            setTimer(timePerSnap);
+        }
+    }
+
+    private void incrementCorrect()
+    {
+        nCorrects++;
+        updateTextUI(); // Edge case where UI does not update when the game ends after we win using Snap.
+        setTimer(timePerSnap);
+    }
+
+    private void updateTextUI()
+    {
+        wrongText.text = nWrongs.ToString();
+        correctText.text = nCorrects.ToString();
+        nMatchesLeft.text = (level[currentLevelId, 1] - nCorrects - nWrongs).ToString();
     }
 
     void SetupGame()
     {
         currentIndex = 0;
         totalMoves = 0;
-        totalTime = 0;
         nCorrects = 0;
         nWrongs = 0;
         deckDrawn = false;
         deckList.Clear();
-        while(deckList.Count < level[currentLevelId, 1])
+        while(deckList.Count < level[currentLevelId, 1]) // Fill up deck list with 6 cards (these cards are the matches)
         {
             int num = UnityEngine.Random.Range(0, level[currentLevelId, 0] + level[currentLevelId, 1] - 1); // For first level, it will be 15 + 6 - 1 = 20
             if (deckList.Contains(num)) continue; // Not sure what this part actually does
             deckList.Add(num);
         }
-        remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString(); // Number of items left
-        wrongText.text = nWrongs.ToString();
-        correctText.text = nCorrects.ToString();
+        updateTextUI();
     }
 
-    public void Snap() // Buy button
+    public void Snap() // Snap button
     {
         if (lockout) return;
         totalMoves++;
-        if (!deckList.Contains(currentIndex))
+        if (!deckList.Contains(currentIndex)) // Current index
         {
             StartCoroutine(Popup("Draw the next card when the cards are not the same!"));
-            nWrongs++;
-            wrongText.text = nWrongs.ToString();
+            incrementWrong();
             return;
         } else
         {
-            nCorrects++;
-            correctText.text = nCorrects.ToString();
+            incrementCorrect();
 
             if (deckList.Max() == currentIndex)
             {
@@ -113,12 +165,12 @@ public class SnapGameManager : MonoBehaviour
                 return;
             }
             currentIndex++;
-            remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
+            updateTextUI();
             StartCoroutine(MoveCardsOut());
             deckDrawn = false;
         }
     }
-    public void DrawNext()
+    public void DrawNext() // Logic for both "Draw" and "Buy" button
     {
         if (!playerDataSO.CanPlaySnap())
         {
@@ -127,23 +179,24 @@ public class SnapGameManager : MonoBehaviour
         }
         else
         {
-            if (lockout) return;
-            if (deckDrawn)
+            if (lockout) return; // While an animation is happening
+            if (deckDrawn) // When draw is pressed, deckDrawn = true
             {
                 totalMoves++;
-                if (deckList.Contains(currentIndex)) // When the cards are the same
+                if (deckList.Contains(currentIndex)) // Prevent drawing when the cards are the same
                 {
                     StartCoroutine(Popup("Buy when the cards are the same!"));
                     return;
                 }
                 currentIndex++;
-                remainingText.text = (level[currentLevelId, 0] + level[currentLevelId, 1] - currentIndex - 1).ToString();
+                updateTextUI();
                 StartCoroutine(FlipNewPlayerCard());
             }
             else
-            {
+            { // When we press draw at the very start of the game to "begin" the game and when snap occurs
+                updateTextUI();
+                setTimer(timePerSnap);
                 StartCoroutine(FlipBothCards());
-                deckDrawn = true;
             }
         }
     }
@@ -171,21 +224,25 @@ public class SnapGameManager : MonoBehaviour
 
     void CompleteGame()
     {
+        deckDrawn = false;
+        nMatchesLeft.text = "0";
+        backButton.text = "Finish";
         RewardPlayer();
         playerDataSO.SetSnapTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
         saveManager.Save();
-        Send();
+        //Send();
         audioSource.clip = successSound;
         audioSource.Play();
         if (currentLevelId < level.Length - 1) currentLevelId++;
         drawBut.SetActive(false);
         buyBut.SetActive(false);
+        deckDrawn = false;
 
         //playerCard.FlipCard();
         //deckCard.FlipCard();
         //SetupGame();
     }
-    IEnumerator FlipBothCards()
+    IEnumerator FlipBothCards() // Only used for game setup
     {
         lockout = true;
         int newDeckCard = UnityEngine.Random.Range(0, cardSprites.Length);
@@ -214,6 +271,7 @@ public class SnapGameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         currentDeckCard = newDeckCard;
         lockout = false;
+        deckDrawn = true;
     }
     IEnumerator FlipNewPlayerCard()
     {
@@ -258,15 +316,16 @@ public class SnapGameManager : MonoBehaviour
         popupBar.transform.DOScale(0, 0.5f);
         popupActive = false;
     }
-    private void Send()
-    {
-        stats[0] = playerDataSO.playerName;
-        stats[1] = totalMoves.ToString();
-        stats[2] = (currentIndex+1).ToString();
-        stats[3] = totalTime.ToString();
-        stats[4] = (totalTime / totalMoves).ToString();
-        GoogleFormsPoster.Post(stats, formIds, "https://docs.google.com/forms/u/0/d/e/1FAIpQLSen_oSSbQte3sBZbkmh_MGPNMXXyQHG_RFWYqV4l_VKTia62Q/formResponse");
-    }
+    // Outdated method. Can look at for Google Forms API
+    //private void Send()
+    //{
+    //    stats[0] = playerDataSO.playerName;
+    //    stats[1] = totalMoves.ToString();
+    //    stats[2] = (currentIndex+1).ToString();
+    //    stats[3] = totalTime.ToString();
+    //    stats[4] = (totalTime / totalMoves).ToString();
+    //    GoogleFormsPoster.Post(stats, formIds, "https://docs.google.com/forms/u/0/d/e/1FAIpQLSen_oSSbQte3sBZbkmh_MGPNMXXyQHG_RFWYqV4l_VKTia62Q/formResponse");
+    //}
 
 
 }
