@@ -13,6 +13,7 @@ public class PlayerDataSO : SavableSO
     private int steps = 0;
     private int exp = 0;
     private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again
+    private String matchingCardTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the matching cards minigame again
 
     const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm";
     public void ResetSurveyTime()
@@ -59,6 +60,7 @@ public class PlayerDataSO : SavableSO
         this.exp = newExpValue;
     }
 
+    // Snap
     public String GetSnapTimer() { return snapTimer; }
 
     public void SetSnapTimer(DateTime dt)
@@ -69,6 +71,22 @@ public class PlayerDataSO : SavableSO
     public Boolean CanPlaySnap()
     {
         DateTime openDateTime = DateTime.ParseExact(this.snapTimer, DATETIME_FORMAT, null);
+        DateTime nowDateTime = DateTime.Now;
+        Boolean ans = nowDateTime >= openDateTime;
+        return ans;
+    }
+
+    // Matching Card
+    public String GetMatchingCardTimer() { return matchingCardTimer; }
+
+    public void SetMatchingCardTimer(DateTime dt)
+    {
+        this.matchingCardTimer = dt.ToString(DATETIME_FORMAT);
+    }
+
+    public Boolean CanPlayMatchingCard()
+    {
+        DateTime openDateTime = DateTime.ParseExact(this.matchingCardTimer, DATETIME_FORMAT, null);
         DateTime nowDateTime = DateTime.Now;
         Boolean ans = nowDateTime >= openDateTime;
         return ans;
@@ -85,6 +103,7 @@ public class PlayerDataSO : SavableSO
             steps = this.steps,
             exp = this.exp,
             snapTimer = this.snapTimer,
+            matchingCardTimer = this.matchingCardTimer,
         };
 
         string saveString = JsonUtility.ToJson(saveObject);
@@ -100,6 +119,7 @@ public class PlayerDataSO : SavableSO
         steps = loadedObject.steps;
         exp = loadedObject.exp;
         snapTimer = loadedObject.snapTimer;
+        matchingCardTimer = loadedObject.matchingCardTimer;
 
         lastSurvey = DateTime.ParseExact(loadedObject.lastSurvey, DATETIME_FORMAT, CultureInfo.InvariantCulture);
     }
@@ -113,5 +133,6 @@ public class PlayerDataSO : SavableSO
         public int steps;
         public int exp;
         public String snapTimer;
+        public String matchingCardTimer;
     }
 }

@@ -709,6 +709,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticleBehaviour: {fileID: 1773916291}
   gardenUIBehaviour: {fileID: 2083900772}
+  player: {fileID: 11400000, guid: de7a4b855443e124e807893f98c13162, type: 2}
+  saveManager: {fileID: 11400000, guid: ddf61ec8f040149498b3a7d02638b035, type: 2}
 --- !u!1 &1623652327
 GameObject:
   m_ObjectHideFlags: 0

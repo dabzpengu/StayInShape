@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class MatchingCardsPrefab : MonoBehaviour
 {
-    [SerializeField] int nCards = 4;
+    [SerializeField] int nCards;
     MatchingCardManager manager;
+    [SerializeField] int spawnRange;
+    [SerializeField] GameObject cardPrefab;
+    // Define a range for randomization
+    private Vector3 randomRangeMin;
+    private Vector3 randomRangeMax;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Find all GameObjects with the Rigidbody component
-        MatchingCardManager[] managers = FindObjectsOfType<MatchingCardManager>();
+    randomRangeMin = new Vector3(-spawnRange, -spawnRange, -spawnRange);
+    randomRangeMax = new Vector3(spawnRange, spawnRange, spawnRange);
+    // Find all GameObjects with the Rigidbody component
+    MatchingCardManager[] managers = FindObjectsOfType<MatchingCardManager>();
 
         foreach (MatchingCardManager man in managers) // There should only be one
         {
@@ -19,21 +26,22 @@ public class MatchingCardsPrefab : MonoBehaviour
             {
                 throw new System.Exception("There are should not be more than one MatchingCardManagers in the scene!");
             }
-            // Access the GameObject associated with the Rigidbody
-            GameObject matchingCardManager = man.gameObject;
-            Debug.Log("Found GameObject with MatchingCardManager: " + matchingCardManager.name);
+            Debug.Log("Found GameObject with MatchingCardManager: " + man.gameObject.name);
+            manager = man;
         }
 
         if (manager == null)
         {
             throw new System.Exception("No MatchingCardManager found in the scene!");
         }
-
-        // Randomise the position of the cards
-
-        // 
-        
-
+        // Spawn cards first
+        for (int i = 0; i < nCards; i++)
+        {
+            GameObject instance = Instantiate(cardPrefab, Vector3.zero, transform.rotation);
+            instance.gameObject.name = "Card " + i.ToString();
+            instance.transform.SetParent(transform);
+        }
+        manager.SetupGame(transform, spawnRange, 1, nCards);
     }
 
     // Update is called once per frame

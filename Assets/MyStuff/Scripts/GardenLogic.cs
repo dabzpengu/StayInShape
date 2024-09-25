@@ -40,6 +40,7 @@ public class GardenLogic : MonoBehaviour
 
     void OnDestroy()
     {
+        Debug.Log("Garden destroyed");
         PlantManager.gardenSpawned = false;
     }
 }

@@ -4,18 +4,43 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class CardLogic : MonoBehaviour
 {
     public string plantName = "DefaultCardName";
     public int id = 0;
+    public Color col = Color.white;
+    public bool isImage = false;
+    public string description;
 
     [SerializeField] TextMeshProUGUI cardTextFront;
     [SerializeField] TextMeshProUGUI cardTextBack;
     private Transform highlight;
 
-    public void OnSelect()
+    public void SetCard(MatchingCardSO cardData, bool isImage)
+    {
+        this.plantName = cardData.name;
+        this.id = cardData.id;
+        this.isImage = isImage;
+        this.description = cardData.description;
+        if (isImage)
+        {
+            cardTextFront.text = cardData.name;
+            cardTextBack.text = cardData.name;
+            MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+            if (meshRenderer != null && meshRenderer.material != null)
+            {
+                Debug.Log("Set");
+                meshRenderer.material.color = cardData.col;
+            }
+        } else
+        {
+            cardTextFront.text = cardData.description;
+            cardTextBack.text = cardData.description;
+        }
+    }
+
+    public void Select()
     {
         if (highlight.gameObject.GetComponent<Outline>() != null)
         {
@@ -29,21 +54,19 @@ public class CardLogic : MonoBehaviour
         }
     }
 
-    public void OnDeselect()
+    public bool IsMatching(CardLogic otherCard)
     {
-        highlight.gameObject.GetComponent<Outline>().enabled = false;
+        return otherCard.id == id & otherCard != this;
     }
 
-    private string presentName()
+    public void Deselect()
     {
-        return plantName + "\nID" + id.ToString();
+        highlight.gameObject.GetComponent<Outline>().enabled = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         highlight = this.transform;
-        cardTextFront.text = presentName();
-        cardTextBack.text = presentName();
     }
 }

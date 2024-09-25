@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Save Manager", menuName = "Saving/Save Manager SO")]
@@ -56,7 +55,6 @@ public class SaveManagerSO : ScriptableObject
                     Debug.Log("Loading Json string: " + itemJson);
 
                     savables[i].LoadFromString(itemJson);
-                    Debug.Log(i);
                 }
             } catch (NullReferenceException)
             {
@@ -64,7 +62,9 @@ public class SaveManagerSO : ScriptableObject
             }
         } else
         {
-            Debug.Log("No save found");
+            Save();
+            Load();
+            Debug.Log("Created a new save file!");
         }
     }
 

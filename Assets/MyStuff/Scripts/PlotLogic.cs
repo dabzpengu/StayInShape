@@ -14,6 +14,7 @@ public class PlotLogic : MonoBehaviour
     public bool InsertPlant(GameObject plantAsset, Vector3 position)
     {
         GameObject spawnedPlant = Instantiate(plantAsset);
+        spawnedPlant.transform.SetParent(this.transform, false);
         spawnedPlant.transform.position = position;
         spawnedPlant.transform.rotation = transform.rotation; //follow soil orientation
         return true;
