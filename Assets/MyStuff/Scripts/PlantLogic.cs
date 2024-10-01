@@ -31,11 +31,6 @@ public class PlantLogic : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -69,6 +64,25 @@ public class PlantLogic : MonoBehaviour
     public void getStatus()
     {
         Debug.Log("Growth Amount: " + growthAmount);
+    }
+    
+    public float getGrowthAmount()
+    {
+        return growthAmount;
+    }
+
+    public void setGrowthAmount(float growthAmount)
+    {
+        this.growthAmount = growthAmount;
+    }
+
+    public float getGrowthRate()
+    {
+        return growthRate;
+    }
+    public void setGrowthRate(float growthRate)
+    {
+        this.growthRate = growthRate;
     }
     private void OnDestroy()
     {
