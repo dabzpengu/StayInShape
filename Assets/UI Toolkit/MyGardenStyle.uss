@@ -1,0 +1,21 @@
+.rightBottomButtons {
+    flex-shrink: 0;
+    background-image: url("project://database/Assets/Sprites/MyGarden/Care%20Book%20Button.png?fileID=2800000&guid=adebfd5b10cb9664e8a340c22460752b&type=3#Care Book Button");
+    -unity-background-scale-mode: scale-to-fit;
+    width: 33%;
+    margin-right: 1%;
+    margin-left: 1%;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-self: stretch;
+    background-color: rgba(56, 56, 56, 0);
+    align-items: center;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}

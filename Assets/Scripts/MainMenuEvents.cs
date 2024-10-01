@@ -27,14 +27,14 @@ public class MainMenuEvents : MonoBehaviour
         _button1 = _document.rootVisualElement.Q("MyGardenButton") as Button;
         _button1.RegisterCallback<ClickEvent>(OnMyGardenClick);
 
-        _button2 = _document.rootVisualElement.Q("CollectResourceButton") as Button;
-        _button2.RegisterCallback<ClickEvent>(OnCollectResourceClick);
+        _button2 = _document.rootVisualElement.Q("CollectResourcesButton") as Button;
+        _button2.RegisterCallback<ClickEvent>(OnCollectResourcesClick);
 
-        _button3 = _document.rootVisualElement.Q("MatchCardButton") as Button;
-        _button3.RegisterCallback<ClickEvent>(OnMatchCardClick);
+        _button3 = _document.rootVisualElement.Q("MyStepsButton") as Button;
+        _button3.RegisterCallback<ClickEvent>(OnMyStepsClick);
 
-        _button4 = _document.rootVisualElement.Q("SnapGameButton") as Button;
-        _button4.RegisterCallback<ClickEvent>(OnSnapGameClick);
+        _button4 = _document.rootVisualElement.Q("SettingsButton") as Button;
+        _button4.RegisterCallback<ClickEvent>(OnSettingsClick);
 
         _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
 
@@ -47,9 +47,9 @@ public class MainMenuEvents : MonoBehaviour
     private void OnDisable()
     {
         _button1.UnregisterCallback<ClickEvent>(OnMyGardenClick);
-        _button2.UnregisterCallback<ClickEvent>(OnCollectResourceClick);
-        _button3.UnregisterCallback<ClickEvent>(OnMatchCardClick);
-        _button4.UnregisterCallback<ClickEvent>(OnSnapGameClick);
+        _button2.UnregisterCallback<ClickEvent>(OnCollectResourcesClick);
+        _button3.UnregisterCallback<ClickEvent>(OnMyStepsClick);
+        _button4.UnregisterCallback<ClickEvent>(OnSettingsClick);
 
         for (int i = 0; i < _menuButtons.Count; i++)
         {
@@ -64,29 +64,29 @@ public class MainMenuEvents : MonoBehaviour
         SceneManager.LoadScene("GardenScene");
     }
 
-    private void OnCollectResourceClick(ClickEvent evt)
+    private void OnCollectResourcesClick(ClickEvent evt)
     {
-        Debug.Log("You pressed the Collect Resource Button");
+        Debug.Log("You pressed the Collect Resources Button");
 
         SceneManager.LoadScene("ResourceCollectionScene");
     }
 
-    private void OnMatchCardClick(ClickEvent evt)
+    private void OnMyStepsClick(ClickEvent evt)
     {
-        Debug.Log("You pressed the Match Card Game Button");
-        if (player.CanPlayMatchingCard())
-        {
-           SceneManager.LoadScene("MatchingCardScene");
-        }
+        Debug.Log("You pressed the My Steps Button");
+        // if (player.CanPlayMatchingCard())
+        // {
+        //    SceneManager.LoadScene("MatchingCardScene");
+        // }
     }
 
-    private void OnSnapGameClick(ClickEvent evt)
+    private void OnSettingsClick(ClickEvent evt)
     {
-        Debug.Log("You pressed the Snap Game Button");
-        if (player.CanPlaySnap())
-        {
-            SceneManager.LoadScene("SnapScene");
-        }
+        Debug.Log("You pressed the Settings Button");
+        // if (player.CanPlaySnap())
+        // {
+        //     SceneManager.LoadScene("SnapScene");
+        // }
     }
 
     private void OnAllButtonsClick(ClickEvent evt)
