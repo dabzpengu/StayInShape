@@ -5,6 +5,7 @@ using UnityEngine;
 using DG.Tweening;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SnapGameManager : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class SnapGameManager : MonoBehaviour
 
     public List<int> deckList;
     public int currentDeckCard; // Deck (RHS)
-    public int currentIndex; // Player
+    public int currentIndex; // Indicates the current index (number of cards we have drawn) so far. If our index matches one of the decks, then we have the same cards.
     public int nCorrects = 0;
     public int nWrongs = 0;
     public int intervalToPlayGame = 60;
@@ -97,20 +98,18 @@ public class SnapGameManager : MonoBehaviour
 
     private void incrementWrong()
     {
-        currentIndex++;
+        //currentIndex++;
         deckDrawn = false;
         nWrongs++;
         updateTextUI(); // Edge case where UI does not update when the game ends after timer runs out. Otherwise, MoveCardsOut handles UI updates too
-        Coroutine movingCardsOut = StartCoroutine(MoveCardsOut());
+
+        //Coroutine movingCardsOut = StartCoroutine(MoveCardsOut());
         if (nWrongs + nCorrects >= level[currentLevelId, 1])
         {
-            StopCoroutine(movingCardsOut);
             CompleteGame();
-            setTimer(0);
-            
         } else
         {
-            setTimer(timePerSnap);
+            StartCoroutine(MoveCardsOut());
         }
     }
 
@@ -118,7 +117,6 @@ public class SnapGameManager : MonoBehaviour
     {
         nCorrects++;
         updateTextUI(); // Edge case where UI does not update when the game ends after we win using Snap.
-        setTimer(timePerSnap);
     }
 
     private void updateTextUI()
@@ -139,8 +137,9 @@ public class SnapGameManager : MonoBehaviour
         while(deckList.Count < level[currentLevelId, 1]) // Fill up deck list with 6 cards (these cards are the matches)
         {
             int num = UnityEngine.Random.Range(0, level[currentLevelId, 0] + level[currentLevelId, 1] - 1); // For first level, it will be 15 + 6 - 1 = 20
-            if (deckList.Contains(num)) continue; // Not sure what this part actually does
-            deckList.Add(num);
+            if (deckList.Contains(num)) continue;
+            deckList.Add(num); // This number determines how many cards we must flip to eventually "reach" the desired card
+            Debug.Log("Deck List has " + num);
         }
         updateTextUI();
     }
@@ -152,13 +151,11 @@ public class SnapGameManager : MonoBehaviour
         if (!deckList.Contains(currentIndex)) // Current index
         {
             StartCoroutine(Popup("Draw the next card when the cards are not the same!"));
-            incrementWrong();
             return;
         } else
         {
             incrementCorrect();
-
-            if (deckList.Max() == currentIndex)
+            if (deckList.Max() == currentIndex || nWrongs + nCorrects >= level[currentLevelId, 1])
             {
                 Debug.Log("Game ended!");
                 CompleteGame();
@@ -172,32 +169,27 @@ public class SnapGameManager : MonoBehaviour
     }
     public void DrawNext() // Logic for both "Draw" and "Buy" button
     {
-        if (!playerDataSO.CanPlaySnap())
+
+        if (lockout) return; // While an animation is happening
+        if (deckDrawn) // When draw is pressed, deckDrawn = true
         {
-            StartCoroutine(Popup(String.Format("Sorry you can only play the game after {0}",
-                playerDataSO.GetSnapTimer())));
+            totalMoves++;
+            if (deckList.Contains(currentIndex)) // Prevent drawing when the cards are the same
+            {
+                Debug.Log(currentIndex);
+                StartCoroutine(Popup("Buy when the cards are the same!"));
+                return;
+            }
+            setTimer(timePerSnap);
+            currentIndex++;
+            updateTextUI();
+            StartCoroutine(FlipNewPlayerCard());
         }
         else
-        {
-            if (lockout) return; // While an animation is happening
-            if (deckDrawn) // When draw is pressed, deckDrawn = true
-            {
-                totalMoves++;
-                if (deckList.Contains(currentIndex)) // Prevent drawing when the cards are the same
-                {
-                    StartCoroutine(Popup("Buy when the cards are the same!"));
-                    return;
-                }
-                currentIndex++;
-                updateTextUI();
-                StartCoroutine(FlipNewPlayerCard());
-            }
-            else
-            { // When we press draw at the very start of the game to "begin" the game and when snap occurs
-                updateTextUI();
-                setTimer(timePerSnap);
-                StartCoroutine(FlipBothCards());
-            }
+        { // When we press draw at the very start of the game to "begin" the game and when snap occurs
+            updateTextUI();
+            setTimer(timePerSnap);
+            StartCoroutine(FlipBothCards());
         }
     }
     public void toggleTutorial()
@@ -237,7 +229,7 @@ public class SnapGameManager : MonoBehaviour
         drawBut.SetActive(false);
         buyBut.SetActive(false);
         deckDrawn = false;
-
+        setTimer(0);
         //playerCard.FlipCard();
         //deckCard.FlipCard();
         //SetupGame();
@@ -301,7 +293,10 @@ public class SnapGameManager : MonoBehaviour
         deckCard.transform.DOLocalMoveX(1000, 0.6f).SetEase(Ease.InOutSine);
         yield return new WaitForSeconds(0.8f);
         lockout = false;
-        DrawNext();
+        if (!(nWrongs + nCorrects >= level[currentLevelId, 1]))
+        {
+            DrawNext();
+        }
     }
 
     IEnumerator Popup(string text)
