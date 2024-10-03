@@ -12,6 +12,7 @@ public class PlayerDataSO : SavableSO
     private int water = 0;
     private int steps = 0;
     private int exp = 0;
+    private int crop = 3;
     private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again
     private String matchingCardTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the matching cards minigame again
 
@@ -57,9 +58,18 @@ public class PlayerDataSO : SavableSO
     }
     public void SetExp(int newExpValue)
     {
-        this.exp = newExpValue;
+        this.exp += newExpValue;
+    }
+    //garden
+    public int GetCrop()
+    {
+        return crop;
     }
 
+    public void SetCrop(int newCropValue)
+    {
+        this.crop += newCropValue;
+    }
     // Snap
     public String GetSnapTimer() { return snapTimer; }
 
