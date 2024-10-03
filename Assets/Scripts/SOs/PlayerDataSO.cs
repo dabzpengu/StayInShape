@@ -10,7 +10,7 @@ public class PlayerDataSO : SavableSO
     public DateTime lastSurvey;
     private int fertilizer = 0;
     private int water = 0;
-    private int steps = 0;
+    private int steps = 200;
     private int exp = 0;
     private int crop = 3;
     private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again

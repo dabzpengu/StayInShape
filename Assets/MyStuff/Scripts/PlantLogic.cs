@@ -35,6 +35,7 @@ public class PlantLogic : MonoBehaviour
 
     private void Awake()
     {
+        gameObject.SetActive(true);
         DontDestroyOnLoad(gameObject);
         numOfPlants++;//not used for alpha
         plantID = numOfPlants; //not used for alpha
@@ -42,24 +43,14 @@ public class PlantLogic : MonoBehaviour
 
     private void Start()
     {
-        SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
-        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        //SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+        //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        GardenUIBehaviourScript.onHomeButtonClicked += GardenUIBehaviourScript_onHomeButtonClicked;
     }
 
-    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    private void GardenUIBehaviourScript_onHomeButtonClicked()
     {
-        if (arg0.buildIndex == gameObject.scene.buildIndex)
-        {
-            gameObject.SetActive(true);
-        }
-    }
-
-    private void SceneManager_sceneUnloaded(Scene arg0)
-    {
-        if (arg0.buildIndex == gameObject.scene.buildIndex)
-        {
-            gameObject.SetActive(false);
-        }
+       gameObject.SetActive(false);
     }
 
     // Update is called once per frame
