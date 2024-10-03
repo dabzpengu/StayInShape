@@ -3,56 +3,65 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PlotLogic : MonoBehaviour
 {
- 
-    private List<Tuple<GameObject, PlantLogic, Vector3, float, float>> plantsInPlot = new List<Tuple<GameObject, PlantLogic, Vector3, float, float>>();
-    private int numOfPlants = -1;
-
-    public void Start()
+    private void Awake()
     {
-        Debug.Log(plantsInPlot.Count);
-        for (int i = 0; i < plantsInPlot.Count; i++)
+        DontDestroyOnLoad(transform.root);
+    }
+    private void Start()
+    {
+        SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+    }
+
+    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        if(arg0.buildIndex == gameObject.scene.buildIndex)
         {
-            DisplayPlant(i);
+            gameObject.SetActive(true);
         }
     }
 
-    public void Awake()
+    private void SceneManager_sceneUnloaded(Scene arg0)
     {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    public void DisplayPlant(int latestPlant) //call at the beginning once, if any
-    {
-        if(numOfPlants != -1)
+        if(arg0.buildIndex == gameObject.scene.buildIndex)
         {
-            GameObject spawnedPlant = Instantiate(plantsInPlot[numOfPlants].Item1);
-            spawnedPlant.transform.SetParent(this.transform, false);
-            spawnedPlant.transform.localPosition = plantsInPlot[numOfPlants].Item3;
-            spawnedPlant.TryGetComponent<PlantLogic>(out PlantLogic plantLogic);
-            plantLogic.setGrowthAmount(plantsInPlot[numOfPlants].Item4);
-            plantLogic.setGrowthRate(plantsInPlot[numOfPlants].Item5);
-            //below is common adjustments
-            spawnedPlant.transform.rotation = transform.rotation;
-            spawnedPlant.transform.localScale = new Vector3(0.3f, 2f, 0.3f);
-        }
-        else
-        {
-            Debug.Log("No plants currently on this plot");
+            gameObject.SetActive(false);
         }
     }
 
-    public void InsertPlant(GameObject plantAsset, Vector3 position)
+    public void InsertPlant(GameObject plantPrefab, Vector3 position) //trigger event from here instead of directly to manager, cause need relative position
     {
         //get relative position of plant with soil
-        Vector3 relativePosition = this.transform.InverseTransformPoint(position);
-        GameObject spawnedPlant = Instantiate(plantAsset); //this spawns the plant, name plantAsset is misleading
-        spawnedPlant.transform.localPosition = relativePosition;
-        spawnedPlant.TryGetComponent<PlantLogic>(out PlantLogic plantLogic);
-        plantsInPlot.Add(new Tuple<GameObject, PlantLogic, Vector3, float, float>(spawnedPlant, plantLogic, relativePosition, plantLogic.getGrowthAmount(), plantLogic.getGrowthRate()));
-        numOfPlants++;
+        GameObject spawnedPlant = Instantiate(plantPrefab);
+        spawnedPlant.transform.SetParent(transform);
+        spawnedPlant.transform.localPosition = transform.InverseTransformPoint(position);
+        spawnedPlant.transform.rotation = transform.rotation;
+        spawnedPlant.transform.localScale = new Vector3(0.3f, 2f, 0.3f);
     }
+
+    private void OnDestroy()
+    {
+        
+    }
+    /**
+    private void PlantManager_onSpawnPlants(GameObject plantPrefab, Dictionary<int, Tuple<Vector3, Vector3, float, float>> plantsToSpawn)
+    {
+        foreach (var plant in plantsToSpawn)
+        {
+            GameObject spawnedPlant = Instantiate(plantPrefab);
+            spawnedPlant.TryGetComponent<PlantLogic>(out PlantLogic plantLogic);
+            spawnedPlant.transform.SetParent(transform);
+            spawnedPlant.transform.localPosition = plant.Value.Item1;
+            spawnedPlant.transform.localScale = plant.Value.Item2;
+            plantLogic.setGrowthAmount(plant.Value.Item3);
+            plantLogic.setGrowthRate(plant.Value.Item4);
+
+        }
+    }
+    **/
 }
