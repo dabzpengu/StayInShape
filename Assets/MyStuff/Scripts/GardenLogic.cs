@@ -10,13 +10,25 @@ public class GardenLogic : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Garden Load");
         sceneName = gameObject.scene.name;
-        SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
-        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        gameObject.SetActive(true);
+        // Calculate actual distance
+
+        //SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+        //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        GardenUIBehaviourScript.onHomeButtonClicked += GardenUIBehaviourScript_onHomeButtonClicked;
+    }
+
+    private void GardenUIBehaviourScript_onHomeButtonClicked()
+    {
+        Debug.Log("event detected, garden disabled");
+        gameObject.SetActive(false);
     }
 
     private void Awake()
     {
+        gameObject.SetActive(true);
         DontDestroyOnLoad(transform.root);
     }
 
@@ -28,16 +40,16 @@ public class GardenLogic : MonoBehaviour
             gameObject.SetActive(true);
         }
     }
-
-    private void SceneManager_sceneUnloaded(Scene arg0)
+    /**
+    private void OnDisable()
     {
-        if (arg0.name == sceneName)
-        {
-            Debug.Log("unloooaaded");
-            gameObject.SetActive(false);
-        }
+        Debug.Log("Garden Disabled");
+        //if (arg0.name == sceneName)
+        //{
+        //gameObject.SetActive(false);
+        //}
     }
-
+    */
     private void Update()
     {
 

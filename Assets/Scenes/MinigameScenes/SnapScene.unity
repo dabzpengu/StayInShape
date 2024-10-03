@@ -5129,6 +5129,7 @@ MonoBehaviour:
   - entry.1232709143
   - entry.1031660944
   successSound: {fileID: 8300000, guid: 90b3e998d89cfeb4788dfed6b5b34110, type: 3}
+  failSound: {fileID: 8300000, guid: ed68e35b8607cef43a26108543e2c5d1, type: 3}
   drawBut: {fileID: 877438965}
   buyBut: {fileID: 888351247}
   deckList: 

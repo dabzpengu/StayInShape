@@ -42,6 +42,8 @@ public class SnapGameManager : MonoBehaviour
     String[] formIds;
     [SerializeField]
     AudioClip successSound;
+    [SerializeField]
+    AudioClip failSound;
     [SerializeField] GameObject drawBut;
     [SerializeField] GameObject buyBut;
 
@@ -98,6 +100,8 @@ public class SnapGameManager : MonoBehaviour
 
     private void incrementWrong()
     {
+        audioSource.clip = failSound;
+        audioSource.Play();
         //currentIndex++;
         deckDrawn = false;
         nWrongs++;

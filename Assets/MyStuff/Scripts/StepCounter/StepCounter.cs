@@ -62,6 +62,7 @@ public class StepCounter : MonoBehaviour
 
     private void OnDisable()
     {
+        Debug.Log("StepCounter disabled");
         playerData.SetSteps(stepCount);
         saveManager.Save();
     }
@@ -79,7 +80,7 @@ public class StepCounter : MonoBehaviour
         //{
         //    stepText.text = "DISABLED";
         //}
-        distanceText.text = GetDistanceWalked().ToString();
+        distanceText.text = GetStepCount().ToString();
     }
     // Checks if device's acceleration is above a particular threshold and adds the "stepCount" variable accordingly
     private void DetectSteps()
