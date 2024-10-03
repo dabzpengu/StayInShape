@@ -8,30 +8,22 @@ using UnityEngine.UIElements;
 
 public class PlotLogic : MonoBehaviour
 {
+    
     private void Awake()
     {
         DontDestroyOnLoad(transform.root);
     }
     private void Start()
     {
-        SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
-        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        gameObject.SetActive(true);
+        //ceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+        //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        GardenUIBehaviourScript.onHomeButtonClicked += GardenUIBehaviourScript_onHomeButtonClicked;
     }
 
-    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    private void GardenUIBehaviourScript_onHomeButtonClicked()
     {
-        if(arg0.buildIndex == gameObject.scene.buildIndex)
-        {
-            gameObject.SetActive(true);
-        }
-    }
-
-    private void SceneManager_sceneUnloaded(Scene arg0)
-    {
-        if(arg0.buildIndex == gameObject.scene.buildIndex)
-        {
-            gameObject.SetActive(false);
-        }
+        gameObject.SetActive(false);
     }
 
     public void InsertPlant(GameObject plantPrefab, Vector3 position) //trigger event from here instead of directly to manager, cause need relative position

@@ -41,7 +41,7 @@ public class MatchingCardsPrefab : MonoBehaviour
             instance.gameObject.name = "Card " + i.ToString();
             instance.transform.SetParent(transform);
         }
-        manager.SetupGame(transform, spawnRange, 1, nCards);
+        manager.SetupGame(transform, spawnRange, 7, nCards);
     }
 
     // Update is called once per frame

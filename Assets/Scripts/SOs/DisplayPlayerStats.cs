@@ -29,6 +29,10 @@ public class DisplayPlayerStats : MonoBehaviour
         {
             saveManager.Load();
         }
+    }
+
+    private void Update()
+    {
         fertilizerUI.text = playerData.GetFertilizer().ToString();
         waterUI.text = playerData.GetWater().ToString();
         expUI.text = playerData.GetExp().ToString();

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
+using System;
 
 public class GardenUIBehaviourScript : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class GardenUIBehaviourScript : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI waterUI;
     [SerializeField] TMPro.TextMeshProUGUI fertUI;
     [SerializeField] TMPro.TextMeshProUGUI stepsUI;
+
+    public static event Action onHomeButtonClicked;
 
     private GardenLogic gardenLogic;
     private Component equippedItem;
@@ -64,6 +67,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
         if(player.GetSteps() >= 200)
         {
             player.SetSteps(player.GetSteps() - 200);
+            player.SetCrop(1);
             saveManager.Save();
         }
     }
@@ -90,7 +94,9 @@ public class GardenUIBehaviourScript : MonoBehaviour
     public void BackHome()
     {
         SceneManager.LoadScene(0);
+        onHomeButtonClicked?.Invoke();
     }
+
 
     public void UpdateItem(Transform item)
     {
