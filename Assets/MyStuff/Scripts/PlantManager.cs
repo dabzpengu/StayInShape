@@ -1,18 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-//KIV THIS ENTIRE CLASS :")
 public class PlantManager : MonoBehaviour
 {
     public static PlantManager instance;
-    private Dictionary<int, Tuple<Vector3, Vector3, float, float>> plantsInPlot = new Dictionary<int, Tuple<Vector3, Vector3, float, float>>();
-    public static bool gardenSpawned = false;
-    public static event Action<GameObject, Dictionary<int, Tuple<Vector3, Vector3, float, float>>> onSpawnPlants;
 
     [SerializeField] GameObject plantPrefab; //this is actually chilli
+    [SerializeField] private PlayerDataSO player;
+    [SerializeField] private SaveManagerSO saveManager;
 
     // Ensures PlantManager persists between scenes
     void Awake()
@@ -21,6 +20,7 @@ public class PlantManager : MonoBehaviour
         {
             Debug.Log("new manager");
             instance = this;
+            saveManager.Load();
             DontDestroyOnLoad(gameObject); // Make persistent between scenes
         }
         else
@@ -31,11 +31,16 @@ public class PlantManager : MonoBehaviour
 
     private void Start()
     {
-        onSpawnPlants?.Invoke(plantPrefab, plantsInPlot);
+
     }
     public GameObject getPlantPrefab()
     {
         return plantPrefab;
+    }
+
+    public List<PlantData> GetPlants()
+    {
+        return player.GetPlants();
     }
 
     public PlantManager getManager()
@@ -48,15 +53,14 @@ public class PlantManager : MonoBehaviour
 
     }
 
-    public void InsertPlant(Vector3 position, Vector3 scale,  int plantID, float amount, float rate)
+    public void ResetPlants()
     {
-        plantsInPlot.Add(plantID, Tuple.Create(position, scale, amount, rate));
+        player.ResetPlants();
+        saveManager.Save();
     }
-
-    /**
-    public LinkedList<GameObject> GetPlantList()
+    public void InsertPlant(PlantData plantData)
     {
-        return this.plantList;
+        player.SetPlant(plantData);
+        saveManager.Save();
     }
-    **/
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using System;
 
 public class MainMenuEvents : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class MainMenuEvents : MonoBehaviour
 
     private AudioSource _audioSource;
 
+    public static event Action onGardenButtonClicked;
     [SerializeField] PlayerDataSO player;
 
     private void Awake()
@@ -60,7 +62,7 @@ public class MainMenuEvents : MonoBehaviour
     private void OnMyGardenClick(ClickEvent evt)
     {
         Debug.Log("You pressed the My Garden Button");
-
+        onGardenButtonClicked?.Invoke();
         SceneManager.LoadScene("GardenScene");
     }
 

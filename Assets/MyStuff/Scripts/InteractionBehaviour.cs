@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 public class InteractionBehaviour : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class InteractionBehaviour : MonoBehaviour
     [SerializeField] SaveManagerSO saveManager;
     DefaultInputActions actions;
 
+
     private void Awake()
     {
         actions = new DefaultInputActions();
@@ -22,6 +24,7 @@ public class InteractionBehaviour : MonoBehaviour
     }
     private void OnDestroy()
     {
+        Debug.Log("InteractionBehaviour destroyed");
         actions.Disable();
     }
 

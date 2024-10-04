@@ -73,7 +73,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
     }
     public void InsertPlant()
     {
-        if(reticleBehaviour.getTransform() == null)
+        if (reticleBehaviour.getTransform() == null)
         {
             Debug.Log("You are too far from the soil to insert plant");
         }

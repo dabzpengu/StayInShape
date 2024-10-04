@@ -2,15 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class PlantLogic : MonoBehaviour
 {
-    private static int numOfPlants = -1; //not used for alpha
-    //[SerializeField] GameObject selected;
     [SerializeField] private GameObject stage1;
     [SerializeField] private GameObject stage2;
     [SerializeField] private GameObject stage3;
@@ -27,7 +27,6 @@ public class PlantLogic : MonoBehaviour
     private float warning_threshold = 90f;
     private float wither_threshold = 120f;
 
-    private int plantID;
     private float growthAmount = 0f;
     private float growthRate = 1f;
     private float witherTime = 0f;
@@ -36,21 +35,13 @@ public class PlantLogic : MonoBehaviour
     private void Awake()
     {
         gameObject.SetActive(true);
-        DontDestroyOnLoad(gameObject);
-        numOfPlants++;//not used for alpha
-        plantID = numOfPlants; //not used for alpha
+        
     }
 
     private void Start()
     {
         //SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
         //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
-        GardenUIBehaviourScript.onHomeButtonClicked += GardenUIBehaviourScript_onHomeButtonClicked;
-    }
-
-    private void GardenUIBehaviourScript_onHomeButtonClicked()
-    {
-       gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,7 +49,6 @@ public class PlantLogic : MonoBehaviour
     {
         growthAmount += Time.deltaTime * growthRate;
         witherTime += Time.deltaTime;
-        Debug.Log(witherTime);
         if (witherTime > warning_threshold && witherTime < wither_threshold && !isWithered)
         {
             warning.SetActive(true);
@@ -71,7 +61,6 @@ public class PlantLogic : MonoBehaviour
         {
             isWithered = true;
             warning.SetActive(false);
-            Debug.Log("WITHERED!");
             if (stage1.activeSelf)
             {
                 stage1.SetActive(false);
@@ -207,9 +196,24 @@ public class PlantLogic : MonoBehaviour
     {
         this.growthRate = growthRate;
     }
+
+    public float getWither()
+    {
+        return witherTime;
+    }
+
+    public void setWither(float witherTime)
+    {
+        this.witherTime = witherTime;
+    }
+
+    public PlantData ToPlantData()
+    {
+        return new PlantData(DateTime.Now, transform.localPosition, growthAmount, growthRate, witherTime);
+    }
     private void OnDestroy()
     {
-        //PlantManager.instance.InsertPlant(transform.localPosition,transform.localScale, plantID, growthAmount, growthRate);
+        PlantManager.instance.InsertPlant(this.ToPlantData());
     }
 
 }

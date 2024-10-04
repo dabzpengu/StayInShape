@@ -8,13 +8,15 @@ using UnityEngine.UIElements;
 
 public class PlotLogic : MonoBehaviour
 {
-    
+    List<PlantData> plants;
     private void Awake()
     {
-        DontDestroyOnLoad(transform.root);
+
     }
     private void Start()
     {
+        plants = PlantManager.instance.GetPlants();
+        LoadPlants();
         gameObject.SetActive(true);
         //ceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
         //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
@@ -26,14 +28,35 @@ public class PlotLogic : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void InsertPlant(GameObject plantPrefab, Vector3 position) //trigger event from here instead of directly to manager, cause need relative position
+    public void InsertPlant(GameObject plantPrefab, Vector3 position)
     {
         //get relative position of plant with soil
+        Debug.Log("Insert Here");
         GameObject spawnedPlant = Instantiate(plantPrefab);
         spawnedPlant.transform.SetParent(transform);
         spawnedPlant.transform.localPosition = transform.InverseTransformPoint(position);
         spawnedPlant.transform.rotation = transform.rotation;
         spawnedPlant.transform.localScale = new Vector3(0.3f, 2f, 0.3f);
+    }
+
+    public void LoadPlants()
+    {
+        foreach (var plant in plants)
+        {
+            GameObject spawnedPlant = Instantiate(PlantManager.instance.getPlantPrefab());
+            spawnedPlant.transform.SetParent(transform);
+            TimeSpan elapsedTime = DateTime.Now - plant.plantedTime;
+            float elapsedSeconds = (float)elapsedTime.TotalSeconds;
+            spawnedPlant.transform.localPosition = plant.position;
+            spawnedPlant.transform.rotation = transform.rotation;
+            spawnedPlant.transform.localScale = new Vector3(0.3f, 2f, 0.3f);
+            spawnedPlant.TryGetComponent<PlantLogic>(out PlantLogic plantLogic);
+            plantLogic.setGrowthAmount(plant.growthAmount + elapsedSeconds);
+            plantLogic.setGrowthRate(plant.growthRate);
+            plantLogic.setWither(plant.witherTime + elapsedSeconds);
+            plants.Remove(plant);
+        }
+        PlantManager.instance.ResetPlants();
     }
 
     private void OnDestroy()
