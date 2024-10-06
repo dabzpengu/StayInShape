@@ -81,12 +81,7 @@ public class PlayerDataSO : SavableSO
     public void SetPlant(PlantData plantData)
     {
         plants.Add(plantData);
-            
-    }
-
-    public void ResetPlants()
-    {
-        plants.Clear();
+        Debug.Log("You have saved " + plants.Count + " plants now");
     }
     // Snap
     public String GetSnapTimer() { return snapTimer; }

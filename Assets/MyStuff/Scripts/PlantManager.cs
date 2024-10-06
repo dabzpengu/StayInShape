@@ -53,11 +53,7 @@ public class PlantManager : MonoBehaviour
 
     }
 
-    public void ResetPlants()
-    {
-        player.ResetPlants();
-        saveManager.Save();
-    }
+
     public void InsertPlant(PlantData plantData)
     {
         player.SetPlant(plantData);
