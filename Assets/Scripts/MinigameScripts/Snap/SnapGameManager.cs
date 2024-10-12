@@ -103,6 +103,8 @@ public class SnapGameManager : MonoBehaviour
         audioSource.clip = failSound;
         audioSource.Play();
         //currentIndex++;
+        audioSource.clip = failSound;
+        audioSource.Play();
         deckDrawn = false;
         nWrongs++;
         updateTextUI(); // Edge case where UI does not update when the game ends after timer runs out. Otherwise, MoveCardsOut handles UI updates too
