@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class PlotLogic : MonoBehaviour
 {
+
+    const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm";
     List<PlantData> plants;
     private void Awake()
     {
@@ -15,7 +17,6 @@ public class PlotLogic : MonoBehaviour
     }
     private void Start()
     {
-        plants = PlantManager.instance.GetPlants();
         LoadPlants();
         gameObject.SetActive(true);
         //ceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
@@ -41,11 +42,12 @@ public class PlotLogic : MonoBehaviour
 
     public void LoadPlants()
     {
+        plants = PlantManager.instance.GetPlants();
         foreach (var plant in plants)
         {
             GameObject spawnedPlant = Instantiate(PlantManager.instance.getPlantPrefab());
             spawnedPlant.transform.SetParent(transform);
-            TimeSpan elapsedTime = DateTime.Now - plant.plantedTime;
+            TimeSpan elapsedTime = DateTime.Now - DateTime.ParseExact(plant.plantedTime, DATETIME_FORMAT, null);
             float elapsedSeconds = (float)elapsedTime.TotalSeconds;
             spawnedPlant.transform.localPosition = plant.position;
             spawnedPlant.transform.rotation = transform.rotation;
@@ -54,9 +56,10 @@ public class PlotLogic : MonoBehaviour
             plantLogic.setGrowthAmount(plant.growthAmount + elapsedSeconds);
             plantLogic.setGrowthRate(plant.growthRate);
             plantLogic.setWither(plant.witherTime + elapsedSeconds);
-            plants.Remove(plant);
+            Debug.Log("Spawned a plant with position " + plant.position + " with elapsed time " + elapsedTime + " wither time " + plant.witherTime);
+            //plants.Remove(plant);
         }
-        PlantManager.instance.ResetPlants();
+        //PlantManager.instance.ResetPlants();
     }
 
     private void OnDestroy()

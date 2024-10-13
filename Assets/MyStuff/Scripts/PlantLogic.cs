@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class PlantLogic : MonoBehaviour
 {
+    const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm";
     [SerializeField] private GameObject stage1;
     [SerializeField] private GameObject stage2;
     [SerializeField] private GameObject stage3;
@@ -209,7 +210,7 @@ public class PlantLogic : MonoBehaviour
 
     public PlantData ToPlantData()
     {
-        return new PlantData(DateTime.Now, transform.localPosition, growthAmount, growthRate, witherTime);
+        return new PlantData(DateTime.Now.ToString(DATETIME_FORMAT), transform.localPosition, growthAmount, growthRate, witherTime);
     }
     private void OnDestroy()
     {
