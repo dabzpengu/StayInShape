@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 public class InteractionBehaviour : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class InteractionBehaviour : MonoBehaviour
     [SerializeField] SaveManagerSO saveManager;
     DefaultInputActions actions;
 
+
     private void Awake()
     {
         actions = new DefaultInputActions();
@@ -22,6 +24,7 @@ public class InteractionBehaviour : MonoBehaviour
     }
     private void OnDestroy()
     {
+        Debug.Log("InteractionBehaviour destroyed");
         actions.Disable();
     }
 
@@ -50,39 +53,54 @@ public class InteractionBehaviour : MonoBehaviour
             {
                 //logic if player taps a plant AND reticle is on plant (kiv, a bit unintuitive)
                 if ((hit.transform.TryGetComponent<PlantLogic>(out PlantLogic plant) && reticleHoveringOn.TryGetComponent<PlantLogic>(out PlantLogic aimedPlant)))
-                { 
-                    if (gardenUIBehaviour.getEquipped() != null)
+                {
+                    if (plant.HarvestPlant())
                     {
-                        if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
-                        {
-                            if (player.GetFertilizer() >= 1)
-                            {
-                                plant.Insert(gardenUIBehaviour.getEquipped());
-                                plant.getStatus();
-                                player.SetFertilizer(player.GetFertilizer() - 1);
-                                saveManager.Save();
-                            } else
-                            {
-                                Debug.Log("No water");
-                            }
-                        }
-                        else if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
-                        {
-                            if (player.GetWater() >= 1)
-                            {
-                                plant.Insert(gardenUIBehaviour.getEquipped());
-                                plant.getStatus();
-                                player.SetWater(player.GetWater() - 1);
-                                saveManager.Save();
-                            } else
-                            {
-                                Debug.Log("No fertilizer");
-                            }
-                        }
+                        Debug.Log("200xp gained!");
+                        player.SetExp(200);
+                        saveManager.Save();
                     }
                     else
                     {
-                        plant.getStatus();
+                        if (gardenUIBehaviour.getEquipped() != null)
+                        {
+                            if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
+                            {
+                                if (player.GetFertilizer() >= 1)
+                                {
+                                    if (plant.Insert(gardenUIBehaviour.getEquipped()))
+                                    {
+                                        plant.getStatus();
+                                        player.SetFertilizer(player.GetFertilizer() - 1);
+                                        saveManager.Save();
+                                    }
+                                }
+                                else
+                                {
+                                    Debug.Log("No fertilizer");
+                                }
+                            }
+                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
+                            {
+                                if (player.GetWater() >= 1)
+                                {
+                                    if (plant.Insert(gardenUIBehaviour.getEquipped()))
+                                    {
+                                        plant.getStatus();
+                                        player.SetWater(player.GetWater() - 1);
+                                        saveManager.Save();
+                                    }
+                                }
+                                else
+                                {
+                                    Debug.Log("No water");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("nothing equipped");
+                        }
                     }
                 }
                 else

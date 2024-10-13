@@ -11,8 +11,11 @@ public class StepCounter : MonoBehaviour
 {
     // Variables
     public TMP_Text distanceText;
-    public float threshold = 1f;
+    public float threshold = 5f;
     public float stepLength = 0.75f;
+    private float timer = 0.0f;
+    private float stepDelay = 0.5f;
+
     [SerializeField]
     public SaveManagerSO saveManager;
     [SerializeField]
@@ -59,12 +62,14 @@ public class StepCounter : MonoBehaviour
 
     private void OnDisable()
     {
+        Debug.Log("StepCounter disabled");
         playerData.SetSteps(stepCount);
         saveManager.Save();
     }
 
     private void Update()
     {
+        timer += Time.deltaTime;
         DetectSteps();
         CalculateDistance();
         //if (Accelerometer.current != null)
@@ -75,15 +80,16 @@ public class StepCounter : MonoBehaviour
         //{
         //    stepText.text = "DISABLED";
         //}
-        distanceText.text = GetDistanceWalked().ToString();
+        distanceText.text = GetStepCount().ToString();
     }
     // Checks if device's acceleration is above a particular threshold and adds the "stepCount" variable accordingly
     private void DetectSteps()
     {
         acceleration = Accelerometer.current.acceleration.ReadValue();
         float delta = (acceleration - prevAcceleration).magnitude;
-        if (delta > threshold)
+        if (delta > threshold && timer > stepDelay)
         {
+            timer = 0.0f;
             stepCount++;
             Debug.Log($"Step detected! Count: {stepCount}");
         }

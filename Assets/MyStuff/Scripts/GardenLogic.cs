@@ -1,38 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR.ARCore;
+using UnityEngine.XR.ARFoundation;
 
 public class GardenLogic : MonoBehaviour
 {
     private PlotLogic plotLogic;
+    private string sceneName;
 
     private void Start()
     {
-        /**
-        currPosition.z += 3;
-        transform.position = currPosition;
-        **/
+        // Calculate actual distance
     }
+
 
     private void Awake()
     {
-        PlantManager.gardenSpawned = true;
-        /**
-        plotLogic = FindObjectOfType<PlotLogic>();
-        plantManager = FindObjectOfType<PlantManager>();
-        if( plantManager != null)
-        {
-            LinkedList<GameObject> plantList = plantManager.GetPlantList();
-            foreach (var item in plantList)
-            {
-                PlantLogic plant = item.GetComponent<PlantLogic>();
-                plotLogic.InsertPlant(item, plant.soilPosition);
-                
-            }
-        }
-        **/
-    }
 
+    }
+    /**
+    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        Debug.Log("Scene Loaded");
+        if (arg0.name == sceneName)
+        {
+            gameObject.SetActive(true);
+        }
+    }
+    private void OnDisable()
+    {
+        Debug.Log("Garden Disabled");
+        //if (arg0.name == sceneName)
+        //{
+        //gameObject.SetActive(false);
+        //}
+    }
+    */
     private void Update()
     {
 
@@ -40,7 +45,6 @@ public class GardenLogic : MonoBehaviour
 
     void OnDestroy()
     {
-        Debug.Log("Garden destroyed");
-        PlantManager.gardenSpawned = false;
+        
     }
 }

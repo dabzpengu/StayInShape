@@ -1,38 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\repos\\StayInShape\\",
+  "WorkspaceRootPath": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\repos\\stayinshape\\assets\\mystuff\\scripts\\plantlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plantlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\PlantLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\plantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\SOs\\PlayerDataSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SOs\\PlayerDataSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\gardenlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\gardenlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlotLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\PlotLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\plotlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plotlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\PlantManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\interactionbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\interactionbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\GardenLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\reticlebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\reticlebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\PlantData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\fertiliserlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\fertiliserlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\FertiliserLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\FertiliserLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\MainMenuEvents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MainMenuEvents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,109 +54,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "PlantData.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantData.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlantData.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantData.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlantData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T08:15:35.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GardenLogic.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenLogic.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenLogic.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenLogic.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenLogic.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\GardenLogic.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T16:28:19.174Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlotLogic.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlotLogic.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlotLogic.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlotLogic.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlotLogic.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T16:29:09.48Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlantManager.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantManager.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlantManager.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantManager.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlantManager.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwCQAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T17:32:42.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FertiliserLogic.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\FertiliserLogic.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\FertiliserLogic.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\FertiliserLogic.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\FertiliserLogic.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T13:13:20.382Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "PlantLogic.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantLogic.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlantLogic.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantLogic.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantLogic.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlantLogic.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAwwDkAAAAkAAAA",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T19:17:23.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReticleBehaviour.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAA5wCMAAABAAAAA",
+              "DocumentIndex": 3,
+              "Title": "PlantManager.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlantManager.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantManager.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlantManager.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAgwDUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:05:25.66Z",
+              "WhenOpened": "2024-09-11T17:32:42.508Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InteractionBehaviour.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAwAAAAgAAAA",
+              "DocumentIndex": 1,
+              "Title": "PlayerDataSO.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\SOs\\PlayerDataSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SOs\\PlayerDataSO.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\SOs\\PlayerDataSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SOs\\PlayerDataSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T08:38:48.848Z",
+              "WhenOpened": "2024-10-02T17:41:20.12Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "GardenUIBehaviourScript.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwDMAAAAJAAAA",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwFIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T14:00:16.654Z"
+              "WhenOpened": "2024-08-22T14:00:16.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FertiliserLogic.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\FertiliserLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\FertiliserLogic.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\FertiliserLogic.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\FertiliserLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T13:13:20.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReticleBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwCMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T14:05:25.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InteractionBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAABsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T08:38:48.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlotLogic.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlotLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlotLogic.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlotLogic.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlotLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T16:29:09.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainMenuEvents.cs",
+              "DocumentMoniker": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\MainMenuEvents.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenuEvents.cs",
+              "ToolTip": "C:\\Users\\ripki\\OneDrive\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\MainMenuEvents.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MainMenuEvents.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwEAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:37:10.686Z"
             }
           ]
         }

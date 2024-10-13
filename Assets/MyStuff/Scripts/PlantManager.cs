@@ -1,23 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 public class PlantManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    //private LinkedList<GameObject> plantList = new LinkedList<GameObject>();
-    private static PlantManager instance;
-    public static bool gardenSpawned = false;
-    public static event Action onGardenSpawned;
-    public static event Action onGardenDestroyed;
+    public static PlantManager instance;
 
-    // Ensures PlantManager persists between scenes (optional)
+    [SerializeField] GameObject plantPrefab; //this is actually chilli
+    [SerializeField] private PlayerDataSO player;
+    [SerializeField] private SaveManagerSO saveManager;
+
+    // Ensures PlantManager persists between scenes
     void Awake()
     {
         if (instance == null)
         {
+            Debug.Log("new manager");
             instance = this;
+            saveManager.Load();
             DontDestroyOnLoad(gameObject); // Make persistent between scenes
         }
         else
@@ -26,26 +29,34 @@ public class PlantManager : MonoBehaviour
         }
     }
 
-    public void AddPlant(GameObject newPlant)
+    private void Start()
     {
-        //plantList.AddLast(newPlant); // Add the new plant to the end of the list
+
+    }
+    public GameObject getPlantPrefab()
+    {
+        return plantPrefab;
+    }
+
+    public List<PlantData> GetPlants()
+    {
+        return player.GetPlants();
+    }
+
+    public PlantManager getManager()
+    {
+        return instance;
     }
 
     private void Update()
     {
-        if (gardenSpawned)
-        {  
-            onGardenSpawned?.Invoke();
-        }
-        else
-        {
-            onGardenDestroyed?.Invoke();
-        }
+
     }
-    /**
-    public LinkedList<GameObject> GetPlantList()
+
+
+    public void InsertPlant(PlantData plantData)
     {
-        return this.plantList;
+        player.SetPlant(plantData);
+        saveManager.Save();
     }
-    **/
 }

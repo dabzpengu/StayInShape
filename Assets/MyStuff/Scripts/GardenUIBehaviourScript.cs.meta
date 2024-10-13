@@ -3,7 +3,15 @@ guid: 1aaf3aac8cad0c542a2773111f6f4609
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - insertPlantButton: {instanceID: 0}
+  - homeButton: {instanceID: 0}
+  - plantAsset: {instanceID: 0}
+  - reticleBehaviour: {instanceID: 0}
+  - itemImage: {instanceID: 0}
+  - defaultImage: {instanceID: 0}
+  - waterImage: {instanceID: 0}
+  - fertiliserImage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
