@@ -39,6 +39,11 @@ public class PlantManager : MonoBehaviour
         return chilliPrefab;
     }
 
+    public GameObject getLoofaPrefab()
+    {
+        return luffaPrefab;
+    }
+
     public List<PlantData> GetPlants()
     {
         return player.GetPlants();

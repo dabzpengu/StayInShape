@@ -12,10 +12,15 @@ public class GardenUIEvents : MonoBehaviour
     private Button _button2;
     private Button _button3;
     private Button _button4;
+    private Button _button5;
 
     private VisualElement resourceTracker;
     public Sprite originalSprite;
     public Sprite newSprite;
+    public Sprite waterSprite;
+    public Sprite fertilizerSprite;
+    public Sprite chilliSprite;
+    public Sprite loofaSprite;
     private bool isOriginal = true;
 
     private VisualElement popUp;
@@ -33,20 +38,19 @@ public class GardenUIEvents : MonoBehaviour
         _button1 = _document.rootVisualElement.Q("BackButton") as Button;
         _button1.RegisterCallback<ClickEvent>(OnBackButtonClick);
 
-<<<<<<< HEAD
 
-        _button3 = _document.rootVisualElement.Q("TakePhotoButton") as Button;
-        _button3.RegisterCallback<ClickEvent>(OnTakePhotoClick);
-=======
         _button2 = _document.rootVisualElement.Q("TakePhotoButton") as Button;
         _button2.RegisterCallback<ClickEvent>(OnTakePhotoClick);
->>>>>>> 7b4ef36a8ec177e9a2ff4eda828d9127b1e413fb
+
         
         _button3 = _document.rootVisualElement.Q("CareBookButton") as Button;
         _button3.RegisterCallback<ClickEvent>(OnCareBookClick);
 
         _button4 = _document.rootVisualElement.Q("ShopButton") as Button;
         _button4.RegisterCallback<ClickEvent>(OnShopClick);
+
+        _button5 = _document.rootVisualElement.Q("PickItem") as Button;
+        _button5.RegisterCallback<ClickEvent>(OnPickItem);
 
         resourceTracker = _document.rootVisualElement.Q("ResourceTracker") as VisualElement;
         resourceTracker.RegisterCallback<ClickEvent>(OnResourceTrackerClick);
@@ -66,18 +70,12 @@ public class GardenUIEvents : MonoBehaviour
     private void OnDisable()
     {
         _button1.UnregisterCallback<ClickEvent>(OnBackButtonClick);
-<<<<<<< HEAD
-        _button3.UnregisterCallback<ClickEvent>(OnTakePhotoClick);
-        _button4.UnregisterCallback<ClickEvent>(OnCareBookClick);
-        _button5.UnregisterCallback<ClickEvent>(OnShopClick);
-=======
         _button2.UnregisterCallback<ClickEvent>(OnTakePhotoClick);
         _button3.UnregisterCallback<ClickEvent>(OnCareBookClick);
         _button4.UnregisterCallback<ClickEvent>(OnShopClick);
+        _button5.UnregisterCallback<ClickEvent>(OnPickItem);
         resourceTracker.UnregisterCallback<ClickEvent>(OnResourceTrackerClick);
         popUp.UnregisterCallback<ClickEvent>(OnPopUpClick);
-
->>>>>>> 7b4ef36a8ec177e9a2ff4eda828d9127b1e413fb
 
         for (int i = 0; i < _menuButtons.Count; i++)
         {
@@ -90,6 +88,17 @@ public class GardenUIEvents : MonoBehaviour
         Debug.Log("You pressed Back Button");
 
         SceneManager.LoadScene("HomeScene");
+    }
+
+    private void OnPickItem(ClickEvent evt)
+    {
+        Debug.Log("You are using an equipped item");
+        UpdatePickButton(null);
+    }
+
+    private void UpdatePickButton(GameObject item)
+    {
+        _button5.style.backgroundImage = chilliSprite.texture;
     }
 
     private void OnTakePhotoClick(ClickEvent evt)

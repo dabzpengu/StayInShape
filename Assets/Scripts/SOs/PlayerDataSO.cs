@@ -13,7 +13,8 @@ public class PlayerDataSO : SavableSO
     private int water = 0;
     private int steps = 200;
     private int exp = 0;
-    private int crop = 3;
+    private int chillicrop = 3;
+    private int loofacrop = 3;
     private List<PlantData> plants = new List<PlantData>();
     private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again
     private String matchingCardTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the matching cards minigame again
@@ -65,14 +66,24 @@ public class PlayerDataSO : SavableSO
         this.exp += newExpValue;
     }
     //garden
-    public int GetCrop()
+    public int GetChilliCrop()
     {
-        return crop;
+        return chillicrop;
     }
 
-    public void SetCrop(int newCropValue)
+    public void SetChilliCrop(int newCropValue)
     {
-        this.crop += newCropValue;
+        this.chillicrop += newCropValue;
+    }
+
+    public int GetLoofaCrop()
+    {
+        return loofacrop;
+    }
+
+    public void SetLoofaCrop(int newCropValue)
+    {
+        this.loofacrop += newCropValue;
     }
 
     public List<PlantData> GetPlants()
@@ -147,7 +158,8 @@ public class PlayerDataSO : SavableSO
             water = this.water,
             steps = this.steps,
             exp = this.exp,
-            crop = this.crop,
+            chillicrop = this.chillicrop,
+            loofacrop = this.loofacrop,
             plants = this.plants,
             snapTimer = this.snapTimer,
             matchingCardTimer = this.matchingCardTimer,
@@ -166,7 +178,8 @@ public class PlayerDataSO : SavableSO
         water = loadedObject.water;
         steps = loadedObject.steps;
         exp = loadedObject.exp;
-        crop = loadedObject.crop;
+        loofacrop = loadedObject.loofacrop;
+        chillicrop = loadedObject.chillicrop;
         plants = loadedObject.plants;
         snapTimer = loadedObject.snapTimer;
         matchingCardTimer = loadedObject.matchingCardTimer;
@@ -183,7 +196,8 @@ public class PlayerDataSO : SavableSO
         public int water;
         public int steps;
         public int exp;
-        public int crop;
+        public int chillicrop;
+        public int loofacrop;
         public List<PlantData> plants;
         public String snapTimer;
         public String matchingCardTimer;

@@ -40,7 +40,7 @@ public class InteractionBehaviour : MonoBehaviour
         }
         if (actions.UI.Click.WasPressedThisFrame())
         {
-            if(reticleBehaviour.getTransform() == null)
+            if (reticleBehaviour.getTransform() == null)
             {
                 Debug.Log("You are too far");
                 return;
@@ -58,6 +58,7 @@ public class InteractionBehaviour : MonoBehaviour
                     {
                         Debug.Log("200xp gained!");
                         player.SetExp(200);
+                        player.SetChilliCrop(1);
                         saveManager.Save();
                     }
                     else
@@ -99,6 +100,62 @@ public class InteractionBehaviour : MonoBehaviour
                             else if (gardenUIBehaviour.getEquipped().GetType() == typeof(TrowelLogic))
                             {
                                 plant.DestroyPlant();
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("nothing equipped");
+                        }
+                    }
+                }
+                else if((hit.transform.TryGetComponent<LoofaLogic>(out LoofaLogic loofa) && reticleHoveringOn.TryGetComponent<LoofaLogic>(out LoofaLogic aimedLoofa)))
+                {
+                    if (loofa.HarvestPlant())
+                    {
+                        Debug.Log("500xp gained!");
+                        player.SetExp(500);
+                        player.SetLoofaCrop(1);
+                        saveManager.Save();
+                    }
+                    else
+                    {
+                        if (gardenUIBehaviour.getEquipped() != null)
+                        {
+                            if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
+                            {
+                                if (player.GetFertilizer() >= 1)
+                                {
+                                    if (loofa.Insert(gardenUIBehaviour.getEquipped()))
+                                    {
+                                        loofa.getStatus();
+                                        player.SetFertilizer(player.GetFertilizer() - 1);
+                                        saveManager.Save();
+                                    }
+                                }
+                                else
+                                {
+                                    Debug.Log("No fertilizer");
+                                }
+                            }
+                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
+                            {
+                                if (player.GetWater() >= 1)
+                                {
+                                    if (loofa.Insert(gardenUIBehaviour.getEquipped()))
+                                    {
+                                        loofa.getStatus();
+                                        player.SetWater(player.GetWater() - 1);
+                                        saveManager.Save();
+                                    }
+                                }
+                                else
+                                {
+                                    Debug.Log("No water");
+                                }
+                            }
+                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(TrowelLogic))
+                            {
+                                loofa.DestroyPlant();
                             }
                         }
                         else

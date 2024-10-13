@@ -1,14 +1,41 @@
 {
   "Version": 1,
-<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\repos\\StayInShape\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\plantlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\plotlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plotlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\plantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\scripts\\gardenuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gardenuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\interactionbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\interactionbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\repos\\stayinshape\\assets\\mystuff\\scripts\\loofalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\loofalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\reticlebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\reticlebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\repos\\stayinshape\\assets\\mystuff\\scripts\\plantlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plantlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\repos\\stayinshape\\assets\\scripts\\sos\\playerdataso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\scripts\\sos\\playerdataso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sos\\playerdataso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -20,43 +47,8 @@
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plantdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\trowellogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\trowellogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\plantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\plotlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\plotlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\interactionbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\interactionbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\repos\\StayInShape\\assets\\mystuff\\scripts\\reticlebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\reticlebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-  "WorkspaceRootPath": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\trlfr\\desktop\\nus_folders\\modslides\\ay2425_sem1\\cs4350\\stayinshape\\assets\\mystuff\\scripts\\chickeninvaderar\\chickeninvadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\chickeninvaderar\\chickeninvadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\trlfr\\desktop\\nus_folders\\modslides\\ay2425_sem1\\cs4350\\stayinshape\\assets\\scripts\\minigamescripts\\snap\\snapgamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\minigamescripts\\snap\\snapgamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\trlfr\\desktop\\nus_folders\\modslides\\ay2425_sem1\\cs4350\\stayinshape\\assets\\mystuff\\scripts\\matchingcardar\\matchingcardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\matchingcardar\\matchingcardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> 7b4ef36a8ec177e9a2ff4eda828d9127b1e413fb
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\repos\\StayInShape\\assets\\trowellogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\trowellogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,12 +58,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-<<<<<<< HEAD
+              "DocumentIndex": 5,
+              "Title": "LoofaLogic.cs",
+              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\LoofaLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\LoofaLogic.cs",
+              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\LoofaLogic.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\LoofaLogic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAN0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T22:40:42.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "GardenUIEvents.cs",
+              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\Scripts\\GardenUIEvents.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GardenUIEvents.cs",
+              "ToolTip": "C:\\repos\\StayInShape\\Assets\\Scripts\\GardenUIEvents.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GardenUIEvents.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAwwF8AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T20:18:30.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "PlantData.cs",
               "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantData.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlantData.cs",
@@ -83,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "TrowelLogic.cs",
               "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\TrowelLogic.cs",
               "RelativeDocumentMoniker": "Assets\\TrowelLogic.cs",
@@ -95,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "GardenLogic.cs",
               "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenLogic.cs",
@@ -107,56 +124,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "PlotLogic.cs",
               "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlotLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlotLogic.cs",
               "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlotLogic.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlotLogic.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAwwCwAAABDAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwEkAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T16:29:09.48Z"
+              "WhenOpened": "2024-08-28T16:29:09.48Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "PlantLogic.cs",
               "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlantLogic.cs",
               "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantLogic.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlantLogic.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAgAAAA",
+              "ViewState": "AQIAAMsAAAAAAAAAAAAswOQAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T19:17:23.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "PlantManager.cs",
               "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlantManager.cs",
               "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantManager.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\PlantManager.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAwwBgAAAAfAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwCkAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T17:32:42.508Z"
+              "WhenOpened": "2024-09-11T17:32:42.508Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "InteractionBehaviour.cs",
               "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
               "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAwwGQAAAA1AAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAwwAcAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T08:38:48.848Z"
+              "WhenOpened": "2024-08-27T08:38:48.848Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "ReticleBehaviour.cs",
               "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
@@ -164,70 +184,33 @@
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwCIAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:05:25.66Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GardenUIBehaviourScript.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwEsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T14:00:16.654Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlayerDataSO.cs",
-              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\Scripts\\SOs\\PlayerDataSO.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SOs\\PlayerDataSO.cs",
-              "ToolTip": "C:\\repos\\StayInShape\\Assets\\Scripts\\SOs\\PlayerDataSO.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SOs\\PlayerDataSO.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwKgAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T17:41:20.12Z",
-              "EditorCaption": ""
-=======
-              "DocumentIndex": 1,
-              "Title": "SnapGameManager.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\Scripts\\MinigameScripts\\Snap\\SnapGameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MinigameScripts\\Snap\\SnapGameManager.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\Scripts\\MinigameScripts\\Snap\\SnapGameManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MinigameScripts\\Snap\\SnapGameManager.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAkwNsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T16:12:19.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MatchingCardManager.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardManager.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardManager.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardManager.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T16:06:46.378Z",
+              "WhenOpened": "2024-08-27T14:05:25.66Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ChickenInvaderManager.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderManager.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderManager.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderManager.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderManager.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAtwCsAAABAAAAAAAAAAA==",
+              "Title": "GardenUIBehaviourScript.cs",
+              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
+              "ToolTip": "C:\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T15:57:35.371Z",
+              "WhenOpened": "2024-08-22T14:00:16.654Z",
               "EditorCaption": ""
->>>>>>> 7b4ef36a8ec177e9a2ff4eda828d9127b1e413fb
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerDataSO.cs",
+              "DocumentMoniker": "C:\\repos\\StayInShape\\Assets\\Scripts\\SOs\\PlayerDataSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SOs\\PlayerDataSO.cs",
+              "ToolTip": "C:\\repos\\StayInShape\\Assets\\Scripts\\SOs\\PlayerDataSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SOs\\PlayerDataSO.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowLQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-02T17:41:20.12Z"
             }
           ]
         }

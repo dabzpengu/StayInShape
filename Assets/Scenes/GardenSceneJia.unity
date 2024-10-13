@@ -187,6 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalSprite: {fileID: 21300000, guid: d52536e00af040241bc6cac7de08dc45, type: 3}
   newSprite: {fileID: 21300000, guid: 5497c9258c2a0894abfa233888839905, type: 3}
+  waterSprite: {fileID: 0}
+  fertilizerSprite: {fileID: 0}
+  chilliSprite: {fileID: 21300000, guid: 56aaf6515dbd1de4abe50ce67da739e7, type: 3}
+  loofaSprite: {fileID: 0}
 --- !u!82 &191597531
 AudioSource:
   m_ObjectHideFlags: 0
@@ -314,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 489977815}
   interactable: {fileID: 2100000, guid: 7c9df94c9cc01074792f7236910bb561, type: 2}
+  rayDistance: 5
 --- !u!4 &247835805
 Transform:
   m_ObjectHideFlags: 0
