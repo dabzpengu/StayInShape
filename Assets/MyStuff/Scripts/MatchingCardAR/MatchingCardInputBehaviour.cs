@@ -9,6 +9,8 @@ public class MatchingCardInputBehaviour : MonoBehaviour
     [SerializeField] float overlapRadius;
     DefaultInputActions actions;
 
+    public int rayDistance = 5;
+
     private void Awake()
     {
         actions = new DefaultInputActions();
@@ -21,26 +23,22 @@ public class MatchingCardInputBehaviour : MonoBehaviour
 
     private void Update()
     {
-        Vector3 cameraPosition = Camera.main.transform.position;
-        Collider[] colliders = Physics.OverlapSphere(cameraPosition, overlapRadius);
+        Transform reticleHoveringOn = null;
 
-        Collider closestCollider = null;
-        float dist = float.PositiveInfinity;
-
-        // Iterate through all colliders found
-        foreach (Collider collider in colliders)
+        if (actions.UI.Click.WasPerformedThisFrame())
         {
-            float newDist = Vector3.Distance(collider.transform.position, cameraPosition);
-            if (newDist < dist) {
-                dist = newDist;
-                closestCollider = collider;
+            if (reticleBehaviour.getTransform() != null)
+            {
+                reticleHoveringOn = reticleBehaviour.getTransform();
             }
-        }
-
-        //updatePosition(Camera.main.transform.position);
-        if (closestCollider != null && closestCollider.TryGetComponent(out CardLogic _))
-        {
-            gameManager.SelectCard(closestCollider.gameObject.GetComponent<CardLogic>());
-        }
+            CardLogic card = reticleHoveringOn.GetComponent<CardLogic>();
+            Vector2 clickPosition = actions.UI.Point.ReadValue<Vector2>();
+            Ray ray = Camera.main.ScreenPointToRay(clickPosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, rayDistance) && card != null && hit.transform.GetComponent<CardLogic>() != null)
+            {
+                gameManager.SelectCard(card);
+            }
+        } 
     }
 }

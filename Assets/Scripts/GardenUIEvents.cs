@@ -12,7 +12,14 @@ public class GardenUIEvents : MonoBehaviour
     private Button _button2;
     private Button _button3;
     private Button _button4;
-    private Button _button5;
+
+    private VisualElement resourceTracker;
+    public Sprite originalSprite;
+    public Sprite newSprite;
+    private bool isOriginal = true;
+
+    private VisualElement popUp;
+    private bool isActive = true;
 
     private List<Button> _menuButtons = new List<Button>();
 
@@ -26,15 +33,27 @@ public class GardenUIEvents : MonoBehaviour
         _button1 = _document.rootVisualElement.Q("BackButton") as Button;
         _button1.RegisterCallback<ClickEvent>(OnBackButtonClick);
 
+<<<<<<< HEAD
 
         _button3 = _document.rootVisualElement.Q("TakePhotoButton") as Button;
         _button3.RegisterCallback<ClickEvent>(OnTakePhotoClick);
+=======
+        _button2 = _document.rootVisualElement.Q("TakePhotoButton") as Button;
+        _button2.RegisterCallback<ClickEvent>(OnTakePhotoClick);
+>>>>>>> 7b4ef36a8ec177e9a2ff4eda828d9127b1e413fb
         
-        _button4 = _document.rootVisualElement.Q("CareBookButton") as Button;
-        _button4.RegisterCallback<ClickEvent>(OnCareBookClick);
+        _button3 = _document.rootVisualElement.Q("CareBookButton") as Button;
+        _button3.RegisterCallback<ClickEvent>(OnCareBookClick);
 
-        _button5 = _document.rootVisualElement.Q("ShopButton") as Button;
-        _button5.RegisterCallback<ClickEvent>(OnShopClick);
+        _button4 = _document.rootVisualElement.Q("ShopButton") as Button;
+        _button4.RegisterCallback<ClickEvent>(OnShopClick);
+
+        resourceTracker = _document.rootVisualElement.Q("ResourceTracker") as VisualElement;
+        resourceTracker.RegisterCallback<ClickEvent>(OnResourceTrackerClick);
+
+        popUp = _document.rootVisualElement.Q("PopUp") as VisualElement;
+        popUp.RegisterCallback<ClickEvent>(OnPopUpClick);
+        StartCoroutine(HidePopUpAfterDelay(5f));
 
         _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
 
@@ -47,9 +66,18 @@ public class GardenUIEvents : MonoBehaviour
     private void OnDisable()
     {
         _button1.UnregisterCallback<ClickEvent>(OnBackButtonClick);
+<<<<<<< HEAD
         _button3.UnregisterCallback<ClickEvent>(OnTakePhotoClick);
         _button4.UnregisterCallback<ClickEvent>(OnCareBookClick);
         _button5.UnregisterCallback<ClickEvent>(OnShopClick);
+=======
+        _button2.UnregisterCallback<ClickEvent>(OnTakePhotoClick);
+        _button3.UnregisterCallback<ClickEvent>(OnCareBookClick);
+        _button4.UnregisterCallback<ClickEvent>(OnShopClick);
+        resourceTracker.UnregisterCallback<ClickEvent>(OnResourceTrackerClick);
+        popUp.UnregisterCallback<ClickEvent>(OnPopUpClick);
+
+>>>>>>> 7b4ef36a8ec177e9a2ff4eda828d9127b1e413fb
 
         for (int i = 0; i < _menuButtons.Count; i++)
         {
@@ -114,6 +142,51 @@ public class GardenUIEvents : MonoBehaviour
         Debug.Log("You pressed Shop Button");
 
         SceneManager.LoadScene("ShopScene");
+    }
+
+    private void OnResourceTrackerClick(ClickEvent evt)
+    {
+         Debug.Log("You pressed Resource Tracker");
+
+        if (isOriginal)
+        {
+            ChangeSprite(newSprite, 86f, 46f);
+        } else {
+            ChangeSprite(originalSprite, 30f, 18f);
+        }
+
+        isOriginal = !isOriginal;
+    }
+
+     private void ChangeSprite(Sprite sprite, float widthPercent, float heightPercent)
+    {
+        if (sprite != null)
+        {
+            resourceTracker.style.backgroundImage = new StyleBackground(sprite);
+
+            resourceTracker.style.width = new Length(widthPercent, LengthUnit.Percent);;
+            resourceTracker.style.height = new Length(heightPercent, LengthUnit.Percent);;
+        }
+    }
+
+    private void OnPopUpClick(ClickEvent evt)
+    {
+        if (isActive)
+        {
+            popUp.style.display = DisplayStyle.None;
+            isActive = false;
+        }
+    }
+
+    private IEnumerator HidePopUpAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (isActive)
+        {
+            popUp.style.display = DisplayStyle.None;
+            isActive = false;
+        }
     }
 
     private void OnAllButtonsClick(ClickEvent evt)

@@ -21,6 +21,8 @@ public class DisplayPlayerStats : MonoBehaviour
     TMPro.TextMeshProUGUI snapUI;
     [SerializeField]
     TMPro.TextMeshProUGUI mcUI;
+    [SerializeField]
+    TMPro.TextMeshProUGUI invaderUI;
 
     // Start is called before the first frame update
     void Awake()
@@ -39,5 +41,6 @@ public class DisplayPlayerStats : MonoBehaviour
         stepsUI.text = playerData.GetSteps().ToString();
         snapUI.text = playerData.CanPlaySnap() ? "Can play now" : "Can only play after " + playerData.GetSnapTimer();
         mcUI.text = playerData.CanPlayMatchingCard() ? "Can play now" : "Can only play after " + playerData.GetMatchingCardTimer();
+        invaderUI.text = playerData.CanPlayChickenInvaders() ? "Can play now" : "Can only play after " + playerData.GetChickenInvaderTimer();
     }
 }
