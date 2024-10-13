@@ -9,6 +9,7 @@ public class ReticleBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject image;
     [SerializeField] Material interactable; //kiv
+    public int rayDistance = 5;
 
     private Transform currFocus;
     private void Awake()
@@ -18,13 +19,12 @@ public class ReticleBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        int rayDistance = 5;
         Vector3 screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         Ray crosshairRay = Camera.main.ScreenPointToRay(screenCenter); //kiv this
         RaycastHit crosshairHit;

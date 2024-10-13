@@ -17,6 +17,7 @@ public class PlayerDataSO : SavableSO
     private List<PlantData> plants = new List<PlantData>();
     private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again
     private String matchingCardTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the matching cards minigame again
+    private String chickenInvaderTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the chicken invaders minigame again
 
     const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm";
     public void ResetSurveyTime()
@@ -115,6 +116,22 @@ public class PlayerDataSO : SavableSO
         return ans;
     }
 
+    // Chicken Invaders
+    public String GetChickenInvaderTimer() { return chickenInvaderTimer; }
+
+    public void SetChickenInvaderTimer(DateTime dt)
+    {
+        this.chickenInvaderTimer = dt.ToString(DATETIME_FORMAT);
+    }
+
+    public Boolean CanPlayChickenInvaders()
+    {
+        DateTime openDateTime = DateTime.ParseExact(this.chickenInvaderTimer, DATETIME_FORMAT, null);
+        DateTime nowDateTime = DateTime.Now;
+        Boolean ans = nowDateTime >= openDateTime;
+        return ans;
+    }
+
     public override string ToJson()
     {
         SaveObject saveObject = new SaveObject
@@ -129,6 +146,7 @@ public class PlayerDataSO : SavableSO
             plants = this.plants,
             snapTimer = this.snapTimer,
             matchingCardTimer = this.matchingCardTimer,
+            chickenInvaderTimer = this.chickenInvaderTimer,
         };
 
         string saveString = JsonUtility.ToJson(saveObject);
@@ -147,6 +165,7 @@ public class PlayerDataSO : SavableSO
         plants = loadedObject.plants;
         snapTimer = loadedObject.snapTimer;
         matchingCardTimer = loadedObject.matchingCardTimer;
+        chickenInvaderTimer = loadedObject.chickenInvaderTimer;
 
         lastSurvey = DateTime.ParseExact(loadedObject.lastSurvey, DATETIME_FORMAT, CultureInfo.InvariantCulture);
     }
@@ -163,5 +182,6 @@ public class PlayerDataSO : SavableSO
         public List<PlantData> plants;
         public String snapTimer;
         public String matchingCardTimer;
+        public String chickenInvaderTimer;
     }
 }

@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit.Filtering;
 
 // Code adapted from https://medium.com/@xavidevsama/create-a-simple-step-counter-pedometer-with-unity-c-a68151354b82
 
@@ -11,10 +10,10 @@ public class StepCounter : MonoBehaviour
 {
     // Variables
     public TMP_Text distanceText;
-    public float threshold = 5f;
+    public float threshold = 1f;
     public float stepLength = 0.75f;
     private float timer = 0.0f;
-    private float stepDelay = 0.5f;
+    private float stepDelay = 0.75f;
 
     [SerializeField]
     public SaveManagerSO saveManager;
@@ -80,7 +79,10 @@ public class StepCounter : MonoBehaviour
         //{
         //    stepText.text = "DISABLED";
         //}
-        distanceText.text = GetStepCount().ToString();
+        if (distanceText != null)
+        {
+            distanceText.text = GetStepCount().ToString();
+        }
     }
     // Checks if device's acceleration is above a particular threshold and adds the "stepCount" variable accordingly
     private void DetectSteps()
