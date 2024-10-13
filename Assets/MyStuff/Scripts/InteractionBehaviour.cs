@@ -32,7 +32,7 @@ public class InteractionBehaviour : MonoBehaviour
     {
         //determines how "near" player needs to be to interact with the assets
         int rayDistance = 5;
-        Transform reticleHoveringOn = null ;
+        Transform reticleHoveringOn = null;
         if(reticleBehaviour.getTransform() != null)
         {
             reticleHoveringOn = reticleBehaviour.getTransform();

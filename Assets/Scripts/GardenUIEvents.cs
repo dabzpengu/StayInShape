@@ -26,8 +26,6 @@ public class GardenUIEvents : MonoBehaviour
         _button1 = _document.rootVisualElement.Q("BackButton") as Button;
         _button1.RegisterCallback<ClickEvent>(OnBackButtonClick);
 
-        _button2 = _document.rootVisualElement.Q("SettingsButton") as Button;
-        _button2.RegisterCallback<ClickEvent>(OnSettingsClick);
 
         _button3 = _document.rootVisualElement.Q("TakePhotoButton") as Button;
         _button3.RegisterCallback<ClickEvent>(OnTakePhotoClick);
@@ -49,7 +47,6 @@ public class GardenUIEvents : MonoBehaviour
     private void OnDisable()
     {
         _button1.UnregisterCallback<ClickEvent>(OnBackButtonClick);
-        _button2.UnregisterCallback<ClickEvent>(OnSettingsClick);
         _button3.UnregisterCallback<ClickEvent>(OnTakePhotoClick);
         _button4.UnregisterCallback<ClickEvent>(OnCareBookClick);
         _button5.UnregisterCallback<ClickEvent>(OnShopClick);
@@ -65,11 +62,6 @@ public class GardenUIEvents : MonoBehaviour
         Debug.Log("You pressed Back Button");
 
         SceneManager.LoadScene("HomeScene");
-    }
-
-    private void OnSettingsClick(ClickEvent evt)
-    {
-        Debug.Log("You pressed Settings Button");
     }
 
     private void OnTakePhotoClick(ClickEvent evt)
