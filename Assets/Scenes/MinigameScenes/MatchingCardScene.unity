@@ -449,7 +449,7 @@ MonoBehaviour:
   m_text: 'Match all the pairs of cards to win the game!
 
     You can select a card
-    by going close to it.'
+    by tapping on it!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1121,6 +1121,7 @@ MonoBehaviour:
   reticleBehaviour: {fileID: 1773916291}
   gameManager: {fileID: 1846747655}
   overlapRadius: 0.1
+  rayDistance: 5
 --- !u!1 &1670246476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 579785676}
   interactable: {fileID: 0}
+  rayDistance: 5
 --- !u!4 &1773916292
 Transform:
   m_ObjectHideFlags: 0
@@ -1348,6 +1350,7 @@ MonoBehaviour:
   saveManager: {fileID: 11400000, guid: ddf61ec8f040149498b3a7d02638b035, type: 2}
   timeToDisplayText: 3
   intervalToPlayGame: 60
+  reward: 2
 --- !u!4 &1846747656
 Transform:
   m_ObjectHideFlags: 0

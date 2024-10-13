@@ -83,9 +83,12 @@ public class MatchingCardManager : MonoBehaviour
         {
             throw new System.Exception("Number of cards cannot be an odd number!");
         }
+
+        MatchingCardSO[] list = db.getRandomCardList();
+
         for (int i = 0; i < nCards/2; i++)
         {
-            MatchingCardSO cardData = db.getCardData(i);
+            MatchingCardSO cardData = list[i];
             CardLogic cardA = cards[i].gameObject.GetComponent<CardLogic>();
             CardLogic cardB = cards[nCards - 1 - i].gameObject.GetComponent<CardLogic>();
             cardA.SetCard(cardData, true);
