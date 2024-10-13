@@ -25,9 +25,9 @@ public class ChickenInvaderManager : MonoBehaviour
     public int spawnRange = 5;
     public float timeLeft;
     public bool isGameEnded;
-    public int reward = 4;
+    public int reward = 12;
     public int nChickens = 10;
-    public int chickenInterval = 4;
+    public int chickenInterval = 3;
 
     private Transform target;
     private Transform ground;

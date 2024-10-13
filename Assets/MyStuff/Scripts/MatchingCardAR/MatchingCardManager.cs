@@ -19,7 +19,7 @@ public class MatchingCardManager : MonoBehaviour
 
     public int timeToDisplayText = 3;
     public int intervalToPlayGame = 30;
-    public int reward = 2;
+    public int reward = 6;
     private CardLogic selectedCard;
     private int nCardsLeft;
     private int currReward;
