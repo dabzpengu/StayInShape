@@ -1513,15 +1513,13 @@ MonoBehaviour:
   spawnButton: {fileID: 1522525501}
   chickenPrefab: {fileID: 4740877593356816333, guid: b7bba9444e6b7294c843e2f143262d4e,
     type: 3}
-  timeToDisplayText: 3
   intervalToPlayGame: 30
   timePerRound: 30
   spawnRange: 1
   timeLeft: 0
   isGameEnded: 0
-  randomRangeMin: {x: 0, y: 0, z: 0}
-  randomRangeMax: {x: 0, y: 0, z: 0}
-  nChickens: 4
+  reward: 5
+  nChickens: 5
   chickenInterval: 5
 --- !u!224 &2083900776 stripped
 RectTransform:

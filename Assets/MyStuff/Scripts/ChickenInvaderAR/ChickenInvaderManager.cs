@@ -20,14 +20,12 @@ public class ChickenInvaderManager : MonoBehaviour
     [SerializeField] GameObject spawnButton;
     [SerializeField] GameObject chickenPrefab;
 
-    public int timeToDisplayText = 3;
     public int intervalToPlayGame = 30;
     public int timePerRound = 30;
     public int spawnRange = 5;
     public float timeLeft;
     public bool isGameEnded;
-    public Vector3 randomRangeMin;
-    public Vector3 randomRangeMax;
+    public int reward = 4;
     public int nChickens = 10;
     public int chickenInterval = 4;
 
@@ -35,6 +33,8 @@ public class ChickenInvaderManager : MonoBehaviour
     private Transform ground;
     private Coroutine countdownCoroutine;
     private AudioSource audioSource;
+    private Vector3 randomRangeMin;
+    private Vector3 randomRangeMax;
 
     // Start is called before the first frame update
     void Start()
@@ -66,25 +66,27 @@ public class ChickenInvaderManager : MonoBehaviour
 
     private void RewardPlayer()
     {
-        int reward = nChickens;
         PlaySound(winGameClip);
+        player.SetChickenInvaderTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
         player.SetFertilizer(player.GetFertilizer() + reward);
         player.SetWater(player.GetWater() + reward);
-        
-        Debug.Log(String.Format("You have earned {0} points! Current fertilizer is {1} and water is {2}", 
-            reward, player.GetFertilizer(), player.GetWater()));
     }
 
     public void WinGame()
     {
+        StopCoroutine(countdownCoroutine);
         instructionsUI.text = "Hurray! You protected all your seeds. You win!";
+        timerUI.text = String.Format("You have earned {0} fertilizers and water!\n Next time to play is {1}", reward, player.GetChickenInvaderTimer());
         CompleteGame();
     }
 
     public void LoseGame()
     {
         StopCoroutine(countdownCoroutine);
+        reward = 0;
+        RewardPlayer();
         instructionsUI.text = "Oh No! A chicken has reached your seeds. You lost.";
+        timerUI.text = String.Format("Next time to play is {0}", player.GetChickenInvaderTimer());
         CompleteGame();
     }
 
@@ -93,9 +95,6 @@ public class ChickenInvaderManager : MonoBehaviour
         isGameEnded = true;
         timeLeft = 0;
         RewardPlayer();
-        player.SetChickenInvaderTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
-        timerUI.text = "Tap on the back button to go to the home screen.\n Next time to play is " +
-            player.GetChickenInvaderTimer();  // Show "0s" when the timer reaches zero
         saveManager.Save();
     }
 
@@ -160,8 +159,6 @@ public class ChickenInvaderManager : MonoBehaviour
         countdownCoroutine = StartCoroutine(StartCountdown());
         StartCoroutine(spawnChickens(chickenInterval, nChickens));
     }
-
-
     private void PlaySound(AudioClip clip)
     {
         audioSource.clip = clip;
