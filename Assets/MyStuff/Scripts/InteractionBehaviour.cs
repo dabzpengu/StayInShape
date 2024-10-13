@@ -96,6 +96,10 @@ public class InteractionBehaviour : MonoBehaviour
                                     Debug.Log("No water");
                                 }
                             }
+                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(TrowelLogic))
+                            {
+                                plant.DestroyPlant();
+                            }
                         }
                         else
                         {
@@ -105,9 +109,10 @@ public class InteractionBehaviour : MonoBehaviour
                 }
                 else
                 {
-                    //if not plant, then check if player trying to equip fertilizer or water
+                    //if not plant, then check if player trying to equip fertilizer or water OR trowel
                     if ((hit.transform.TryGetComponent<WaterLogic>(out WaterLogic water) && reticleHoveringOn.TryGetComponent<WaterLogic>(out WaterLogic aimedWater) || 
-                        (hit.transform.TryGetComponent<FertiliserLogic>(out FertiliserLogic fertiliser) && reticleHoveringOn.TryGetComponent<FertiliserLogic>(out FertiliserLogic aimedFertiliser))))
+                        (hit.transform.TryGetComponent<FertiliserLogic>(out FertiliserLogic fertiliser) && reticleHoveringOn.TryGetComponent<FertiliserLogic>(out FertiliserLogic aimedFertiliser)) ||
+                        hit.transform.TryGetComponent<TrowelLogic>(out TrowelLogic trowel) && reticleHoveringOn.TryGetComponent<TrowelLogic>(out TrowelLogic trowelLogic)))
                     {
                         gardenUIBehaviour.UpdateItem(hit.transform);
                     }

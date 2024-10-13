@@ -19,6 +19,7 @@ public class PlayerDataSO : SavableSO
     private String matchingCardTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the matching cards minigame again
 
     const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm";
+    const string DATETIME_FORMAT_PLANT = "MM/dd/yyyy HH:mm:ss";
     public void ResetSurveyTime()
     {
         lastSurvey = DateTime.Now;
@@ -81,7 +82,11 @@ public class PlayerDataSO : SavableSO
     public void SetPlant(PlantData plantData)
     {
         plants.Add(plantData);
-        Debug.Log("You have saved " + plants.Count + " plants now");
+    }
+
+    public void ClearList()
+    {
+        this.plants = new List<PlantData>();
     }
     // Snap
     public String GetSnapTimer() { return snapTimer; }

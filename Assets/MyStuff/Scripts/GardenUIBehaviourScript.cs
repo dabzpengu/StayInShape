@@ -19,6 +19,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
     [SerializeField] private Texture2D defaultImage;
     [SerializeField] private Texture2D waterImage;
     [SerializeField] private Texture2D fertiliserImage;
+    [SerializeField] private Texture2D trowelImage;
     [SerializeField] private PlayerDataSO player;
     [SerializeField] private SaveManagerSO saveManager;
     [SerializeField] TMPro.TextMeshProUGUI lvlUI;
@@ -109,6 +110,11 @@ public class GardenUIBehaviourScript : MonoBehaviour
         {
             itemImage.texture = fertiliserImage;
             equippedItem = fertiliser;
+        }
+        else if(item.TryGetComponent<TrowelLogic>(out TrowelLogic trowelLogic))
+        {
+            itemImage.texture = trowelImage;
+            equippedItem = trowelLogic;
         }
         else
         {

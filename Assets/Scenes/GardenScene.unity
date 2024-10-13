@@ -2608,6 +2608,7 @@ MonoBehaviour:
   defaultImage: {fileID: 2800000, guid: c5adfe294554543868fc7cf60dded650, type: 3}
   waterImage: {fileID: 2800000, guid: bf5061903b3d76b478b8911687a57dc7, type: 3}
   fertiliserImage: {fileID: 2800000, guid: 6bb08926142bfae4581fa394070a49ab, type: 3}
+  trowelImage: {fileID: 2800000, guid: 4fe4d3241d435594b82a72af96e4052d, type: 3}
   player: {fileID: 11400000, guid: de7a4b855443e124e807893f98c13162, type: 2}
   saveManager: {fileID: 11400000, guid: ddf61ec8f040149498b3a7d02638b035, type: 2}
   lvlUI: {fileID: 564038166}
@@ -2928,6 +2929,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ddf61ec8f040149498b3a7d02638b035,
         type: 2}
+    - target: {fileID: 676664945166631823, guid: d76e44c860a64f64bb6926b8db4a26f8,
+        type: 3}
+      propertyPath: chilliPrefab
+      value: 
+      objectReference: {fileID: 6439454629336272800, guid: 9128d06f66c73be4fabcc962e958003c,
+        type: 3}
     - target: {fileID: 676664945166631823, guid: d76e44c860a64f64bb6926b8db4a26f8,
         type: 3}
       propertyPath: gardenPrefab

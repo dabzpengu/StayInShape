@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class PlantLogic : MonoBehaviour
 {
-    const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm";
+    const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm:ss";
     [SerializeField] private GameObject stage1;
     [SerializeField] private GameObject stage2;
     [SerializeField] private GameObject stage3;
@@ -25,13 +25,14 @@ public class PlantLogic : MonoBehaviour
     private float stage_2_threshold = 120f;
     private float stage_3_threshold = 180f;
     private float harvest_threshold = 240f;
-    private float warning_threshold = 90f;
     private float wither_threshold = 120f;
+    private float warning_threshold = 90f;
 
     private float growthAmount = 0f;
     private float growthRate = 1f;
     private float witherTime = 0f;
     private Boolean isWithered = false;
+    private Boolean isPlayerRemove = false;
 
     private void Awake()
     {
@@ -41,8 +42,7 @@ public class PlantLogic : MonoBehaviour
 
     private void Start()
     {
-        //SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
-        //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+
     }
 
     // Update is called once per frame
@@ -50,6 +50,7 @@ public class PlantLogic : MonoBehaviour
     {
         growthAmount += Time.deltaTime * growthRate;
         witherTime += Time.deltaTime;
+        Debug.Log(growthAmount);
         if (witherTime > warning_threshold && witherTime < wither_threshold && !isWithered)
         {
             warning.SetActive(true);
@@ -61,8 +62,8 @@ public class PlantLogic : MonoBehaviour
         if (witherTime >= wither_threshold)
         {
             isWithered = true;
-            warning.SetActive(false);
-            if (stage1.activeSelf)
+            warning.SetActive(false); //plant has withered, turn off warning
+            if (growthAmount > stage_1_threshold) //means it was stage 1 when it withered
             {
                 stage1.SetActive(false);
                 stage2.SetActive(false);
@@ -72,7 +73,7 @@ public class PlantLogic : MonoBehaviour
                 stage2_withered.SetActive(false);
                 stage3_withered.SetActive(false);
             }
-            if (stage2.activeSelf)
+            if (growthAmount > stage_2_threshold) //means it was stage 2 when it withered
             {
                 stage1.SetActive(false);
                 stage2.SetActive(false);
@@ -82,7 +83,7 @@ public class PlantLogic : MonoBehaviour
                 stage2_withered.SetActive(true);
                 stage3_withered.SetActive(false);
             }
-            if (stage3.activeSelf)
+            if (growthAmount > stage_3_threshold) //means it was stage 3 when it withered
             {
                 stage1.SetActive(false);
                 stage2.SetActive(false);
@@ -137,7 +138,7 @@ public class PlantLogic : MonoBehaviour
 
     public Boolean HarvestPlant()
     {
-        if(!isWithered && stage3.activeSelf)
+        if(!isWithered && growthAmount > harvest_threshold)
         {
             stage1.SetActive(false);
             stage2.SetActive(false);
@@ -208,13 +209,23 @@ public class PlantLogic : MonoBehaviour
         this.witherTime = witherTime;
     }
 
+    public void DestroyPlant()
+    {
+        Destroy(gameObject);
+        isPlayerRemove = true;
+    }
+
     public PlantData ToPlantData()
     {
-        return new PlantData(DateTime.Now.ToString(DATETIME_FORMAT), transform.localPosition, growthAmount, growthRate, witherTime);
+        return new PlantData(DateTime.Now.ToString(DATETIME_FORMAT), transform.localPosition, growthAmount, growthRate, witherTime,1);
     }
     private void OnDestroy()
     {
-        PlantManager.instance.InsertPlant(this.ToPlantData());
+        if (!isPlayerRemove)
+        {
+            Debug.Log("This plant is saved");
+            PlantManager.instance.InsertPlant(this.ToPlantData());
+        }
     }
 
 }
