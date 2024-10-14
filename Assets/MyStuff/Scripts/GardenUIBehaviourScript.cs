@@ -11,19 +11,23 @@ public class GardenUIBehaviourScript : MonoBehaviour
 {
     [SerializeField] private float rotateSpeed = 10f;
     [SerializeField] private Button insertPlantButton;
+    [SerializeField] private Button insertLoofaButton;
     [SerializeField] private Button homeButton;
     [SerializeField] private Button shopButton;
-    [SerializeField] GameObject plantAsset; //temporarily use placeholderasset, to be replaced with plant asset
+    [SerializeField] GameObject chilliAsset;
+    [SerializeField] GameObject loofaAsset;
     [SerializeField] ReticleBehaviour reticleBehaviour;
     [SerializeField] private RawImage itemImage;
     [SerializeField] private Texture2D defaultImage;
     [SerializeField] private Texture2D waterImage;
     [SerializeField] private Texture2D fertiliserImage;
+    [SerializeField] private Texture2D trowelImage;
     [SerializeField] private PlayerDataSO player;
     [SerializeField] private SaveManagerSO saveManager;
     [SerializeField] TMPro.TextMeshProUGUI lvlUI;
     [SerializeField] TMPro.TextMeshProUGUI expUI;
-    [SerializeField] TMPro.TextMeshProUGUI cropUI;
+    [SerializeField] TMPro.TextMeshProUGUI chillicropUI;
+    [SerializeField] TMPro.TextMeshProUGUI loofacropUI;
     [SerializeField] TMPro.TextMeshProUGUI waterUI;
     [SerializeField] TMPro.TextMeshProUGUI fertUI;
     [SerializeField] TMPro.TextMeshProUGUI stepsUI;
@@ -36,6 +40,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
     private void Start()
     {
         insertPlantButton.onClick.AddListener(InsertPlant);
+        insertLoofaButton.onClick.AddListener(InsertLoofa);
         homeButton.onClick.AddListener(BackHome);
         shopButton.onClick.AddListener(Shop);
     }
@@ -56,7 +61,8 @@ public class GardenUIBehaviourScript : MonoBehaviour
         }
         lvlUI.text = Mathf.Floor(player.GetExp()/1000).ToString();
         expUI.text = player.GetExp().ToString();
-        cropUI.text = player.GetCrop().ToString();
+        chillicropUI.text = player.GetChilliCrop().ToString();
+        loofacropUI.text = player.GetLoofaCrop().ToString();
         waterUI.text = player.GetWater().ToString();
         fertUI.text = player.GetFertilizer().ToString();
         stepsUI.text = player.GetSteps().ToString();
@@ -67,7 +73,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
         if(player.GetSteps() >= 200)
         {
             player.SetSteps(player.GetSteps() - 200);
-            player.SetCrop(1);
+            player.SetChilliCrop(1);
             saveManager.Save();
         }
     }
@@ -81,10 +87,30 @@ public class GardenUIBehaviourScript : MonoBehaviour
         {
             if (reticleBehaviour.getTransform().TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
             {
-                if(player.GetCrop() >= 1)
+                if(player.GetChilliCrop() >= 1)
                 {
-                    plotLogic.InsertPlant(plantAsset, reticleBehaviour.transform.position);
-                    player.SetCrop(-1);
+                    plotLogic.InsertPlant(chilliAsset, reticleBehaviour.transform.position);
+                    player.SetChilliCrop(-1);
+                    saveManager.Save();
+                }
+            }
+        }
+    }
+
+    public void InsertLoofa()
+    {
+        if (reticleBehaviour.getTransform() == null)
+        {
+            Debug.Log("You are too far from the soil to insert plant");
+        }
+        else
+        {
+            if (reticleBehaviour.getTransform().TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
+            {
+                if (player.GetLoofaCrop() >= 1)
+                {
+                    plotLogic.InsertPlant(loofaAsset, reticleBehaviour.transform.position);
+                    player.SetLoofaCrop(-1);
                     saveManager.Save();
                 }
             }
@@ -109,6 +135,11 @@ public class GardenUIBehaviourScript : MonoBehaviour
         {
             itemImage.texture = fertiliserImage;
             equippedItem = fertiliser;
+        }
+        else if(item.TryGetComponent<TrowelLogic>(out TrowelLogic trowelLogic))
+        {
+            itemImage.texture = trowelImage;
+            equippedItem = trowelLogic;
         }
         else
         {

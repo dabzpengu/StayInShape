@@ -19,6 +19,7 @@ public class MatchingCardManager : MonoBehaviour
 
     public int timeToDisplayText = 3;
     public int intervalToPlayGame = 30;
+    public int reward = 6;
     private CardLogic selectedCard;
     private int nCardsLeft;
     private int currReward;
@@ -49,11 +50,11 @@ public class MatchingCardManager : MonoBehaviour
         PlaySound(winGameClip);
         player.SetFertilizer(player.GetFertilizer() + reward);
         player.SetWater(player.GetWater() + reward);
-        DisplayText(String.Format("You have earned {0} points! Current fertilizer is {1} and water is {2}", 
-            reward, player.GetFertilizer(), player.GetWater()));
+        DisplayText(String.Format("You have earned {0} fertilizers and water!", 
+            reward));
     }
 
-    private void AddReward(int add, string plantName)
+    private void AddReward(int add, string plantName) // TODO: Find a way to utilise currReward
     {
         currReward += add;
         DisplayText(String.Format("You have matched a pair of {0} cards!", plantName));
@@ -61,7 +62,7 @@ public class MatchingCardManager : MonoBehaviour
 
     private void CompleteGame()
     {
-        RewardPlayer(currReward);
+        RewardPlayer(reward);
         player.SetMatchingCardTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
         instructions.text = "You have won the game. Tap on the back button to go to the home screen.\n Next time to play is " + player.GetMatchingCardTimer();
         saveManager.Save();
@@ -82,9 +83,12 @@ public class MatchingCardManager : MonoBehaviour
         {
             throw new System.Exception("Number of cards cannot be an odd number!");
         }
+
+        MatchingCardSO[] list = db.getRandomCardList();
+
         for (int i = 0; i < nCards/2; i++)
         {
-            MatchingCardSO cardData = db.getCardData(i);
+            MatchingCardSO cardData = list[i];
             CardLogic cardA = cards[i].gameObject.GetComponent<CardLogic>();
             CardLogic cardB = cards[nCards - 1 - i].gameObject.GetComponent<CardLogic>();
             cardA.SetCard(cardData, true);

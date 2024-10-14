@@ -13,12 +13,15 @@ public class PlayerDataSO : SavableSO
     private int water = 0;
     private int steps = 200;
     private int exp = 0;
-    private int crop = 3;
+    private int chillicrop = 3;
+    private int loofacrop = 3;
     private List<PlantData> plants = new List<PlantData>();
     private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again
     private String matchingCardTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the matching cards minigame again
+    private String chickenInvaderTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the chicken invaders minigame again
 
     const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm";
+    const string DATETIME_FORMAT_PLANT = "MM/dd/yyyy HH:mm:ss";
     public void ResetSurveyTime()
     {
         lastSurvey = DateTime.Now;
@@ -63,14 +66,24 @@ public class PlayerDataSO : SavableSO
         this.exp += newExpValue;
     }
     //garden
-    public int GetCrop()
+    public int GetChilliCrop()
     {
-        return crop;
+        return chillicrop;
     }
 
-    public void SetCrop(int newCropValue)
+    public void SetChilliCrop(int newCropValue)
     {
-        this.crop += newCropValue;
+        this.chillicrop += newCropValue;
+    }
+
+    public int GetLoofaCrop()
+    {
+        return loofacrop;
+    }
+
+    public void SetLoofaCrop(int newCropValue)
+    {
+        this.loofacrop += newCropValue;
     }
 
     public List<PlantData> GetPlants()
@@ -81,7 +94,11 @@ public class PlayerDataSO : SavableSO
     public void SetPlant(PlantData plantData)
     {
         plants.Add(plantData);
-        Debug.Log("You have saved " + plants.Count + " plants now");
+    }
+
+    public void ClearList()
+    {
+        this.plants = new List<PlantData>();
     }
     // Snap
     public String GetSnapTimer() { return snapTimer; }
@@ -115,6 +132,22 @@ public class PlayerDataSO : SavableSO
         return ans;
     }
 
+    // Chicken Invaders
+    public String GetChickenInvaderTimer() { return chickenInvaderTimer; }
+
+    public void SetChickenInvaderTimer(DateTime dt)
+    {
+        this.chickenInvaderTimer = dt.ToString(DATETIME_FORMAT);
+    }
+
+    public Boolean CanPlayChickenInvaders()
+    {
+        DateTime openDateTime = DateTime.ParseExact(this.chickenInvaderTimer, DATETIME_FORMAT, null);
+        DateTime nowDateTime = DateTime.Now;
+        Boolean ans = nowDateTime >= openDateTime;
+        return ans;
+    }
+
     public override string ToJson()
     {
         SaveObject saveObject = new SaveObject
@@ -125,10 +158,12 @@ public class PlayerDataSO : SavableSO
             water = this.water,
             steps = this.steps,
             exp = this.exp,
-            crop = this.crop,
+            chillicrop = this.chillicrop,
+            loofacrop = this.loofacrop,
             plants = this.plants,
             snapTimer = this.snapTimer,
             matchingCardTimer = this.matchingCardTimer,
+            chickenInvaderTimer = this.chickenInvaderTimer,
         };
 
         string saveString = JsonUtility.ToJson(saveObject);
@@ -143,10 +178,12 @@ public class PlayerDataSO : SavableSO
         water = loadedObject.water;
         steps = loadedObject.steps;
         exp = loadedObject.exp;
-        crop = loadedObject.crop;
+        loofacrop = loadedObject.loofacrop;
+        chillicrop = loadedObject.chillicrop;
         plants = loadedObject.plants;
         snapTimer = loadedObject.snapTimer;
         matchingCardTimer = loadedObject.matchingCardTimer;
+        chickenInvaderTimer = loadedObject.chickenInvaderTimer;
 
         lastSurvey = DateTime.ParseExact(loadedObject.lastSurvey, DATETIME_FORMAT, CultureInfo.InvariantCulture);
     }
@@ -159,9 +196,11 @@ public class PlayerDataSO : SavableSO
         public int water;
         public int steps;
         public int exp;
-        public int crop;
+        public int chillicrop;
+        public int loofacrop;
         public List<PlantData> plants;
         public String snapTimer;
         public String matchingCardTimer;
+        public String chickenInvaderTimer;
     }
 }

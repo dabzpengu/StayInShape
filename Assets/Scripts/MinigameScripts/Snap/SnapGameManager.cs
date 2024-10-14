@@ -16,7 +16,7 @@ public class SnapGameManager : MonoBehaviour
     [SerializeField]
     Sprite backSprite;
     [SerializeField]
-    int[,] level = new int[5,2] { {15,6 },{10,4 },{14,6 },{18,8 },{ 20, 10 } }; // Right number represents the number of matches needed, left number represents the number of spare cards
+    int[,] level = new int[5,2] { {15,3 },{10,4 },{14,6 },{18,8 },{ 20, 10 } }; // Right number represents the number of matches needed, left number represents the number of spare cards
     [SerializeField]
     GameObject tutorialPrompt, popupBar;
     [SerializeField]
@@ -103,6 +103,8 @@ public class SnapGameManager : MonoBehaviour
         audioSource.clip = failSound;
         audioSource.Play();
         //currentIndex++;
+        audioSource.clip = failSound;
+        audioSource.Play();
         deckDrawn = false;
         nWrongs++;
         updateTextUI(); // Edge case where UI does not update when the game ends after timer runs out. Otherwise, MoveCardsOut handles UI updates too
@@ -212,10 +214,15 @@ public class SnapGameManager : MonoBehaviour
 
     void RewardPlayer()
     {
-        int reward = (nCorrects - nWrongs) < 0 ? 0 : (nCorrects - nWrongs);
-        playerDataSO.SetFertilizer(playerDataSO.GetFertilizer() + reward);
+        int reward = (nCorrects - nWrongs) < 0 ? 1 : (nCorrects - nWrongs);
         playerDataSO.SetWater(playerDataSO.GetWater() + reward);
-        StartCoroutine(Popup(String.Format("Well done! You've earned {0} points with {1} correct and {2} wrongs! Keep it up!", reward, nCorrects, nWrongs)));
+        if (reward > 1)
+        {
+            StartCoroutine(Popup(String.Format("Well done! With {1} correct and {2} wrongs, you've earned {0} water!", reward, nCorrects, nWrongs)));
+        } else
+        {
+            StartCoroutine(Popup(String.Format("Oh no! You made too many mistakes. you've earned 1 water!", reward, nCorrects, nWrongs)));
+        }
     }
 
     void CompleteGame()

@@ -9,7 +9,9 @@ public class PlantManager : MonoBehaviour
 {
     public static PlantManager instance;
 
-    [SerializeField] GameObject plantPrefab; //this is actually chilli
+    [SerializeField] GameObject chilliPrefab;
+    [SerializeField] GameObject luffaPrefab;
+    [SerializeField] GameObject eggPlantPrefab;
     [SerializeField] private PlayerDataSO player;
     [SerializeField] private SaveManagerSO saveManager;
 
@@ -21,7 +23,6 @@ public class PlantManager : MonoBehaviour
             Debug.Log("new manager");
             instance = this;
             saveManager.Load();
-            DontDestroyOnLoad(gameObject); // Make persistent between scenes
         }
         else
         {
@@ -35,7 +36,12 @@ public class PlantManager : MonoBehaviour
     }
     public GameObject getPlantPrefab()
     {
-        return plantPrefab;
+        return chilliPrefab;
+    }
+
+    public GameObject getLoofaPrefab()
+    {
+        return luffaPrefab;
     }
 
     public List<PlantData> GetPlants()
@@ -57,6 +63,12 @@ public class PlantManager : MonoBehaviour
     public void InsertPlant(PlantData plantData)
     {
         player.SetPlant(plantData);
+        saveManager.Save();
+    }
+
+    public void ClearList()
+    {
+        player.ClearList();
         saveManager.Save();
     }
 }
