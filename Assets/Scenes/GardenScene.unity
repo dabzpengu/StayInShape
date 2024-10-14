@@ -3261,6 +3261,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 676664945166631823, guid: d76e44c860a64f64bb6926b8db4a26f8,
         type: 3}
+      propertyPath: luffaPrefab
+      value: 
+      objectReference: {fileID: 101209142350310369, guid: ae303f41b8cb8ec44ad96e14893d767c,
+        type: 3}
+    - target: {fileID: 676664945166631823, guid: d76e44c860a64f64bb6926b8db4a26f8,
+        type: 3}
       propertyPath: plantPrefab
       value: 
       objectReference: {fileID: 6439454629336272800, guid: 9128d06f66c73be4fabcc962e958003c,

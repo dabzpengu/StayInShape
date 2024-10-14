@@ -67,9 +67,10 @@ public class ChickenInvaderManager : MonoBehaviour
     private void RewardPlayer()
     {
         PlaySound(winGameClip);
-        player.SetChickenInvaderTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
+        player.SetChickenInvaderTimer(DateTime.Now.AddMinutes(3));
         player.SetFertilizer(player.GetFertilizer() + reward);
         player.SetWater(player.GetWater() + reward);
+        saveManager.Save();
     }
 
     public void WinGame()
