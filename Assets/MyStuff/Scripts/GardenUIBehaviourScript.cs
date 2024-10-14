@@ -70,12 +70,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
 
     public void Shop()
     {
-        if(player.GetSteps() >= 200)
-        {
-            player.SetSteps(player.GetSteps() - 200);
-            player.SetChilliCrop(1);
-            saveManager.Save();
-        }
+        SceneManager.LoadScene("TempShop");
     }
     public void InsertPlant()
     {

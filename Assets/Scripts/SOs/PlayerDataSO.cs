@@ -14,7 +14,7 @@ public class PlayerDataSO : SavableSO
     private int steps = 200;
     private int exp = 0;
     private int chillicrop = 3;
-    private int loofacrop = 3;
+    private int loofacrop = 0;
     private List<PlantData> plants = new List<PlantData>();
     private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again
     private String matchingCardTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the matching cards minigame again
