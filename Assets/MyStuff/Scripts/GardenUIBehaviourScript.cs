@@ -36,6 +36,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
 
     private GardenLogic gardenLogic;
     private Component equippedItem;
+    public int rayDistance = 5;
     // to Add Listeners to the buttons
     private void Start()
     {
@@ -72,42 +73,39 @@ public class GardenUIBehaviourScript : MonoBehaviour
     {
         SceneManager.LoadScene("TempShop");
     }
+
+    public RaycastHit TestCheck()
+    {
+        Vector3 screenCenter = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+        Ray crosshairRay = Camera.main.ScreenPointToRay(screenCenter);
+        RaycastHit crosshairHit;
+        Physics.Raycast(crosshairRay, out crosshairHit, rayDistance);
+        return crosshairHit;
+    }
     public void InsertPlant()
     {
-        if (reticleBehaviour.getTransform() == null)
+        Transform objectHit = TestCheck().transform;
+        if (objectHit != null && objectHit.TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
         {
-            Debug.Log("You are too far from the soil to insert plant");
-        }
-        else
-        {
-            if (reticleBehaviour.getTransform().TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
+            if(player.GetChilliCrop() >= 1)
             {
-                if(player.GetChilliCrop() >= 1)
-                {
-                    plotLogic.InsertPlant(chilliAsset, reticleBehaviour.transform.position);
-                    player.SetChilliCrop(-1);
-                    saveManager.Save();
-                }
+                plotLogic.InsertPlant(chilliAsset, reticleBehaviour.transform.position);
+                player.SetChilliCrop(-1);
+                saveManager.Save();
             }
         }
     }
 
     public void InsertLoofa()
     {
-        if (reticleBehaviour.getTransform() == null)
+        Transform objectHit = TestCheck().transform;
+        if (objectHit != null && objectHit.TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
         {
-            Debug.Log("You are too far from the soil to insert plant");
-        }
-        else
-        {
-            if (reticleBehaviour.getTransform().TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
+            if (player.GetLoofaCrop() >= 1)
             {
-                if (player.GetLoofaCrop() >= 1)
-                {
-                    plotLogic.InsertPlant(loofaAsset, reticleBehaviour.transform.position);
-                    player.SetLoofaCrop(-1);
-                    saveManager.Save();
-                }
+                plotLogic.InsertPlant(loofaAsset, reticleBehaviour.transform.position);
+                player.SetLoofaCrop(-1);
+                saveManager.Save();
             }
         }
     }
