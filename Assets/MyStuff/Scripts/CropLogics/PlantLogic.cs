@@ -1,9 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
+using Unity.XR.CoreUtils;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
-public class LoofaLogic : MonoBehaviour
+public class PlantLogic : MonoBehaviour
 {
     const string DATETIME_FORMAT = "MM/dd/yyyy HH:mm:ss";
     [SerializeField] private GameObject stage1;
@@ -31,7 +37,7 @@ public class LoofaLogic : MonoBehaviour
     private void Awake()
     {
         gameObject.SetActive(true);
-
+        
     }
 
     private void Start()
@@ -42,9 +48,11 @@ public class LoofaLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        growthAmount += Time.deltaTime * growthRate;
-        witherTime += Time.deltaTime;
-        Debug.Log(growthAmount);
+        if (!isWithered)
+        {
+            growthAmount += Time.deltaTime * growthRate;
+            witherTime += Time.deltaTime;
+        }
         if (witherTime > warning_threshold && witherTime < wither_threshold && !isWithered)
         {
             warning.SetActive(true);
@@ -88,7 +96,7 @@ public class LoofaLogic : MonoBehaviour
                 stage3_withered.SetActive(true);
             }
         }
-        if (growthAmount < stage_1_threshold && !isWithered)
+        if(growthAmount < stage_1_threshold && !isWithered)
         {
             stage1.SetActive(true);
             stage2.SetActive(false);
@@ -98,7 +106,7 @@ public class LoofaLogic : MonoBehaviour
             stage2_withered.SetActive(false);
             stage3_withered.SetActive(false);
         }
-        else if (growthAmount < stage_2_threshold && !isWithered)
+        else if(growthAmount < stage_2_threshold && !isWithered)
         {
             stage1.SetActive(false);
             stage2.SetActive(true);
@@ -108,7 +116,7 @@ public class LoofaLogic : MonoBehaviour
             stage2_withered.SetActive(false);
             stage3_withered.SetActive(false);
         }
-        else if (growthAmount < stage_3_threshold && !isWithered)
+        else if(growthAmount < stage_3_threshold && !isWithered)
         {
             stage1.SetActive(false);
             stage2.SetActive(false);
@@ -118,7 +126,7 @@ public class LoofaLogic : MonoBehaviour
             stage2_withered.SetActive(false);
             stage3_withered.SetActive(false);
         }
-        else if (growthAmount > harvest_threshold && !isWithered)
+        else if(growthAmount > harvest_threshold && !isWithered)
         {
             stage1.SetActive(false);
             stage2.SetActive(false);
@@ -132,7 +140,7 @@ public class LoofaLogic : MonoBehaviour
 
     public Boolean HarvestPlant()
     {
-        if (!isWithered && growthAmount > harvest_threshold)
+        if(!isWithered && growthAmount > harvest_threshold)
         {
             stage1.SetActive(false);
             stage2.SetActive(false);
@@ -166,14 +174,14 @@ public class LoofaLogic : MonoBehaviour
                 growthRate += 0.5f;
             }
             return true;
-        }
+        }   
     }
 
     public void getStatus()
     {
         Debug.Log("Growth Amount: " + growthAmount);
     }
-
+    
     public float getGrowthAmount()
     {
         return growthAmount;
@@ -211,7 +219,7 @@ public class LoofaLogic : MonoBehaviour
 
     public PlantData ToPlantData()
     {
-        return new PlantData(DateTime.Now.ToString(DATETIME_FORMAT), transform.localPosition, growthAmount, growthRate, witherTime, 2);
+        return new PlantData(DateTime.Now.ToString(DATETIME_FORMAT), transform.localPosition, growthAmount, growthRate, witherTime,1);
     }
     private void OnDestroy()
     {
@@ -221,6 +229,5 @@ public class LoofaLogic : MonoBehaviour
             PlantManager.instance.InsertPlant(this.ToPlantData());
         }
     }
+
 }
-
-

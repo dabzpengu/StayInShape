@@ -76,8 +76,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage1: {fileID: 8091849741235528480}
   stage2: {fileID: 3363214517991297370}
-  stage3: {fileID: 3238975076231537042}
-  stage3_harvest: {fileID: 6983486804609489846}
+  stage3: {fileID: 6983486804609489846}
+  stage3_harvest: {fileID: 3238975076231537042}
   stage1_withered: {fileID: 952919871420044907}
   stage2_withered: {fileID: 1156971915934474931}
   stage3_withered: {fileID: 56263187965102804}
