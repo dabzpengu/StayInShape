@@ -44,6 +44,11 @@ public class PlantManager : MonoBehaviour
         return luffaPrefab;
     }
 
+    public GameObject getEggplantPrefab()
+    {
+        return eggPlantPrefab;
+    }
+
     public List<PlantData> GetPlants()
     {
         return player.GetPlants();

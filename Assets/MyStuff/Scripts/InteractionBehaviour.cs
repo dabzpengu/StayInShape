@@ -101,8 +101,8 @@ public class InteractionBehaviour : MonoBehaviour
                 {
                     if (loofa.HarvestPlant())
                     {
-                        Debug.Log("500xp gained!");
-                        player.SetExp(500);
+                        Debug.Log("1000xp gained!");
+                        player.SetExp(1000);
                         player.SetLoofaCrop(1);
                         saveManager.Save();
                     }
@@ -145,6 +145,62 @@ public class InteractionBehaviour : MonoBehaviour
                             else if (gardenUIBehaviour.getEquipped().GetType() == typeof(TrowelLogic))
                             {
                                 loofa.DestroyPlant();
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("nothing equipped");
+                        }
+                    }
+                }
+                else if (hit.transform.TryGetComponent<EggplantLogic>(out EggplantLogic eggplant))
+                {
+                    if (eggplant.HarvestPlant())
+                    {
+                        Debug.Log("500xp gained!");
+                        player.SetExp(500);
+                        player.SetEggplantCrop(1);
+                        saveManager.Save();
+                    }
+                    else
+                    {
+                        if (gardenUIBehaviour.getEquipped() != null)
+                        {
+                            if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
+                            {
+                                if (player.GetFertilizer() >= 1)
+                                {
+                                    if (eggplant.Insert(gardenUIBehaviour.getEquipped()))
+                                    {
+                                        eggplant.getStatus();
+                                        player.SetFertilizer(player.GetFertilizer() - 1);
+                                        saveManager.Save();
+                                    }
+                                }
+                                else
+                                {
+                                    Debug.Log("No fertilizer");
+                                }
+                            }
+                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
+                            {
+                                if (player.GetWater() >= 1)
+                                {
+                                    if (eggplant.Insert(gardenUIBehaviour.getEquipped()))
+                                    {
+                                        eggplant.getStatus();
+                                        player.SetWater(player.GetWater() - 1);
+                                        saveManager.Save();
+                                    }
+                                }
+                                else
+                                {
+                                    Debug.Log("No water");
+                                }
+                            }
+                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(TrowelLogic))
+                            {
+                                eggplant.DestroyPlant();
                             }
                         }
                         else

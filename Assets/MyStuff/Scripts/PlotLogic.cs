@@ -44,9 +44,13 @@ public class PlotLogic : MonoBehaviour
                 spawnedPlant = Instantiate(PlantManager.instance.getPlantPrefab());
 
             }
-            else
+            else if (plant.plantType == 2)
             {
                 spawnedPlant = Instantiate(PlantManager.instance.getLoofaPrefab());
+            }
+            else
+            {
+                spawnedPlant = Instantiate(PlantManager.instance.getEggplantPrefab());
             }
             spawnedPlant.transform.SetParent(transform);
             String reformattingTime = DateTime.Now.ToString(DATETIME_FORMAT);
@@ -62,12 +66,19 @@ public class PlotLogic : MonoBehaviour
                 plantLogic.setGrowthRate(plant.growthRate);
                 plantLogic.setWither(plant.witherTime + elapsedSeconds);
             }
-            else
+            else if(plant.plantType == 2)
             {
                 spawnedPlant.TryGetComponent<LoofaLogic>(out LoofaLogic loofaLogic);
                 loofaLogic.setGrowthAmount(plant.growthAmount + elapsedSeconds);
                 loofaLogic.setGrowthRate(plant.growthRate);
                 loofaLogic.setWither(plant.witherTime + elapsedSeconds);
+            }
+            else
+            {
+                spawnedPlant.TryGetComponent<EggplantLogic>(out EggplantLogic eggplant);
+                eggplant.setGrowthAmount(plant.growthAmount + elapsedSeconds);
+                eggplant.setGrowthRate(plant.growthRate);
+                eggplant.setWither(plant.witherTime + elapsedSeconds);
             }
         }
         Debug.Log("Plants spawned, list cleared");

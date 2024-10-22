@@ -11,6 +11,7 @@ public class TempShopUI : MonoBehaviour
 {
     [SerializeField] private Button buyChilliButton;
     [SerializeField] private Button buyLoofaButton;
+    [SerializeField] private Button buyEggplantButton;
     [SerializeField] private Button backButton;
     [SerializeField] private PlayerDataSO player;
     [SerializeField] private SaveManagerSO saveManager;
@@ -19,6 +20,7 @@ public class TempShopUI : MonoBehaviour
     {
         buyChilliButton.onClick.AddListener(BuyChilli);
         buyLoofaButton.onClick.AddListener(BuyLoofa);
+        buyEggplantButton.onClick.AddListener(BuyEggplant);
         backButton.onClick.AddListener(BackButton);
     }
 
@@ -33,11 +35,26 @@ public class TempShopUI : MonoBehaviour
         saveManager.Save();
     }
 
+    public void BuyEggplant()
+    {
+        if (player.GetChilliCrop() >= 3)
+        {
+            player.SetChilliCrop(-3);
+            player.SetEggplantCrop(1);
+            saveManager.Save();
+        }
+        else
+        {
+            Debug.Log("Not enough");
+        }
+    }
+
     public void BuyLoofa()
     {
-        if(player.GetChilliCrop() >= 2)
+        if(player.GetChilliCrop() >= 3 && player.GetEggplantCrop() >= 3)
         {
-            player.SetChilliCrop(-2);
+            player.SetChilliCrop(-3);
+            player.SetEggplantCrop(-3);
             player.SetLoofaCrop(1);
             saveManager.Save();
         }
