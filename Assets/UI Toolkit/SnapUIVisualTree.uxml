@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/SnapGameStyle.uss?fileID=7433441132597879392&amp;guid=c2511bef8ebf2d74e8d4794ff9c71513&amp;type=3#SnapGameStyle" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgb(244, 239, 234);">
+        <ui:Button parse-escape-sequences="false" display-tooltip-when-elided="true" name="ExitButton" style="margin-top: 5%; margin-right: 0; margin-bottom: 0; margin-left: 5%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-image: url(&quot;project://database/Assets/Sprites/SnapGame/Exit%20Button.png?fileID=21300000&amp;guid=76051a349b824c24c931a359508cffbd&amp;type=3#Exit Button&quot;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(0, 0, 0, 0); border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; width: 23%; height: 6.35%;" />
+        <ui:VisualElement name="GameStatus" style="flex-grow: 0; -unity-background-scale-mode: scale-to-fit; background-image: url(&quot;project://database/Assets/Sprites/SnapGame/Group%20168.png?fileID=21300000&amp;guid=bba39aab31b9d524faa314447b7fb3b7&amp;type=3#Group 168&quot;); width: 70%; height: 25%; flex-shrink: 0; position: absolute; margin-top: 5%; right: 0;">
+            <ui:GroupBox name="PlantBar" style="flex-direction: row; top: 22%; align-self: center; width: 75%; height: 20%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                <ui:VisualElement name="Plant1" class="plant" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/SnapGame/potted%20plant-1.png?fileID=21300000&amp;guid=3e9d1bbb117e09142975e3c5401a7f3f&amp;type=3#potted plant-1&quot;);" />
+                <ui:VisualElement name="Plant2" class="plant" style="flex-grow: 1;" />
+                <ui:VisualElement name="Plant3" class="plant" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/SnapGame/potted%20plant-1.png?fileID=21300000&amp;guid=3e9d1bbb117e09142975e3c5401a7f3f&amp;type=3#potted plant-1&quot;);" />
+                <ui:VisualElement name="Plant4" class="plant" style="flex-grow: 1;" />
+                <ui:VisualElement name="Plant5" class="plant" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/SnapGame/potted%20plant-1.png?fileID=21300000&amp;guid=3e9d1bbb117e09142975e3c5401a7f3f&amp;type=3#potted plant-1&quot;);" />
+                <ui:VisualElement name="Plant6" class="plant" style="flex-grow: 1;" />
+            </ui:GroupBox>
+        </ui:VisualElement>
+        <ui:VisualElement name="Card1" class="card" style="flex-grow: 1; left: 5%;" />
+        <ui:VisualElement name="Card2" class="card" style="flex-grow: 1; right: 5%;" />
+        <ui:VisualElement name="PopUp" style="flex-grow: 0; flex-shrink: 0; width: 90%; align-self: center; height: 30%; background-image: url(&quot;project://database/Assets/Sprites/SnapGame/snap_instructions.png?fileID=21300000&amp;guid=77037dea8fe37864b9c463b628cb41d6&amp;type=3#snap_instructions&quot;); position: absolute; top: 30%;" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="DrawButton" class="botButton" style="left: 12%; background-image: url(&quot;project://database/Assets/Sprites/SnapGame/Draw%20Card%20Button.png?fileID=21300000&amp;guid=696f03ad0967fe240bc83cd942f6169a&amp;type=3#Draw Card Button&quot;);" />
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="BuyButton" class="botButton" style="right: 12%;" />
+    </ui:VisualElement>
+</ui:UXML>
