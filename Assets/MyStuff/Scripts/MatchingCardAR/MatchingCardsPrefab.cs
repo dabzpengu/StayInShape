@@ -4,7 +4,6 @@ public class MatchingCardsPrefab : MonoBehaviour
 {
     MatchingCardManager manager;
     [SerializeField] public GameObject ground;
-    // Assign the new material from the Inspector
     [SerializeField] public Material groundMat;
     [SerializeField] public GameObject xMark;
     [SerializeField] public GameObject yMark;
@@ -35,7 +34,7 @@ public class MatchingCardsPrefab : MonoBehaviour
     public void StartGame()
     {
         SpawnGround();
-        // DisableMarkings
+        // Disable Markings
         xMark.SetActive(false); yMark.SetActive(false) ;
     }
 

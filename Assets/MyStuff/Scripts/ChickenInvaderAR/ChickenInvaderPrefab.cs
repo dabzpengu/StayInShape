@@ -7,19 +7,15 @@ public class ChickenInvaderPrefab : MonoBehaviour
     [SerializeField] int nCards;
     ChickenInvaderManager manager;
     [SerializeField] int spawnRange;
-    [SerializeField]
-    public GameObject target;
-    [SerializeField]
-    public Transform ground;
-    //// Define a range for randomization
-    //private Vector3 randomRangeMin;
-    //private Vector3 randomRangeMax;
+    [SerializeField] public GameObject target;
+    [SerializeField] public GameObject ground;
+    [SerializeField] public Material groundMat;
+    [SerializeField] public GameObject xMark;
+    [SerializeField] public GameObject zMark;
 
     // Start is called before the first frame update
     void Start()
     {
-        //randomRangeMin = new Vector3(-spawnRange, -spawnRange, -spawnRange);
-        //randomRangeMax = new Vector3(spawnRange, spawnRange, spawnRange);
         // Find all GameObjects with the Rigidbody component
         ChickenInvaderManager[] managers = FindObjectsOfType<ChickenInvaderManager>();
 
@@ -39,13 +35,35 @@ public class ChickenInvaderPrefab : MonoBehaviour
         }
         GoalLogic goal = target.GetComponent<GoalLogic>();
         goal.SetManager(manager);
-        manager.SetupGame(target.transform, ground);
+        manager.SetupGame(target.transform, ground.transform, this);
+    }
+
+    public void StartGame()
+    {
+        SpawnAssets();
+        // Disable Markings
+        xMark.SetActive(false); zMark.SetActive(false);
     }
 
 
-    // Update is called once per frame
-    void Update()
+    private void SpawnAssets()
     {
-        
+        target.SetActive(true);
+
+        // Change ground material
+        // Get the Renderer component from the target object
+        Renderer objectRenderer = ground.GetComponent<Renderer>();
+
+        // Check if the object has a Renderer component
+        if (objectRenderer != null)
+        {
+            // Assign the new material to the object
+            objectRenderer.material = groundMat;
+            Debug.Log("Material has been changed.");
+        }
+        else
+        {
+            Debug.LogError("No Renderer found on the target object.");
+        }
     }
 }

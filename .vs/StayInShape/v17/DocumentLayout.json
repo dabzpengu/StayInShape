@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\trlfr\\desktop\\nus_folders\\modslides\\ay2425_sem1\\cs4350\\stayinshape\\assets\\mystuff\\scripts\\matchingcardar\\matchingcardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\matchingcardar\\matchingcardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\trlfr\\desktop\\nus_folders\\modslides\\ay2425_sem1\\cs4350\\stayinshape\\assets\\mystuff\\scripts\\stepcounter\\stepcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\stepcounter\\stepcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\assets\\mystuff\\scripts\\chickeninvaderar\\invaderlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\chickeninvaderar\\invaderlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\assets\\mystuff\\scripts\\chickeninvaderar\\chickeninvadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\chickeninvaderar\\chickeninvadermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\trlfr\\desktop\\nus_folders\\modslides\\ay2425_sem1\\cs4350\\stayinshape\\assets\\mystuff\\scripts\\matchingcardar\\matchingcardsprefab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\matchingcardar\\matchingcardsprefab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\trlfr\\desktop\\nus_folders\\modslides\\ay2425_sem1\\cs4350\\stayinshape\\assets\\mystuff\\scripts\\chickeninvaderar\\chickeninvaderinputbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\chickeninvaderar\\chickeninvaderinputbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\trlfr\\desktop\\nus_folders\\modslides\\ay2425_sem1\\cs4350\\stayinshape\\assets\\scripts\\scenechanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenechanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\assets\\mystuff\\scripts\\matchingcardar\\matchingcardinputbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\matchingcardar\\matchingcardinputbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\assets\\mystuff\\scripts\\matchingcardar\\matchingcardso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\matchingcardar\\matchingcardso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\assets\\mystuff\\scripts\\chickeninvaderar\\chickeninvaderprefab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\chickeninvaderar\\chickeninvaderprefab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChickenInvaderPrefab.cs",
+              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderPrefab.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderPrefab.cs",
+              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderPrefab.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderPrefab.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwBAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T18:09:34.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StepCounter.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\StepCounter\\StepCounter.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\StepCounter\\StepCounter.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\StepCounter\\StepCounter.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\StepCounter\\StepCounter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T13:36:54.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SceneChanger.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\Scripts\\SceneChanger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneChanger.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\Scripts\\SceneChanger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SceneChanger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T13:28:48.114Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MatchingCardManager.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardManager.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardManager.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardManager.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardManager.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAQwGUAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T13:21:07.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ChickenInvaderManager.cs",
               "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderManager.cs",
               "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderManager.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAuwFUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T10:02:37.339Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MatchingCardsPrefab.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardsPrefab.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardsPrefab.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardsPrefab.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardsPrefab.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwAYAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ChickenInvaderInputBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderInputBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderInputBehaviour.cs",
+              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderInputBehaviour.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\ChickenInvaderInputBehaviour.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wBcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T09:46:10.715Z",
+              "WhenOpened": "2024-10-23T18:19:20.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MatchingCardInputBehaviour.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardInputBehaviour.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardInputBehaviour.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardInputBehaviour.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardInputBehaviour.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA6AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "InvaderLogic.cs",
+              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\InvaderLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\InvaderLogic.cs",
+              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\InvaderLogic.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ChickenInvaderAR\\InvaderLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T09:45:58.368Z",
+              "WhenOpened": "2024-10-23T19:24:47.192Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MatchingCardSO.cs",
-              "DocumentMoniker": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardSO.cs",
-              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardSO.cs",
-              "ToolTip": "C:\\Users\\trlfr\\Desktop\\NUS_Folders\\ModSlides\\AY2425_Sem1\\CS4350\\StayInShape\\Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardSO.cs",
-              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\MatchingCardAR\\MatchingCardSO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T09:43:11.503Z"
             }
           ]
         }

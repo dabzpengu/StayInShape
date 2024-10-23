@@ -5143,7 +5143,7 @@ MonoBehaviour:
   currentIndex: 0
   nCorrects: 0
   nWrongs: 0
-  intervalToPlayGame: 60
+  intervalToPlayGame: 5
   popupActive: 0
 --- !u!82 &1895497796
 AudioSource:

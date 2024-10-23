@@ -1418,7 +1418,7 @@ MonoBehaviour:
   L_ui: {fileID: 1668936988}
   trackedImageManager: {fileID: 2512387470422636670}
   timeToDisplayText: 3
-  intervalToPlayGame: 60
+  intervalToPlayGame: 5
   reward: 2
   heightOfCards: 4
   nCards: 8

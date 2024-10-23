@@ -25,7 +25,7 @@ public class MatchingCardManager : MonoBehaviour
 
 
     public int timeToDisplayText = 3;
-    public int intervalToPlayGame = 30;
+    public int intervalToPlayGame = 5;
     public int reward = 6;
     public int heightOfCards = 4;
     public int nCards = 8;
@@ -74,7 +74,7 @@ public class MatchingCardManager : MonoBehaviour
     private void CompleteGame()
     {
         RewardPlayer(reward);
-        player.SetMatchingCardTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
+        player.SetMatchingCardTimer(DateTime.Now.AddMinutes(intervalToPlayGame));
         instructions.text = "You have won the game. Tap on the back button to go to the home screen.\n Next time to play is " + player.GetMatchingCardTimer();
         saveManager.Save();
     }
