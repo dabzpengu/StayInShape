@@ -138,10 +138,8 @@ public class GardenUIEvents : MonoBehaviour
 
         if (isOriginal)
         {
-            Debug.Log(newSprite);
             ChangeSprite(newSprite, 86f, 46f);
         } else {
-            Debug.Log(originalSprite);
             ChangeSprite(originalSprite, 30f, 18f);
         }
 
