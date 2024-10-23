@@ -76,10 +76,8 @@ public class MainMenuEvents : MonoBehaviour
     private void OnMyStepsClick(ClickEvent evt)
     {
         Debug.Log("You pressed the My Steps Button");
-        // if (player.CanPlayMatchingCard())
-        // {
-        //    SceneManager.LoadScene("MatchingCardScene");
-        // }
+        
+        SceneManager.LoadScene("MyStepsScene");
     }
 
     private void OnSettingsClick(ClickEvent evt)

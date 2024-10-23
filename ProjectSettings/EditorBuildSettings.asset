@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GardenScene.unity
     guid: 59233f0865880e7408a755524f0ccdd2
+  - enabled: 1
+    path: Assets/Scenes/CareScenes/CareBookScene.unity
+    guid: 3fe44dcecfb220d4388f36b34865053d
+  - enabled: 1
+    path: Assets/Scenes/CareScenes/PlantInstructionsScene.unity
+    guid: 98076f2b143c7cc4d9b06c72aa549ffb
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
