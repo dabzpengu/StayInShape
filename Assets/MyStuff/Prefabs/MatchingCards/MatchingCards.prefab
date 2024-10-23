@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ground: {fileID: 5814622297318452859}
-  groundMat: {fileID: 2100000, guid: 9664a313aeba8bf47a2861968c3428c7, type: 2}
+  groundMat: {fileID: 2100000, guid: d44cded4208c78e46bad232a9afaa5d5, type: 2}
   xMark: {fileID: 8615610234803952482}
   yMark: {fileID: 158678655603396465}
 --- !u!1 &5814622297318452859

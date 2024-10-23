@@ -27,7 +27,7 @@ public class MatchingCardManager : MonoBehaviour
     public int timeToDisplayText = 3;
     public int intervalToPlayGame = 30;
     public int reward = 6;
-    public int heightOfCards = 5;
+    public int heightOfCards = 4;
     public int nCards = 8;
     public int spawnRange = 5;
     private CardLogic selectedCard;
@@ -99,7 +99,7 @@ public class MatchingCardManager : MonoBehaviour
     public void SetupGame(Transform pTransform, MatchingCardsPrefab callee)
     {
         gamePrefab = callee;
-        instructions.text = "Match every card to another similar card!\r\nYou can select a card by tapping on them!";
+        instructions.text = "Don't see anything? Try moving closer or further to the QR code.";
         status.text = "To properly spawn AR, move your phone so that the blue and red lines fit inside the L on your screen.\nOnce ready, press START GAME.";
         currReward = 0;
         nCardsLeft = nCards;
@@ -115,6 +115,7 @@ public class MatchingCardManager : MonoBehaviour
     {
         L_ui.SetActive(false);
         status.text = "Look up, the cards are in front of you. Good Luck!";
+        instructions.text = "Match every card to another similar card!\r\nYou can select a card by tapping on them!";
         startButton.SetActive(false);
         trackedImageManager.enabled = false;
         SpawnCards();
@@ -162,7 +163,7 @@ public class MatchingCardManager : MonoBehaviour
     private Vector3[] CalculateSpawnPositions(int nCards, int spawnRange)
     {
         Vector3[] spawnPositions = new Vector3[nCards];
-        
+        int z_offset = 3;
         float angleStep = 360f / nCards;
         float x, z;
 
@@ -170,10 +171,18 @@ public class MatchingCardManager : MonoBehaviour
         {
             float angleDegrees = i * angleStep;
             float angleRadians = angleDegrees * Mathf.Deg2Rad;
-
-            x = Mathf.Cos(angleRadians) * spawnRange;
-            //z = Mathf.Sin(angleRadians) * spawnRange;
-            Vector3 newSpawnPosition = new Vector3(i * spawnRange * 0.25f - 5, heightOfCards, 3);
+            Vector3 newSpawnPosition;
+            if (i % 2 == 0)
+            {
+                x = Mathf.Cos(angleRadians) * spawnRange;
+                //z = Mathf.Sin(angleRadians) * spawnRange;
+                newSpawnPosition = new Vector3(i * spawnRange * 0.25f - 4, heightOfCards, z_offset);
+            } else
+            {
+                x = Mathf.Cos(angleRadians) * spawnRange;
+                //z = Mathf.Sin(angleRadians) * spawnRange;
+                newSpawnPosition = new Vector3((i-1) * spawnRange * 0.25f - 4, heightOfCards * 1.5f, z_offset);
+            }
             spawnPositions[i] = newSpawnPosition;
         }
 
@@ -193,7 +202,7 @@ public class MatchingCardManager : MonoBehaviour
             cards[j] = temp;
         }
     }
-    private void SpawnCards(Transform[] cards, Vector3[] spawnPositions)
+    private void PositionCards(Transform[] cards, Vector3[] spawnPositions)
     {
         float yRotation = 90; // Trial and error Tested value
         float rotateStep = 0; // 360 / cards.Length;
@@ -212,7 +221,7 @@ public class MatchingCardManager : MonoBehaviour
     private void ArrangeCards(Transform[] myCards, int spawnRange, int nCards)
     {
         Vector3[] spawnPositions = CalculateSpawnPositions(nCards, spawnRange);
-        SpawnCards(myCards, spawnPositions);
+        PositionCards(myCards, spawnPositions);
     }
 
     private void PlaySound(AudioClip clip)
