@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TempShop.unity
     guid: bbd7fb28131567544ab764d560fdbe3b
+  - enabled: 0
+    path: Assets/Scenes/ResourceCollectionSceneJia.unity
+    guid: cc96de53a985e3d438cb7d3ffab9ddbc
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
