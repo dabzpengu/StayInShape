@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.UI;
 
 
 public class MatchingCardManager : MonoBehaviour
@@ -19,7 +20,9 @@ public class MatchingCardManager : MonoBehaviour
     [SerializeField] SaveManagerSO saveManager;
     [SerializeField] GameObject cardPrefab;
     [SerializeField] GameObject startButton;
+    [SerializeField] GameObject L_ui;
     [SerializeField] ARTrackedImageManager trackedImageManager;
+
 
     public int timeToDisplayText = 3;
     public int intervalToPlayGame = 30;
@@ -32,12 +35,12 @@ public class MatchingCardManager : MonoBehaviour
     private int currReward;
     private AudioSource audioSource;
     private Transform parentTransform;
+    private MatchingCardsPrefab gamePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        status.text = "";
         currReward = 0;
     }
 
@@ -93,13 +96,15 @@ public class MatchingCardManager : MonoBehaviour
         startButton.SetActive(true);
     }
 
-    public void SetupGame(Transform pTransform)
+    public void SetupGame(Transform pTransform, MatchingCardsPrefab callee)
     {
-        instructions.text = "Match every card to another similar card!\r\nYou can select a card by tapping on it!";
-        status.text = "Press START GAME once the blue and red lines form a flat L";
+        gamePrefab = callee;
+        instructions.text = "Match every card to another similar card!\r\nYou can select a card by tapping on them!";
+        status.text = "To properly spawn AR, move your phone so that the blue and red lines fit inside the L on your screen.\nOnce ready, press START GAME.";
         currReward = 0;
         nCardsLeft = nCards;
         parentTransform = pTransform;
+        L_ui.SetActive(true);
         SpawnStartButton();
         //Transform[] myCards = GetCards(pTransform, nCards);
         //RandomiseCards(myCards, nCards);
@@ -108,13 +113,15 @@ public class MatchingCardManager : MonoBehaviour
 
     public void StartGame()
     {
-        status.text = "Good Luck!";
+        L_ui.SetActive(false);
+        status.text = "Look up, the cards are in front of you. Good Luck!";
         startButton.SetActive(false);
         trackedImageManager.enabled = false;
         SpawnCards();
         Transform[] myCards = GetCards(parentTransform, nCards);
         RandomiseCards(myCards, nCards);
         ArrangeCards(myCards, spawnRange, nCards);
+        gamePrefab.StartGame();
     }
 
     private void RandomiseCards(Transform[] cards, int nCards)
@@ -238,7 +245,7 @@ public class MatchingCardManager : MonoBehaviour
                 MatchCards(selectedCard, card);
             } else
             {
-                //PlaySound(matchWrongClip); // Can play this if we can overcome infinite looping
+                PlaySound(matchWrongClip); // Can play this if we can overcome infinite looping
                 Debug.Log("Unable to match!");
             }
         }

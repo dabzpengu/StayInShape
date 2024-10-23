@@ -1,10 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MatchingCardsPrefab : MonoBehaviour
 {
     MatchingCardManager manager;
+    [SerializeField] public GameObject ground;
+    // Assign the new material from the Inspector
+    [SerializeField] public Material groundMat;
+    [SerializeField] public GameObject xMark;
+    [SerializeField] public GameObject yMark;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +29,31 @@ public class MatchingCardsPrefab : MonoBehaviour
         {
             throw new System.Exception("No MatchingCardManager found in the scene!");
         }
-        manager.SetupGame(transform);
+        manager.SetupGame(transform, this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        SpawnGround();
+        // DisableMarkings
+        xMark.SetActive(false); yMark.SetActive(false) ;
+    }
+
+    private void SpawnGround()
+    {
+        // Get the Renderer component from the target object
+        Renderer objectRenderer = ground.GetComponent<Renderer>();
+
+        // Check if the object has a Renderer component
+        if (objectRenderer != null)
+        {
+            // Assign the new material to the object
+            objectRenderer.material = groundMat;
+            Debug.Log("Material has been changed.");
+        }
+        else
+        {
+            Debug.LogError("No Renderer found on the target object.");
+        }
     }
 }
