@@ -176,6 +176,8 @@ public class GardenUIEvents : MonoBehaviour
     private void OnCareBookClick(ClickEvent evt)
     {
         Debug.Log("You pressed Care Book Button");
+
+        SceneManager.LoadScene("CareBookScene");
     }
 
     private void OnShopClick(ClickEvent evt)

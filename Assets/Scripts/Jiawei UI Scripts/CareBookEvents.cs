@@ -82,6 +82,8 @@ public class CareBookEvents : MonoBehaviour
     private void OnReturnClick(ClickEvent evt)
     {
         Debug.Log("You pressed the Return Button");
+
+        SceneManager.LoadScene("GardenSceneJia");
     }
 
     private void OnChilliClick(ClickEvent evt)

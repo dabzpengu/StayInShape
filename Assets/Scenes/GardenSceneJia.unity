@@ -190,7 +190,7 @@ MonoBehaviour:
   newSprite: {fileID: 21300000, guid: 5497c9258c2a0894abfa233888839905, type: 3}
   waterSprite: {fileID: 21300000, guid: 026624518441247479435f219c740a51, type: 3}
   fertilizerSprite: {fileID: 21300000, guid: a94d1cac80f245f45a5fb1d2f4d679d6, type: 3}
-  trowelSprite: {fileID: 0}
+  trowelSprite: {fileID: 21300000, guid: edbb9dcb69886c940b455b2a655bc569, type: 3}
   chilliSprite: {fileID: 21300000, guid: 56aaf6515dbd1de4abe50ce67da739e7, type: 3}
   eggplantSprite: {fileID: 21300000, guid: 02372d880fad6e24fb9376f92f4dd21f, type: 3}
   loofaSprite: {fileID: 21300000, guid: f627893736114c941bfa6dc989bd27be, type: 3}

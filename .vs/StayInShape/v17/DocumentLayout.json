@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\mahathir\\desktop\\repos\\stayinshape\\assets\\mystuff\\scripts\\sweetpotatobag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\mahathir\\desktop\\repos\\stayinshape\\assets\\mystuff\\scripts\\gardenlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\gardenlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\mahathir\\desktop\\repos\\stayinshape\\assets\\scripts\\jiawei ui scripts\\gardenuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jiawei ui scripts\\gardenuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\scripts\\jiawei ui scripts\\mainmenuevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jiawei ui scripts\\mainmenuevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\scripts\\jiawei ui scripts\\carebookevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\jiawei ui scripts\\carebookevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\sweetpotatobag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\sweetpotatobag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\scripts\\shopuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\gardenuibehaviour2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\croplogics\\sweetpotatologic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\croplogics\\sweetpotatologic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\scripts\\gardenuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gardenuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,6 +73,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\croplogics\\loofalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\croplogics\\loofalogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\ShopUIEvents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ShopUIEvents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\GardenUIEvents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\GardenUIEvents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -79,6 +95,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GardenLogic.cs",
+              "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenLogic.cs",
+              "ToolTip": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenLogic.cs",
+              "RelativeToolTip": "Assets\\MyStuff\\Scripts\\GardenLogic.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T02:42:09.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CareBookEvents.cs",
+              "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\Jiawei UI Scripts\\CareBookEvents.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Jiawei UI Scripts\\CareBookEvents.cs",
+              "ToolTip": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\Jiawei UI Scripts\\CareBookEvents.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Jiawei UI Scripts\\CareBookEvents.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAowFUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T02:23:51.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GardenUIEvents.cs",
+              "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\Jiawei UI Scripts\\GardenUIEvents.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Jiawei UI Scripts\\GardenUIEvents.cs",
+              "ToolTip": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\Jiawei UI Scripts\\GardenUIEvents.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Jiawei UI Scripts\\GardenUIEvents.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAIwLoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T02:21:41.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainMenuEvents.cs",
+              "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\Jiawei UI Scripts\\MainMenuEvents.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Jiawei UI Scripts\\MainMenuEvents.cs",
+              "ToolTip": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\Jiawei UI Scripts\\MainMenuEvents.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Jiawei UI Scripts\\MainMenuEvents.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T02:20:25.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SweetPotatoBag.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\SweetPotatoBag.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\SweetPotatoBag.cs",
@@ -86,12 +152,11 @@
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\SweetPotatoBag.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T02:04:30.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T02:04:30.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "CalamansiLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\CropLogics\\CalamansiLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\CropLogics\\CalamansiLogic.cs",
@@ -103,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ShopManager.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ShopManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ShopManager.cs",
@@ -111,12 +176,11 @@
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ShopManager.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAA4wBwAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T21:48:15.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T21:48:15.265Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 18,
               "Title": "ShopUIEvents.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\ShopUIEvents.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShopUIEvents.cs",
@@ -124,12 +188,11 @@
               "RelativeToolTip": "Assets\\Scripts\\ShopUIEvents.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAwwBEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T21:40:33.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T21:40:33.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "GardenUIBehaviourScript.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
@@ -141,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
               "Title": "GardenUIEvents.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\GardenUIEvents.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GardenUIEvents.cs",
@@ -153,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "InteractionBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
@@ -161,12 +224,11 @@
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAwwDgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T09:02:42.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-20T09:02:42.439Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "PlayerDataSO.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\SOs\\PlayerDataSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SOs\\PlayerDataSO.cs",
@@ -178,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "GardenUIBehaviour2.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviour2.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenUIBehaviour2.cs",
@@ -186,12 +248,11 @@
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\GardenUIBehaviour2.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAgwIUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T04:23:01.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T04:23:01.141Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "PlantManager.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlantManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlantManager.cs",
@@ -203,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "PlotLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\PlotLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\PlotLogic.cs",
@@ -215,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "PapayaLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\CropLogics\\PapayaLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\CropLogics\\PapayaLogic.cs",
@@ -227,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "SweetpotatoLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\CropLogics\\SweetpotatoLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\CropLogics\\SweetpotatoLogic.cs",
@@ -239,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "ReticleBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ReticleBehaviour.cs",
@@ -251,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "LoofaLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\CropLogics\\LoofaLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\CropLogics\\LoofaLogic.cs",
@@ -263,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "PlantLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\CropLogics\\PlantLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\CropLogics\\PlantLogic.cs",

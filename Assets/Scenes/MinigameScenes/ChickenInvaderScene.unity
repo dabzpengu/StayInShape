@@ -269,8 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97193c122c12c348835a2472f7faa2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arSession: {fileID: 0}
-  trackedImageManager: {fileID: 0}
+  arSession: {fileID: 1167446572}
+  trackedImageManager: {fileID: 2512387470422636670}
 --- !u!4 &452372938
 Transform:
   m_ObjectHideFlags: 0
