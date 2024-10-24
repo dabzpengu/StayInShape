@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.UI;
 
 
 public class MatchingCardManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI ui;
+    [SerializeField] TextMeshProUGUI status;
     [SerializeField] TextMeshProUGUI instructions;
     [SerializeField] AudioClip selectClip;
     [SerializeField] AudioClip matchCorrectClip;
@@ -16,28 +18,37 @@ public class MatchingCardManager : MonoBehaviour
     [SerializeField] CardDB db;
     [SerializeField] PlayerDataSO player;
     [SerializeField] SaveManagerSO saveManager;
+    [SerializeField] GameObject cardPrefab;
+    [SerializeField] GameObject startButton;
+    [SerializeField] GameObject L_ui;
+    [SerializeField] ARTrackedImageManager trackedImageManager;
+
 
     public int timeToDisplayText = 3;
-    public int intervalToPlayGame = 30;
+    public int intervalToPlayGame = 5;
     public int reward = 6;
+    public int heightOfCards = 4;
+    public int nCards = 8;
+    public int spawnRange = 5;
     private CardLogic selectedCard;
     private int nCardsLeft;
     private int currReward;
     private AudioSource audioSource;
+    private Transform parentTransform;
+    private MatchingCardsPrefab gamePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        ui.text = "";
         currReward = 0;
     }
 
     private IEnumerator DisplayTextCoroutine(string message, float duration)
     {
-        ui.text = message;
+        status.text = message;
         yield return new WaitForSeconds(duration);
-        ui.text = "";
+        status.text = "";
     }
 
     private void DisplayText(string text)
@@ -63,18 +74,55 @@ public class MatchingCardManager : MonoBehaviour
     private void CompleteGame()
     {
         RewardPlayer(reward);
-        player.SetMatchingCardTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
+        player.SetMatchingCardTimer(DateTime.Now.AddMinutes(intervalToPlayGame));
         instructions.text = "You have won the game. Tap on the back button to go to the home screen.\n Next time to play is " + player.GetMatchingCardTimer();
         saveManager.Save();
     }
 
-    public void SetupGame(Transform parentTransform, int spawnRange, float height, int nCards)
+    private void SpawnCards()
     {
+        // Spawn cards first
+        for (int i = 0; i < nCards; i++)
+        {
+            GameObject instance = Instantiate(cardPrefab, Vector3.zero, transform.rotation);
+            instance.gameObject.name = "Card " + i.ToString();
+            instance.transform.SetParent(parentTransform);
+            instance.transform.rotation = parentTransform.rotation;
+        }
+    }
+
+    private void SpawnStartButton()
+    {
+        startButton.SetActive(true);
+    }
+
+    public void SetupGame(Transform pTransform, MatchingCardsPrefab callee)
+    {
+        gamePrefab = callee;
+        instructions.text = "Don't see anything? Try moving closer or further to the QR code.";
+        status.text = "To properly spawn AR, move your phone so that the blue and red lines fit inside the L on your screen.\nOnce ready, press START GAME.";
         currReward = 0;
         nCardsLeft = nCards;
+        parentTransform = pTransform;
+        L_ui.SetActive(true);
+        SpawnStartButton();
+        //Transform[] myCards = GetCards(pTransform, nCards);
+        //RandomiseCards(myCards, nCards);
+        //ArrangeCards(myCards, spawnRange, nCards);
+    }
+
+    public void StartGame()
+    {
+        L_ui.SetActive(false);
+        status.text = "Look up, the cards are in front of you. Good Luck!";
+        instructions.text = "Match every card to another similar card!\r\nYou can select a card by tapping on them!";
+        startButton.SetActive(false);
+        trackedImageManager.enabled = false;
+        SpawnCards();
         Transform[] myCards = GetCards(parentTransform, nCards);
         RandomiseCards(myCards, nCards);
-        ArrangeCards(myCards, spawnRange, height, nCards);
+        ArrangeCards(myCards, spawnRange, nCards);
+        gamePrefab.StartGame();
     }
 
     private void RandomiseCards(Transform[] cards, int nCards)
@@ -112,9 +160,10 @@ public class MatchingCardManager : MonoBehaviour
         return cards;
     }
 
-    private Vector3[] CalculateSpawnPositions(int nCards, int spawnRange, float height)
+    private Vector3[] CalculateSpawnPositions(int nCards, int spawnRange)
     {
         Vector3[] spawnPositions = new Vector3[nCards];
+        int z_offset = 3;
         float angleStep = 360f / nCards;
         float x, z;
 
@@ -122,10 +171,18 @@ public class MatchingCardManager : MonoBehaviour
         {
             float angleDegrees = i * angleStep;
             float angleRadians = angleDegrees * Mathf.Deg2Rad;
-
-            x = Mathf.Cos(angleRadians) * spawnRange;
-            z = Mathf.Sin(angleRadians) * spawnRange;
-            Vector3 newSpawnPosition = new Vector3(x, height, z);
+            Vector3 newSpawnPosition;
+            if (i % 2 == 0)
+            {
+                x = Mathf.Cos(angleRadians) * spawnRange;
+                //z = Mathf.Sin(angleRadians) * spawnRange;
+                newSpawnPosition = new Vector3(i * spawnRange * 0.25f - 4, heightOfCards, z_offset);
+            } else
+            {
+                x = Mathf.Cos(angleRadians) * spawnRange;
+                //z = Mathf.Sin(angleRadians) * spawnRange;
+                newSpawnPosition = new Vector3((i-1) * spawnRange * 0.25f - 4, heightOfCards * 1.5f, z_offset);
+            }
             spawnPositions[i] = newSpawnPosition;
         }
 
@@ -148,22 +205,22 @@ public class MatchingCardManager : MonoBehaviour
     private void PositionCards(Transform[] cards, Vector3[] spawnPositions)
     {
         float yRotation = 90; // Trial and error Tested value
-        float rotateStep = 360 / cards.Length;
+        float rotateStep = 0; // 360 / cards.Length;
         shuffleCards(cards);
 
         int i = 0;
         foreach (Transform card in cards)
         {
             card.localPosition = spawnPositions[i];
-            card.transform.Rotate(0, yRotation, 0);
-            yRotation -= rotateStep; // Trial and error Tested value
+            card.transform.Rotate(0, 0, 0);
+            //yRotation -= rotateStep; // Trial and error Tested value
             i += 1;
         }
     }
 
-    private void ArrangeCards(Transform[] myCards, int spawnRange, float height, int nCards)
+    private void ArrangeCards(Transform[] myCards, int spawnRange, int nCards)
     {
-        Vector3[] spawnPositions = CalculateSpawnPositions(nCards, spawnRange, height);
+        Vector3[] spawnPositions = CalculateSpawnPositions(nCards, spawnRange);
         PositionCards(myCards, spawnPositions);
     }
 
@@ -197,7 +254,7 @@ public class MatchingCardManager : MonoBehaviour
                 MatchCards(selectedCard, card);
             } else
             {
-                //PlaySound(matchWrongClip); // Can play this if we can overcome infinite looping
+                PlaySound(matchWrongClip); // Can play this if we can overcome infinite looping
                 Debug.Log("Unable to match!");
             }
         }

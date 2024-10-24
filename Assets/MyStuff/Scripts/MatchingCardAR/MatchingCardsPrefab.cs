@@ -1,22 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MatchingCardsPrefab : MonoBehaviour
 {
-    [SerializeField] int nCards;
     MatchingCardManager manager;
-    [SerializeField] int spawnRange;
-    [SerializeField] GameObject cardPrefab;
-    // Define a range for randomization
-    private Vector3 randomRangeMin;
-    private Vector3 randomRangeMax;
+    [SerializeField] public GameObject ground;
+    [SerializeField] public Material groundMat;
+    [SerializeField] public GameObject xMark;
+    [SerializeField] public GameObject yMark;
 
     // Start is called before the first frame update
     void Start()
     {
-    randomRangeMin = new Vector3(-spawnRange, -spawnRange, -spawnRange);
-    randomRangeMax = new Vector3(spawnRange, spawnRange, spawnRange);
     // Find all GameObjects with the Rigidbody component
     MatchingCardManager[] managers = FindObjectsOfType<MatchingCardManager>();
 
@@ -34,19 +28,31 @@ public class MatchingCardsPrefab : MonoBehaviour
         {
             throw new System.Exception("No MatchingCardManager found in the scene!");
         }
-        // Spawn cards first
-        for (int i = 0; i < nCards; i++)
-        {
-            GameObject instance = Instantiate(cardPrefab, Vector3.zero, transform.rotation);
-            instance.gameObject.name = "Card " + i.ToString();
-            instance.transform.SetParent(transform);
-        }
-        manager.SetupGame(transform, spawnRange, 7, nCards);
+        manager.SetupGame(transform, this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        SpawnGround();
+        // Disable Markings
+        xMark.SetActive(false); yMark.SetActive(false) ;
+    }
+
+    private void SpawnGround()
+    {
+        // Get the Renderer component from the target object
+        Renderer objectRenderer = ground.GetComponent<Renderer>();
+
+        // Check if the object has a Renderer component
+        if (objectRenderer != null)
+        {
+            // Assign the new material to the object
+            objectRenderer.material = groundMat;
+            Debug.Log("Material has been changed.");
+        }
+        else
+        {
+            Debug.LogError("No Renderer found on the target object.");
+        }
     }
 }
