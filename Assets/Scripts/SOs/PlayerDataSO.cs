@@ -16,6 +16,9 @@ public class PlayerDataSO : SavableSO
     private int chillicrop = 3;
     private int loofacrop = 0;
     private int eggplantcrop = 0;
+    private int sweetpotatocrop = 0;
+    private int papayacrop = 0;
+    private int kalamansicrop = 0;
     private List<PlantData> plants = new List<PlantData>();
     private String snapTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the Snap minigame again
     private String matchingCardTimer = DateTime.Now.AddDays(-1).ToString(DATETIME_FORMAT); // When the player can play the matching cards minigame again
@@ -97,10 +100,40 @@ public class PlayerDataSO : SavableSO
         this.eggplantcrop += newCropValue;
     }
 
+    public int GetSweetPotatoCrop()
+    {
+        return sweetpotatocrop;
+    }
+
+    public void SetSweetPotatoCrop(int newCropValue)
+    {
+        this.sweetpotatocrop += newCropValue;
+    }
+
+    public int GetPapayaCrop()
+    {
+        return papayacrop;
+    }
+
+    public void SetPapayaCrop(int newCropValue)
+    {
+        this.papayacrop += newCropValue;
+    }
+
+    public int GetKalamansiCrop()
+    {
+        return kalamansicrop;
+    }
+
+    public void SetKalamansiCrop(int newCropValue)
+    {
+        this.kalamansicrop += newCropValue;
+    }
     public List<PlantData> GetPlants()
     {
         return plants;
     }
+
 
     public void SetPlant(PlantData plantData)
     {
@@ -172,6 +205,9 @@ public class PlayerDataSO : SavableSO
             chillicrop = this.chillicrop,
             loofacrop = this.loofacrop,
             eggplantcrop = this.eggplantcrop,
+            sweetpotatocrop = this.sweetpotatocrop,
+            papayacrop = this.papayacrop,
+            kalamansicrop = this.kalamansicrop,
             plants = this.plants,
             snapTimer = this.snapTimer,
             matchingCardTimer = this.matchingCardTimer,
@@ -193,6 +229,9 @@ public class PlayerDataSO : SavableSO
         loofacrop = loadedObject.loofacrop;
         chillicrop = loadedObject.chillicrop;
         eggplantcrop = loadedObject.eggplantcrop;
+        sweetpotatocrop = loadedObject.sweetpotatocrop;
+        papayacrop= loadedObject.papayacrop;
+        kalamansicrop= loadedObject.kalamansicrop;
         plants = loadedObject.plants;
         snapTimer = loadedObject.snapTimer;
         matchingCardTimer = loadedObject.matchingCardTimer;
@@ -212,6 +251,9 @@ public class PlayerDataSO : SavableSO
         public int chillicrop;
         public int loofacrop;
         public int eggplantcrop;
+        public int sweetpotatocrop;
+        public int papayacrop;
+        public int kalamansicrop;
         public List<PlantData> plants;
         public String snapTimer;
         public String matchingCardTimer;

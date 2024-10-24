@@ -8,7 +8,7 @@ using UnityEngine.XR.ARFoundation;
 public class GardenLogic : MonoBehaviour
 {
     private ARTrackedImageManager imageManager;
-    public Vector3 scaleFactor = new Vector3(0.5f, 0.5f, 0.5f);
+    public Vector3 scaleFactor = new Vector3(0.1f, 0.1f, 0.1f);
 
     private void Awake()
     {
@@ -43,6 +43,7 @@ public class GardenLogic : MonoBehaviour
 
             // Optionally, set this object as a child of the tracked image
             transform.SetParent(trackedImage.transform);
+            transform.localPosition += new Vector3(0, 2f, -5f);
         }
 
         foreach (var trackedImage in eventArgs.updated)
@@ -51,25 +52,6 @@ public class GardenLogic : MonoBehaviour
             transform.rotation = trackedImage.transform.rotation;
         }
     }
-
-    /**
-    private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
-    {
-        Debug.Log("Scene Loaded");
-        if (arg0.name == sceneName)
-        {
-            gameObject.SetActive(true);
-        }
-    }
-    private void OnDisable()
-    {
-        Debug.Log("Garden Disabled");
-        //if (arg0.name == sceneName)
-        //{
-        //gameObject.SetActive(false);
-        //}
-    }
-    */
     private void Update()
     {
 

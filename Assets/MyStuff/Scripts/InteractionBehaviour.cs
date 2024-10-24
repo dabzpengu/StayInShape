@@ -9,12 +9,11 @@ using UnityEngine.XR.ARFoundation;
 
 public class InteractionBehaviour : MonoBehaviour
 {
-    [SerializeField] ReticleBehaviour reticleBehaviour; //obsolete
-    [SerializeField] GardenUIBehaviourScript gardenUIBehaviour;
+    [SerializeField] GardenUIBehaviour2 gardenUIBehaviour2;
+    [SerializeField] PlantManager plantManager;
     [SerializeField] PlayerDataSO player;
     [SerializeField] SaveManagerSO saveManager;
     DefaultInputActions actions;
-
 
     private void Awake()
     {
@@ -26,6 +25,38 @@ public class InteractionBehaviour : MonoBehaviour
     {
         Debug.Log("InteractionBehaviour destroyed");
         actions.Disable();
+    }
+
+    private void InsertPlant(GameObject plant, PlotLogic plot, Vector3 position)
+    {
+        if (plant.TryGetComponent<ChilliBag>(out ChilliBag chilliBag))
+        {
+            gardenUIBehaviour2.InsertPlant(position, plot);
+        }
+        else if(plant.TryGetComponent<EggplantBag>(out EggplantBag eggplantBag))
+        {
+            gardenUIBehaviour2.InsertEggplant(position, plot);
+        }
+        else if (plant.TryGetComponent<LoofaBag>(out LoofaBag loofaBag))
+        {
+            gardenUIBehaviour2.InsertLoofa(position, plot);
+        }
+        else if(plant.TryGetComponent<SweetPotatoBag>(out SweetPotatoBag sweetPotatoBag))
+        {
+            gardenUIBehaviour2.InsertSweetPotato(position, plot);
+        }
+        else if (plant.TryGetComponent<PapayaBag>(out PapayaBag papayaBag))
+        {
+            gardenUIBehaviour2.InsertPapaya(position, plot);
+        }
+        else if(plant.TryGetComponent<CalamansiBag>(out CalamansiBag calamansiBag))
+        {
+            gardenUIBehaviour2.InsertKalamansi(position, plot);
+        }
+        else
+        {
+            Debug.Log("Crop not in yet");
+        }
     }
 
     private void Update()
@@ -40,8 +71,23 @@ public class InteractionBehaviour : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, rayDistance))
             {
-                //logic if player taps a plant AND reticle is on plant (kiv, a bit unintuitive)
-                if (hit.transform.TryGetComponent<PlantLogic>(out PlantLogic plant))
+                if(hit.transform.TryGetComponent<PlotLogic>(out PlotLogic plotLogic))
+                {
+                    Component heldItem = gardenUIBehaviour2.getEquipped();
+                    if (heldItem != null && !heldItem.TryGetComponent<WaterLogic>(out WaterLogic water) && 
+                        !heldItem.TryGetComponent<FertiliserLogic>(out FertiliserLogic fertiliser) &&
+                        !heldItem.TryGetComponent<TrowelLogic>(out TrowelLogic trowel))
+                    {
+                        InsertPlant(heldItem.gameObject, plotLogic, hit.point);
+                    }
+                }
+                //logic if player taps bag of seeds
+                else if(hit.transform.TryGetComponent<ChilliBag>(out ChilliBag chilliBag))
+                {
+                    gardenUIBehaviour2.UpdateItem(hit.transform);
+                }
+                //logic if player taps a plant
+                else if (hit.transform.TryGetComponent<PlantLogic>(out PlantLogic plant))
                 {
                     if (plant.HarvestPlant())
                     {
@@ -52,13 +98,13 @@ public class InteractionBehaviour : MonoBehaviour
                     }
                     else
                     {
-                        if (gardenUIBehaviour.getEquipped() != null)
+                        if (gardenUIBehaviour2.getEquipped() != null)
                         {
-                            if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
+                            if (gardenUIBehaviour2.getEquipped().GetType() == typeof(FertiliserLogic))
                             {
                                 if (player.GetFertilizer() >= 1)
                                 {
-                                    if (plant.Insert(gardenUIBehaviour.getEquipped()))
+                                    if (plant.Insert(gardenUIBehaviour2.getEquipped()))
                                     {
                                         plant.getStatus();
                                         player.SetFertilizer(player.GetFertilizer() - 1);
@@ -70,11 +116,11 @@ public class InteractionBehaviour : MonoBehaviour
                                     Debug.Log("No fertilizer");
                                 }
                             }
-                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
+                            else if (gardenUIBehaviour2.getEquipped().GetType() == typeof(WaterLogic))
                             {
                                 if (player.GetWater() >= 1)
                                 {
-                                    if (plant.Insert(gardenUIBehaviour.getEquipped()))
+                                    if (plant.Insert(gardenUIBehaviour2 .getEquipped()))
                                     {
                                         plant.getStatus();
                                         player.SetWater(player.GetWater() - 1);
@@ -86,7 +132,7 @@ public class InteractionBehaviour : MonoBehaviour
                                     Debug.Log("No water");
                                 }
                             }
-                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(TrowelLogic))
+                            else if (gardenUIBehaviour2.getEquipped().GetType() == typeof(TrowelLogic))
                             {
                                 plant.DestroyPlant();
                             }
@@ -108,13 +154,13 @@ public class InteractionBehaviour : MonoBehaviour
                     }
                     else
                     {
-                        if (gardenUIBehaviour.getEquipped() != null)
+                        if (gardenUIBehaviour2.getEquipped() != null)
                         {
-                            if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
+                            if (gardenUIBehaviour2.getEquipped().GetType() == typeof(FertiliserLogic))
                             {
                                 if (player.GetFertilizer() >= 1)
                                 {
-                                    if (loofa.Insert(gardenUIBehaviour.getEquipped()))
+                                    if (loofa.Insert(gardenUIBehaviour2.getEquipped()))
                                     {
                                         loofa.getStatus();
                                         player.SetFertilizer(player.GetFertilizer() - 1);
@@ -126,11 +172,11 @@ public class InteractionBehaviour : MonoBehaviour
                                     Debug.Log("No fertilizer");
                                 }
                             }
-                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
+                            else if (gardenUIBehaviour2.getEquipped().GetType() == typeof(WaterLogic))
                             {
                                 if (player.GetWater() >= 1)
                                 {
-                                    if (loofa.Insert(gardenUIBehaviour.getEquipped()))
+                                    if (loofa.Insert(gardenUIBehaviour2.getEquipped()))
                                     {
                                         loofa.getStatus();
                                         player.SetWater(player.GetWater() - 1);
@@ -142,7 +188,7 @@ public class InteractionBehaviour : MonoBehaviour
                                     Debug.Log("No water");
                                 }
                             }
-                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(TrowelLogic))
+                            else if (gardenUIBehaviour2.getEquipped().GetType() == typeof(TrowelLogic))
                             {
                                 loofa.DestroyPlant();
                             }
@@ -164,13 +210,13 @@ public class InteractionBehaviour : MonoBehaviour
                     }
                     else
                     {
-                        if (gardenUIBehaviour.getEquipped() != null)
+                        if (gardenUIBehaviour2.getEquipped() != null)
                         {
-                            if (gardenUIBehaviour.getEquipped().GetType() == typeof(FertiliserLogic))
+                            if (gardenUIBehaviour2.getEquipped().GetType() == typeof(FertiliserLogic))
                             {
                                 if (player.GetFertilizer() >= 1)
                                 {
-                                    if (eggplant.Insert(gardenUIBehaviour.getEquipped()))
+                                    if (eggplant.Insert(gardenUIBehaviour2.getEquipped()))
                                     {
                                         eggplant.getStatus();
                                         player.SetFertilizer(player.GetFertilizer() - 1);
@@ -182,11 +228,11 @@ public class InteractionBehaviour : MonoBehaviour
                                     Debug.Log("No fertilizer");
                                 }
                             }
-                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(WaterLogic))
+                            else if (gardenUIBehaviour2.getEquipped().GetType() == typeof(WaterLogic))
                             {
                                 if (player.GetWater() >= 1)
                                 {
-                                    if (eggplant.Insert(gardenUIBehaviour.getEquipped()))
+                                    if (eggplant.Insert(gardenUIBehaviour2.getEquipped()))
                                     {
                                         eggplant.getStatus();
                                         player.SetWater(player.GetWater() - 1);
@@ -198,7 +244,7 @@ public class InteractionBehaviour : MonoBehaviour
                                     Debug.Log("No water");
                                 }
                             }
-                            else if (gardenUIBehaviour.getEquipped().GetType() == typeof(TrowelLogic))
+                            else if (gardenUIBehaviour2.getEquipped().GetType() == typeof(TrowelLogic))
                             {
                                 eggplant.DestroyPlant();
                             }
@@ -216,7 +262,7 @@ public class InteractionBehaviour : MonoBehaviour
                         (hit.transform.TryGetComponent<FertiliserLogic>(out FertiliserLogic fertiliser)) ||
                         hit.transform.TryGetComponent<TrowelLogic>(out TrowelLogic trowel)))
                     {
-                        gardenUIBehaviour.UpdateItem(hit.transform);
+                        gardenUIBehaviour2.UpdateItem(hit.transform);
                     }
                 }
             }

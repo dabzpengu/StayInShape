@@ -12,15 +12,23 @@ public class GardenUIEvents : MonoBehaviour
     private Button _button2;
     private Button _button3;
     private Button _button4;
-    private Button _button5;
+
+    private IntegerField fertiliserValue;
+    private IntegerField waterValue;
 
     private VisualElement resourceTracker;
+    private VisualElement pickedItem;
     public Sprite originalSprite;
     public Sprite newSprite;
     public Sprite waterSprite;
     public Sprite fertilizerSprite;
+    public Sprite trowelSprite;
     public Sprite chilliSprite;
+    public Sprite eggplantSprite;
     public Sprite loofaSprite;
+    public Sprite papayaSprite;
+    public Sprite kalamansiSprite;
+    public Sprite sweetPotatoSprite;
     private bool isOriginal = true;
 
     private VisualElement popUp;
@@ -49,11 +57,14 @@ public class GardenUIEvents : MonoBehaviour
         _button4 = _document.rootVisualElement.Q("ShopButton") as Button;
         _button4.RegisterCallback<ClickEvent>(OnShopClick);
 
-        _button5 = _document.rootVisualElement.Q("PickItem") as Button;
-        _button5.RegisterCallback<ClickEvent>(OnPickItem);
+        fertiliserValue = _document.rootVisualElement.Q("fertiliserValue") as IntegerField;
+        waterValue = _document.rootVisualElement.Q("waterValue") as IntegerField;
 
-        resourceTracker = _document.rootVisualElement.Q("ResourceTracker") as VisualElement;
-        resourceTracker.RegisterCallback<ClickEvent>(OnResourceTrackerClick);
+
+        pickedItem = _document.rootVisualElement.Q("PickedItem") as VisualElement;
+
+        //resourceTracker = _document.rootVisualElement.Q("ResourceTracker") as VisualElement;
+        //resourceTracker.RegisterCallback<ClickEvent>(OnResourceTrackerClick);
 
         popUp = _document.rootVisualElement.Q("PopUp") as VisualElement;
         popUp.RegisterCallback<ClickEvent>(OnPopUpClick);
@@ -73,8 +84,7 @@ public class GardenUIEvents : MonoBehaviour
         _button2.UnregisterCallback<ClickEvent>(OnTakePhotoClick);
         _button3.UnregisterCallback<ClickEvent>(OnCareBookClick);
         _button4.UnregisterCallback<ClickEvent>(OnShopClick);
-        _button5.UnregisterCallback<ClickEvent>(OnPickItem);
-        resourceTracker.UnregisterCallback<ClickEvent>(OnResourceTrackerClick);
+        //resourceTracker.UnregisterCallback<ClickEvent>(OnResourceTrackerClick);
         popUp.UnregisterCallback<ClickEvent>(OnPopUpClick);
 
         for (int i = 0; i < _menuButtons.Count; i++)
@@ -89,16 +99,38 @@ public class GardenUIEvents : MonoBehaviour
 
         SceneManager.LoadScene("HomeScene");
     }
-
-    private void OnPickItem(ClickEvent evt)
+    public void UpdatePickedItem(int item)
     {
-        Debug.Log("You are using an equipped item");
-        UpdatePickButton(null);
-    }
-
-    private void UpdatePickButton(GameObject item)
-    {
-        _button5.style.backgroundImage = chilliSprite.texture;
+        if(item == 1)
+        {
+            Debug.Log("ITS WATER CUHHH");
+            pickedItem.style.backgroundImage = new StyleBackground(waterSprite);
+        }
+        else if(item == 2)
+        {
+            Debug.Log("FAERTILISERRR");
+            pickedItem.style.backgroundImage = new StyleBackground(fertilizerSprite);
+        }
+        else if(item == 3)
+        {
+            Debug.Log("TROOOOWELLLL");
+            pickedItem.style.backgroundImage = new StyleBackground(trowelSprite);
+        }
+        else if(item == 4)
+        {
+            Debug.Log("CHILLIIIIIIIII");
+            pickedItem.style.backgroundImage = new StyleBackground(chilliSprite);
+        }
+        else if (item == 5)
+        {
+            Debug.Log("EGGPLANT");
+            pickedItem.style.backgroundImage = new StyleBackground(eggplantSprite);
+        }
+        else if(item == 6)
+        {
+            Debug.Log("LOOOOOFAAAA");
+            pickedItem.style.backgroundImage= new StyleBackground(loofaSprite);
+        }
     }
 
     private void OnTakePhotoClick(ClickEvent evt)
@@ -153,6 +185,7 @@ public class GardenUIEvents : MonoBehaviour
         SceneManager.LoadScene("ShopScene");
     }
 
+    /**
     private void OnResourceTrackerClick(ClickEvent evt)
     {
          Debug.Log("You pressed Resource Tracker");
@@ -166,6 +199,7 @@ public class GardenUIEvents : MonoBehaviour
 
         isOriginal = !isOriginal;
     }
+    **/
 
      private void ChangeSprite(Sprite sprite, float widthPercent, float heightPercent)
     {
@@ -197,7 +231,16 @@ public class GardenUIEvents : MonoBehaviour
             isActive = false;
         }
     }
+    
+    public void setWaterText(int value)
+    {
+        waterValue.value = value;
+    }
 
+    public void setFertiliserText(int value)
+    {
+        fertiliserValue.value = value;
+    }
     private void OnAllButtonsClick(ClickEvent evt)
     {
         _audioSource.Play();

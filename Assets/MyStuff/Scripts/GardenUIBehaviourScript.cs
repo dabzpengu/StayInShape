@@ -36,7 +36,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
 
     public static event Action onHomeButtonClicked;
 
-    private GardenLogic gardenLogic;
+    private GardenLogic gardenLogic; //not used
     private Component equippedItem;
     public int rayDistance = 5;
     // to Add Listeners to the buttons
@@ -140,7 +140,7 @@ public class GardenUIBehaviourScript : MonoBehaviour
     }
 
 
-    public void UpdateItem(Transform item)
+    public virtual void UpdateItem(Transform item)
     {
         if(item.TryGetComponent<WaterLogic>(out WaterLogic water))
         {

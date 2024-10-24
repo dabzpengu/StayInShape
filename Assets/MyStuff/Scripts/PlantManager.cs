@@ -12,6 +12,9 @@ public class PlantManager : MonoBehaviour
     [SerializeField] GameObject chilliPrefab;
     [SerializeField] GameObject luffaPrefab;
     [SerializeField] GameObject eggPlantPrefab;
+    [SerializeField] GameObject sweetPotatoPrefab;
+    [SerializeField] GameObject papayaPrefab;
+    [SerializeField] GameObject kalamansiPrefab;
     [SerializeField] private PlayerDataSO player;
     [SerializeField] private SaveManagerSO saveManager;
 
@@ -47,6 +50,21 @@ public class PlantManager : MonoBehaviour
     public GameObject getEggplantPrefab()
     {
         return eggPlantPrefab;
+    }
+
+    public GameObject getSweetPotatoPrefab()
+    {
+        return sweetPotatoPrefab;
+    }
+
+    public GameObject getKalamansiPrefab()
+    {
+        return kalamansiPrefab;
+    }
+
+    public GameObject getPapayaPrefab()
+    {
+        return papayaPrefab;
     }
 
     public List<PlantData> GetPlants()

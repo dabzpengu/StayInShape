@@ -477,6 +477,7 @@ GameObject:
   - component: {fileID: 2029488893}
   - component: {fileID: 2029488892}
   - component: {fileID: 2029488895}
+  - component: {fileID: 2029488896}
   - component: {fileID: 2029488894}
   m_Layer: 5
   m_Name: ShopUI
@@ -625,6 +626,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5902aac06166bc4ab23918967c214f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2029488896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029488891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9a04547a2b0c34eafff3ccc76c0fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: de7a4b855443e124e807893f98c13162, type: 2}
+  saveManager: {fileID: 11400000, guid: ddf61ec8f040149498b3a7d02638b035, type: 2}
+  shopUIEvents: {fileID: 2029488895}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
