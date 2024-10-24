@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TempShop.unity
     guid: bbd7fb28131567544ab764d560fdbe3b
   - enabled: 1
+    path: Assets/Scenes/MyStepsScene.unity
+    guid: 8f23d4161f7d4914ab4a80c8759e4a8d
+  - enabled: 1
     path: Assets/Scenes/ResourceCollectionSceneJia.unity
     guid: cc96de53a985e3d438cb7d3ffab9ddbc
   m_configObjects:
