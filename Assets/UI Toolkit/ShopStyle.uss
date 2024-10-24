@@ -10,7 +10,7 @@
     padding-right: 0;
     padding-bottom: 0;
     padding-left: 0;
-    height: 70%;
+    height: 100%;
     width: 100%;
     align-self: center;
     border-left-color: rgba(0, 0, 0, 0);
