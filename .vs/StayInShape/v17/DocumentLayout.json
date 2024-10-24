@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\mahathir\\desktop\\repos\\stayinshape\\assets\\mystuff\\scripts\\sweetpotatobag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\sweetpotatobag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\scripts\\shopuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\gardenuibehaviour2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\gardenuibehaviour2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\interactionbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\interactionbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|c:\\users\\mahathir\\desktop\\repos\\stayinshape\\assets\\mystuff\\scripts\\sweetpotatobag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\sweetpotatobag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\croplogics\\calamansilogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\gardenuibehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\scripts\\shopuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopuievents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|solutionrelative:assets\\mystuff\\scripts\\shopmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66D631D6-8BB4-0FDB-C552-CE4F5417DC5F}|Assembly-CSharp.csproj|C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\assets\\mystuff\\scripts\\plantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,11 +74,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "SweetPotatoBag.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\SweetPotatoBag.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\SweetPotatoBag.cs",
@@ -91,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CalamansiLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\CropLogics\\CalamansiLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\CropLogics\\CalamansiLogic.cs",
@@ -103,31 +103,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "ShopManager.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ShopManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\ShopManager.cs",
               "ToolTip": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\ShopManager.cs",
               "RelativeToolTip": "Assets\\MyStuff\\Scripts\\ShopManager.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBwAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAA4wBwAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T21:48:15.265Z"
+              "WhenOpened": "2024-10-23T21:48:15.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "ShopUIEvents.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\ShopUIEvents.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShopUIEvents.cs",
               "ToolTip": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\ShopUIEvents.cs",
               "RelativeToolTip": "Assets\\Scripts\\ShopUIEvents.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAuwBEAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAwwBEAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T21:40:33.329Z"
+              "WhenOpened": "2024-10-23T21:40:33.329Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "GardenUIBehaviourScript.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenUIBehaviourScript.cs",
@@ -139,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "GardenUIEvents.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\Scripts\\GardenUIEvents.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GardenUIEvents.cs",
@@ -151,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "InteractionBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\InteractionBehaviour.cs",
@@ -176,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "GardenUIBehaviour2.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\GardenUIBehaviour2.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\GardenUIBehaviour2.cs",
@@ -213,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "PapayaLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\CropLogics\\PapayaLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\CropLogics\\PapayaLogic.cs",
@@ -225,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "SweetpotatoLogic.cs",
               "DocumentMoniker": "C:\\Users\\Mahathir\\Desktop\\repos\\StayInShape\\Assets\\MyStuff\\Scripts\\CropLogics\\SweetpotatoLogic.cs",
               "RelativeDocumentMoniker": "Assets\\MyStuff\\Scripts\\CropLogics\\SweetpotatoLogic.cs",
