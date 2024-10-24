@@ -1,0 +1,23 @@
+.goal {
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 1%;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/MySteps/Uncollected/uncollected_1.png?fileID=21300000&guid=85df05b6a51adb44196ed6aff69c893e&type=3#uncollected_1");
+    height: 100%;
+    flex-grow: 1;
+    min-width: auto;
+    min-height: 20px;
+}

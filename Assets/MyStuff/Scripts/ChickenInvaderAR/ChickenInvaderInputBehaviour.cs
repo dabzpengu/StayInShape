@@ -1,12 +1,9 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.ARFoundation;
 
 public class ChickenInvaderInputBehaviour : MonoBehaviour
 {
     [SerializeField] ChickenInvaderManager manager;
-    [SerializeField] ReticleBehaviour reticleBehaviour;
     DefaultInputActions actions;
 
     public int rayDistance;
@@ -32,20 +29,16 @@ public class ChickenInvaderInputBehaviour : MonoBehaviour
     private void Update()
     {
         Vector3 cameraPosition = Camera.main.transform.position;
-        Transform reticleHoveringOn = null;
-        if (reticleBehaviour.getTransform() != null)
-        {
-            reticleHoveringOn = reticleBehaviour.getTransform();
-        }
-
-        InvaderLogic invader = reticleHoveringOn.GetComponentInParent<InvaderLogic>();
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
         RaycastHit hit;
-        if (invader != null && Physics.Raycast(ray, out hit, rayDistance) && !manager.isGameEnded)
+
+        Physics.Raycast(ray, out hit, rayDistance);
+        if (hit.transform != null && hit.transform.parent.GetComponent<InvaderLogic>() != null && !manager.isGameEnded)
         {
+            InvaderLogic invader = hit.transform.parent.GetComponent<InvaderLogic>();
             Debug.Log("MOVE!");
-            Vector3 directionAwayFromPlayer = (invader.transform.position - cameraPosition).normalized;
-            invader.Move(directionAwayFromPlayer, chaseSpeed);
+            //Vector3 directionAwayFromPlayer = (invader.transform.position - cameraPosition).normalized;
+            invader.MoveAway();
         }
     }
 }

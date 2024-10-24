@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class MatchingCardInputBehaviour : MonoBehaviour
 {
-    [SerializeField] ReticleBehaviour reticleBehaviour;
+    //[SerializeField] ReticleBehaviour reticleBehaviour;
     [SerializeField] MatchingCardManager gameManager;
     [SerializeField] float overlapRadius;
     DefaultInputActions actions;
@@ -23,21 +23,21 @@ public class MatchingCardInputBehaviour : MonoBehaviour
 
     private void Update()
     {
-        Transform reticleHoveringOn = null;
+        //Transform reticleHoveringOn = null;
 
         if (actions.UI.Click.WasPerformedThisFrame())
         {
-            if (reticleBehaviour.getTransform() != null)
-            {
-                reticleHoveringOn = reticleBehaviour.getTransform();
-            }
-            CardLogic card = reticleHoveringOn.GetComponent<CardLogic>();
+            //if (reticleBehaviour.getTransform() != null)
+            //{
+            //    reticleHoveringOn = reticleBehaviour.getTransform();
+            //}
+            //CardLogic card = reticleHoveringOn.GetComponent<CardLogic>();
             Vector2 clickPosition = actions.UI.Point.ReadValue<Vector2>();
             Ray ray = Camera.main.ScreenPointToRay(clickPosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, rayDistance) && card != null && hit.transform.GetComponent<CardLogic>() != null)
+            if (Physics.Raycast(ray, out hit, rayDistance) && hit.transform.GetComponent<CardLogic>() != null)
             {
-                gameManager.SelectCard(card);
+                gameManager.SelectCard(hit.transform.GetComponent<CardLogic>());
             }
         } 
     }

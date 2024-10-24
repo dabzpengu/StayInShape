@@ -52,7 +52,7 @@ public class SnapGameManager : MonoBehaviour
     public int currentIndex; // Indicates the current index (number of cards we have drawn) so far. If our index matches one of the decks, then we have the same cards.
     public int nCorrects = 0;
     public int nWrongs = 0;
-    public int intervalToPlayGame = 60;
+    public int intervalToPlayGame = 5;
     public static float timePerSnap = 5;
     private float timeLeft;
     int currentLevelId;
@@ -231,7 +231,7 @@ public class SnapGameManager : MonoBehaviour
         nMatchesLeft.text = "0";
         backButton.text = "Finish";
         RewardPlayer();
-        playerDataSO.SetSnapTimer(DateTime.Now.AddSeconds(intervalToPlayGame));
+        playerDataSO.SetSnapTimer(DateTime.Now.AddMinutes(intervalToPlayGame));
         saveManager.Save();
         //Send();
         audioSource.clip = successSound;

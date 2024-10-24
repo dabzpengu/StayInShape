@@ -8,4 +8,5 @@ public class MatchingCardSO : ScriptableObject
     public string description;
     public int id;
     public Color col;
+    public Sprite img;
 }

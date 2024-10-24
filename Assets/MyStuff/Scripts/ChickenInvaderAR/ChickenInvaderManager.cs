@@ -10,19 +10,19 @@ public class ChickenInvaderManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerUI;
     [SerializeField] TextMeshProUGUI instructionsUI;
-    [SerializeField] AudioClip selectClip;
-    [SerializeField] AudioClip matchCorrectClip;
-    [SerializeField] AudioClip matchWrongClip;
+    [SerializeField] AudioClip chickenClip;
     [SerializeField] AudioClip winGameClip;
     [SerializeField] PlayerDataSO player;
     [SerializeField] SaveManagerSO saveManager;
     [SerializeField] ARTrackedImageManager trackedImageManager;
     [SerializeField] GameObject spawnButton;
     [SerializeField] GameObject chickenPrefab;
+    [SerializeField] GameObject L_ui;
+    [SerializeField] GameObject eye_ui;
 
-    public int intervalToPlayGame = 30;
+    public int intervalToPlayGame = 5;
     public int timePerRound = 30;
-    public int spawnRange = 5;
+    public float spawnRange = 5;
     public float timeLeft;
     public bool isGameEnded;
     public int reward = 12;
@@ -31,6 +31,7 @@ public class ChickenInvaderManager : MonoBehaviour
 
     private Transform target;
     private Transform ground;
+    private ChickenInvaderPrefab gamePrefab;
     private Coroutine countdownCoroutine;
     private AudioSource audioSource;
     private Vector3 randomRangeMin;
@@ -67,7 +68,7 @@ public class ChickenInvaderManager : MonoBehaviour
     private void RewardPlayer()
     {
         PlaySound(winGameClip);
-        player.SetChickenInvaderTimer(DateTime.Now.AddMinutes(3));
+        player.SetChickenInvaderTimer(DateTime.Now.AddMinutes(intervalToPlayGame));
         player.SetFertilizer(player.GetFertilizer() + reward);
         player.SetWater(player.GetWater() + reward);
         saveManager.Save();
@@ -77,7 +78,7 @@ public class ChickenInvaderManager : MonoBehaviour
     {
         StopCoroutine(countdownCoroutine);
         instructionsUI.text = "Hurray! You protected all your seeds. You win!";
-        timerUI.text = String.Format("You have earned {0} fertilizers and water!\n Next time to play is {1}", reward, player.GetChickenInvaderTimer());
+        timerUI.text = String.Format("You have earned {0} fertilizers and water!\n Next time to play is {1} minutes later", reward, intervalToPlayGame);
         CompleteGame();
     }
 
@@ -87,7 +88,7 @@ public class ChickenInvaderManager : MonoBehaviour
         reward = 0;
         RewardPlayer();
         instructionsUI.text = "Oh No! A chicken has reached your seeds. You lost.";
-        timerUI.text = String.Format("Next time to play is {0}", player.GetChickenInvaderTimer());
+        timerUI.text = String.Format("Next time to play is {0} minutes later", intervalToPlayGame);
         CompleteGame();
     }
 
@@ -99,8 +100,12 @@ public class ChickenInvaderManager : MonoBehaviour
         saveManager.Save();
     }
 
-    public void SetupGame(Transform target, Transform ground)
+    public void SetupGame(Transform target, Transform ground, ChickenInvaderPrefab prefab)
     {
+        L_ui.SetActive(true);
+        gamePrefab = prefab;
+        instructionsUI.text = "Don't see anything? Try moving closer or further to the QR code.";
+        timerUI.text = "To properly spawn AR, move your phone so that the blue and red lines fit inside the L on your screen.\nOnce ready, press START GAME.";
         this.target = target;
         this.ground = ground;
         timeLeft = timePerRound;
@@ -112,13 +117,15 @@ public class ChickenInvaderManager : MonoBehaviour
         spawnButton.SetActive(true);
     }
 
-    public Vector3 CalculateSpawnPosition(int spawnRange)
+    public Vector3 CalculateSpawnPosition(float spawnRange)
     {
         float x, z;
         int i = UnityEngine.Random.Range(0, 360);
         float angleRad = i * Mathf.Deg2Rad;
-        x = Mathf.Cos(angleRad) * spawnRange;
-        z = Mathf.Sin(angleRad) * spawnRange;
+        x = (Mathf.Cos(angleRad) * spawnRange);
+        z = Math.Abs(Mathf.Sin(angleRad) * spawnRange);
+        //x = 0;
+        //z = spawnRange;
         return new Vector3(x, spawnRange, z);
     }
 
@@ -137,7 +144,6 @@ public class ChickenInvaderManager : MonoBehaviour
             Debug.LogError("Error: 'InvaderLogic' component is missing on 'instance'.");
         } else
         {
-            print("Got Invader Logic!");
             StartCoroutine(i.AttackTarget(target, this));
         }
     }
@@ -153,8 +159,13 @@ public class ChickenInvaderManager : MonoBehaviour
     
     public void StartGame()
     {
+        eye_ui.SetActive(true);
+        L_ui.SetActive(false);
+        instructionsUI.text = "Look at the chickens to chase them away before they steal your seeds!";
+        timerUI.text = "Game start!";
+        gamePrefab.StartGame();
+        L_ui.SetActive(false);
         spawnButton.SetActive(false);
-        Debug.Log("Game Start! Locked Tracking Feature.");
         trackedImageManager.enabled = false;
         isGameEnded = false;
         countdownCoroutine = StartCoroutine(StartCountdown());
